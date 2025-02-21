@@ -1,9 +1,25 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
 
-\title{Filipino Case Study}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{biblatex}
+
+\usepackage{tipx} % for Chapter 1.1.1
+
+
+% REFERENCES
+\addbibresource{bibliography/chapter1.bib}
+
+% FUNCTIONS
+\newtheorem{example}{Example}
+
+\title{Filipino Grammar}
 \author{Stephen Borja, Justin Ching, Zhean Ganituen}
 \date{\today}
 
@@ -11,6 +27,10 @@
 
 \maketitle
 
+% \tableofcontents % FIXME: remove comment here later on 
+
 \include{chapters/chapter1}
+
+% \printbibliography % FIXME: remove comment here later on  
 
 \end{document}
