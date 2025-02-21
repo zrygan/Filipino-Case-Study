@@ -30,9 +30,12 @@ We can also introduce subsets the following which are subsets of \(\mathcal{F}\)
     \item \(\mathbb{V}\) = \{a,e,i,o,u,A,E,I,O,I\}, the set of upper and lower case vowels
     \item \(\mathbb{C}\) = \(\mathcal{F} - (\mathbb{M}\cup\mathbb{V})\),
           the set of upper and lower case consonants
+    \item \(\mathbb{V}_\text{upper}\) is the set of upper case vowels
+    \item \(\mathbb{V}_\text{lower}\) is the set of lower case vowels
+    \item \(\mathbb{C}_\text{upper}\) is the set of upper case consonants
+    \item \(\mathbb{C}_\text{lower}\) is the set of lower case consonants
+    \item \(\mathbb{L}\) = \(\mathcal{F} - \mathbb{M}\), the set of consonants and vowels
 \end{enumerate}
-
-
 
 \subsubsection{Remarks on the Digraph: \text{ng/Ng} or "\textit{en dyi}"}
 
@@ -52,8 +55,74 @@ but is not pronounced as the velar nasal sound. Instead, its pronunciation is
 \textipa{\textprimstress m\ae N @r} ("mang-er") or
 \textipa{\textprimstress m\ae N@r} ("manger").
 
-
-
 \subsection{Common Errors}
 
-\subsubsection{On Spelling}
+\subsubsection{Loan Words, U/O, and I/E}
+
+Given the Spanish and English roots of Filipino, some \textit{loan} words have
+rules for Filipino spelling. Let \(s\) be any string, the English language
+\(\mathcal{E}\), the Spanish language \(\mathcal{S}\), and \(\mathcal{F}(s)\) is
+the translation of \(s\) in \(\mathcal{F}\)
+
+\begin{enumerate}
+    \item \(s\in \mathcal{S} \rightarrow \mathcal{F}(s) : \text{ es}\cdot
+          (\mathbb{M}|\mathbb{C})* \)
+    \item \(s\in \mathcal{E} \rightarrow \mathcal{F}(s) : \text{ is}\cdot
+          (\mathbb{M}|\mathbb{C})* \)
+\end{enumerate}
+
+Rule (1) denotes that if \(s\) is a Spanish word, translating \(s\) to a Filipino
+word would use "es" as the prefix to the word to denote that \(\mathcal{F}(s)\)
+is a word of Spanish origin. On the other hand, for rule (2), if \(s\) is an
+English word, then \(\mathcal{F}(s)\) would use "is" as the prefix to the word
+to denote that it is of English origin.
+
+Another rule for Spanish loan words is the "o" to "u" change. If \(s\in \mathcal{S}\)
+was translated to \(\mathcal{F}\), and the the prefix of \(s\) is given by the
+regular expression \((\text{C}|\text{c})\text{on}(\text{f}|\text{v})\). Then,
+\(\mathcal{F}(s)\) is prefixed with
+\((\text{C}|\text{c})\text{um}(\text{p}|\text{b})\). In particular, if the
+\(s \models \text{conf} \rightarrow \mathcal{F}(s) \models \text{kump}\),
+otherwise \(\mathcal{F}(s) \models \text{ kumb}\).
+
+In addition to this, let \(\alpha\) be the prefix, \(\omega\) be the suffix, and
+\(s\in\mathcal{F}\) be any Filipino word and \(s \models \mathbb{(M|C)}+(\text{e}|\text{o})\).
+If another word \(k\in\mathcal{F}\) and \(k=\alpha\cdot s\cdot\omega\), then
+\(k\models\alpha\mathbb{(M|C)}+(\text{i}|\text{u})\omega\). That is to say, that
+if a Filipino word is the concatenation of a root word that ends in "e" or "o" and
+a suffix. Then, "e" will change to "i" and "o" will change to "u".
+
+Finally, "e" changes to "i" and "o" changes to "u" if the word is a concatenation
+of a root word with itself without a \textit{gitling}. Let
+\(s\in\mathcal{F}\) and \(s\models s'\text{\textbackslash}\text{-}s\)
+for \(s'\) is the word \(s\) but if \(s\) ends in "e" \(s'\) ends in "i", or if
+\(s\) ends in "o" then \(s'\) ends in "u".
+
+\subsubsection{Raw v. Daw (Enclitic Particles); Rin v. Din}
+
+Let \(p = " "\) the blank symbol or the symbol containing space. And, we have the
+sentence structure \(S = \alpha + p + EP\). The Enclitic Particles (\(\mathbb{EP}\))
+is the set \(\mathbb{EP} = \{"\text{raw}", "\text{daw}"\}\) and \(n\) is any \(\alpha\)
+is any noun, adjective, verb, or adverb. The usage of "raw" and "daw" is given by:
+
+\[
+    \left(\alpha \models \left[\text{a-zñ(ng)A-ZÑ(Ng)}\right]+\left[\text{aeiou}\right] \equiv (\mathbb{V}\cup\mathbb{C}) + \mathbb{V}_\text{lower}\right)
+    \Longleftrightarrow EP = \text{"raw"}
+\]
+
+Otherwise,
+
+\[
+    EP = \text{"daw"}
+\]
+
+In other words, if the preceeding word to the enclitic particle ends in vowel,
+then the enclitic particle is "raw". If it is a consonant, then it is "daw".
+
+This is the same idea with the adverbs "rin" and "din". If the sentence structure
+\(S = \omega + p + (\text{"rin"}|\text{"din"})\). If \(\omega\) ends in a vowel
+then the adverb used is "rin". Otherwise, the adverb is "din".
+
+\subsubsection{Ng v. Nang}
+
+\subsubsection{\textit{Gitling} Usage}
