@@ -17,26 +17,26 @@ The 11 punctuation marks in the Filipino language are the: \textit{tuldok} (.),
 In mathematical notation, we can represent \(\mathbb{F}\) as the set:
 
 \[
-    \mathbb{F} = \{\text{a},\text{b},\dots,\text{z},\text{ñ},\text{ng},   \
-    \text{A},\text{B},\text{C},\dots,\text{Z},\text{Ñ},\text{Ng}\}         \
-    \cup \{\text{.},\text{?},\text{!},\text{,},\text{'},\text{-},\text{:}, \
-    \text{;},\text{"},\text{(},\text{)}, \ldots\}
+      \mathbb{F} = \{\text{a},\text{b},\dots,\text{z},\text{ñ},\text{ng},   \
+      \text{A},\text{B},\text{C},\dots,\text{Z},\text{Ñ},\text{Ng}\}         \
+      \cup \{\text{.},\text{?},\text{!},\text{,},\text{'},\text{-},\text{:}, \
+      \text{;},\text{"},\text{(},\text{)}, \ldots\}
 \]
 
 and the size of \(\mathbb{F}\), \(\left|\mathbb{F}\right| = 67\).
 
 From this we can introduce the following sets:
 \begin{enumerate}
-    \item \(\mathbb{M}\) = \{.,?,!,,,',-,:,;,",(,),...\}, the set of punctuation marks
-    \item \(\mathbb{V}\) = \{a,e,i,o,u,A,E,I,O,I\}, the set of upper and lower case vowels
-    \item \(\mathbb{C}\) = \(\mathcal{F} - (\mathbb{M}\cup\mathbb{V})\),
-          the set of upper and lower case consonants
-    \item \(\mathbb{V}_\text{upper}\) is the set of upper case vowels
-    \item \(\mathbb{V}_\text{lower}\) is the set of lower case vowels
-    \item \(\mathbb{C}_\text{upper}\) is the set of upper case consonants
-    \item \(\mathbb{C}_\text{lower}\) is the set of lower case consonants
-    \item \(\mathbb{L}\) = \(\mathbb{F} - \mathbb{M}\), is the set of consonants and vowels
-    \item \(\mathbb{L}*\), is the set of words in \(\mathcal{F}\)
+      \item \(\mathbb{M}\) = \{.,?,!,,,',-,:,;,",(,),...\}, the set of punctuation marks
+      \item \(\mathbb{V}\) = \{a,e,i,o,u,A,E,I,O,I\}, the set of upper and lower case vowels
+      \item \(\mathbb{C}\) = \(\mathcal{F} - (\mathbb{M}\cup\mathbb{V})\),
+            the set of upper and lower case consonants
+      \item \(\mathbb{V}_\text{upper}\) is the set of upper case vowels
+      \item \(\mathbb{V}_\text{lower}\) is the set of lower case vowels
+      \item \(\mathbb{C}_\text{upper}\) is the set of upper case consonants
+      \item \(\mathbb{C}_\text{lower}\) is the set of lower case consonants
+      \item \(\mathbb{L}\) = \(\mathbb{F} - \mathbb{M}\), is the set of consonants and vowels
+      \item \(\mathbb{L}*\), is the set of words in \(\mathcal{F}\)
 \end{enumerate}
 
 \paragraph{Remark on the Digraph: \text{ng/Ng} or "\textit{en dyi}"}
@@ -70,10 +70,10 @@ the set of words in \(\mathcal{S}\) and \(\mathbb{E}*\) be the set of words in
 \(\mathcal{E}\).
 
 \begin{enumerate}
-    \item \(\left(\forall s\in \mathbb{S}*,s \matches \text{es}(\mathbb{S}*) \right) \rightarrow \left(\mathcal{F}(s) \matches \text{es}
-              (\mathbb{M}|\mathbb{C})*\right) \)
-    \item \(\left(\forall s\in \mathbb{E}*,s \matches \text{s}(\mathbb{E}*)\right) \rightarrow  \left(\mathcal{F}(s) \matches \text{is}
-              (\mathbb{M}|\mathbb{C})* \right)\)
+      \item \(\left(\forall s\in \mathbb{S}*,s \matches \text{es}(\mathbb{S}*) \right) \rightarrow \left(\mathcal{F}(s) \matches \text{es}
+                  (\mathbb{M}|\mathbb{C})*\right) \)
+      \item \(\left(\forall s\in \mathbb{E}*,s \matches \text{s}(\mathbb{E}*)\right) \rightarrow  \left(\mathcal{F}(s) \matches \text{is}
+                  (\mathbb{M}|\mathbb{C})* \right)\)
 \end{enumerate}
 
 Rule (1) denotes that if \(s\) is a Spanish word, translating \(s\) to a Filipino
@@ -83,42 +83,42 @@ English word, then \(\mathcal{F}(s)\) would use "is" as the prefix to the word
 to denote that it is of English origin.
 
 \begin{example}
-    Here are examples of English and Spanish loan words in Filipino:
+      Here are examples of English and Spanish loan words in Filipino:
 \end{example}
 \begin{enumerate}
-    \item Ako ay papasok sa \textbf{eskwelahan}. (correct) \\
-          Ako ay papasok sa \textit{iskwelahan}. (incorrect) \\
-          eskwelahan (\(\mathcal{F}\)) from escuela (\(\mathcal{S}\))
-    \item Aba! Malaki pala ang \textbf{espasyo} rito. (correct) \\
-          Aba! Malaki pala ang \textit{ispasyo} rito. (incorrect) \\
-          espasyo (\(\mathcal{F}\)) from espacio (\(\mathcal{S}\))
-    \item Marami kaming \textbf{estudyante} sa Computer Science. (correct) \\
-          Marami kaming \textit{istudyante} sa Computer Science. (incorrect)\\
-          estudyante (\(\mathcal{F}\)) from estudiante (\(\mathcal{S}\))
-    \item Mahilig sila Turing at Sipser maglaro ng \textbf{eskrima}. (correct) \\
-          Mahilig sila Turing at Sipser maglaro ng \textit{iskrima}. (incorrect) \\
-          eskrima  (\(\mathcal{F}\)) from esgrima (\(\mathcal{S}\))
-    \item Marami raw \textbf{espiritu} rito. (correct) \\
-          Marami raw \textit{ispiritu} rito. (incorrect) \\
-          espiritu (\(\mathcal{F}\)) from espiritu (\(\mathcal{S}\))
-    \item Kinausap mo na ba iyung \textbf{ispiker}. (correct) \\
-          Kinausap mo na ba iyung \textit{espiker}. (incorrect) \\
-          ispiker (\(\mathcal{F}\)) from speaker (\(\mathcal{E}\))
-    \item Marami naman daw \textbf{isports} na puwedeng pagpilian. (correct) \\
-          Marami naman daw \textit{esports} na puwedeng pagpilian. (incorrect) \\
-          isports (\(\mathcal{F}\)) from sports (\(\mathcal{E}\))
-    \item Si Dijkstra ay hindi raw \textbf{iskolar}. (correct) \\
-          Si Dijkstra ay hindi raw \textit{eskolar}. (incorrect) \\
-          iskolar (\(\mathcal{F}\)) from scholar (\(\mathcal{E}\))
+      \item Ako ay papasok sa \textbf{eskwelahan}. (correct) \\
+            Ako ay papasok sa \textit{iskwelahan}. (incorrect) \\
+            eskwelahan (\(\mathcal{F}\)) from escuela (\(\mathcal{S}\))
+      \item Aba! Malaki pala ang \textbf{espasyo} rito. (correct) \\
+            Aba! Malaki pala ang \textit{ispasyo} rito. (incorrect) \\
+            espasyo (\(\mathcal{F}\)) from espacio (\(\mathcal{S}\))
+      \item Marami kaming \textbf{estudyante} sa Computer Science. (correct) \\
+            Marami kaming \textit{istudyante} sa Computer Science. (incorrect)\\
+            estudyante (\(\mathcal{F}\)) from estudiante (\(\mathcal{S}\))
+      \item Mahilig sila Turing at Sipser maglaro ng \textbf{eskrima}. (correct) \\
+            Mahilig sila Turing at Sipser maglaro ng \textit{iskrima}. (incorrect) \\
+            eskrima  (\(\mathcal{F}\)) from esgrima (\(\mathcal{S}\))
+      \item Marami raw \textbf{espiritu} rito. (correct) \\
+            Marami raw \textit{ispiritu} rito. (incorrect) \\
+            espiritu (\(\mathcal{F}\)) from espiritu (\(\mathcal{S}\))
+      \item Kinausap mo na ba iyung \textbf{ispiker}. (correct) \\
+            Kinausap mo na ba iyung \textit{espiker}. (incorrect) \\
+            ispiker (\(\mathcal{F}\)) from speaker (\(\mathcal{E}\))
+      \item Marami naman daw \textbf{isports} na puwedeng pagpilian. (correct) \\
+            Marami naman daw \textit{esports} na puwedeng pagpilian. (incorrect) \\
+            isports (\(\mathcal{F}\)) from sports (\(\mathcal{E}\))
+      \item Si Dijkstra ay hindi raw \textbf{iskolar}. (correct) \\
+            Si Dijkstra ay hindi raw \textit{eskolar}. (incorrect) \\
+            iskolar (\(\mathcal{F}\)) from scholar (\(\mathcal{E}\))
 \end{enumerate}
 
 \begin{example}
-    Here are some examples of literature and webpages where the "es-" and "is-"
-    prefixes are misused:
+      Here are some examples of literature and webpages where the "es-" and "is-"
+      prefixes are misused:
 \end{example}
 
 \begin{enumerate}
-    \item \textbf{TODO}
+      \item \textbf{TODO}
 \end{enumerate}
 
 \subsubsection{"kump"-words and "kumb"-words}
@@ -130,47 +130,47 @@ regular expression \((\text{C}|\text{c})\text{on}(\text{f}|\text{v})\). Then,
 
 In particular:
 \begin{itemize}
-    \item \(s \matches (\text{conf})\mathbb{S}* \rightarrow \mathcal{F}(s) \matches (\text{kump})\mathbb{L}*\)
-    \item \(s \matches (\text{conv})\mathbb{S}* \rightarrow \mathcal{F}(s) \matches (\text{kumb})\mathbb{L}*\)
+      \item \(s \matches (\text{conf})\mathbb{S}* \rightarrow \mathcal{F}(s) \matches (\text{kump})\mathbb{L}*\)
+      \item \(s \matches (\text{conv})\mathbb{S}* \rightarrow \mathcal{F}(s) \matches (\text{kumb})\mathbb{L}*\)
 \end{itemize}
 
 \begin{example}
-    Here are examples of Spanish words in Filipino with the "kump-" and "kumb-"
-    prefixes:
+      Here are examples of Spanish words in Filipino with the "kump" and "kumb"
+      prefixes:
 \end{example}
 \begin{enumerate}
-    \item Pumasok si Cormen sa \textbf{kumbento}. (correct) \\
-          Pumasok si Cormen sa \textit{konbento}. (incorrect) \\
-          kumbento (\(\mathcal{F}\)) from convento (\(\mathcal{S}\))
-    \item Tinanong ko si Leiserson bilang \textbf{kumpirmasyon}. (correct) \\
-          Tinanong ko si Leiserson bilang \textit{kunpirmasyon}. (incorrect) \\
-          kumpirmasyon (\(\mathcal{F}\)) from confirmacion (\(\mathcal{S}\))
-    \item Ang \textbf{kumpetisyon} sa agham ay ginanap sa paaralan. (correct) \\
-          Ang \textit{kunpetisyon} sa agham ay ginanap sa paaralan. (incorrect) \\
-          kumpetisyon (\(\mathcal{F}\)) from competición (\(\mathcal{S}\))
-    \item Nagbigay siya ng \textbf{kumpisal} sa pari noong Linggo. (correct) \\
-          Nagbigay siya ng \textit{kunpisal} sa pari noong Linggo. (incorrect) \\
-          kumpisal (\(\mathcal{F}\)) from confesión (\(\mathcal{S}\))
-    \item Sumali ako sa isang \textbf{kumbento} sa simbahan natin. (correct) \\
-          Sumali ako sa isang \textit{kunbento} sa simbahan natin. (incorrect) \\
-          kumbento (\(\mathcal{F}\)) from convento (\(\mathcal{S}\))
-    \item Hindi ko alam ang \textbf{kumbinasyon} sa Graph Coloring. (correct) \\
-          Hindi ko alam ang \textit{kunbinasyon} sa Graph Coloring. (correct) \\
-          kumbinasyon (\(\mathcal{F}\)) from combinación (\(\mathcal{S}\))
-    \item Ipinahayag niya ang kanyang \textbf{kumbersasyon} sa kanila. (correct) \\
-          Ipinahayag niya ang kanyang \textit{kunbersasyon} sa . (incorrect) \\
-          kumbersasyon (\(\mathcal{F}\)) from conversación (\(\mathcal{S}\))
-    \item Ang patakaran ay dumaan sa \textbf{kumpigurasyon} bago ipatupad. (correct) \\
-          Ang patakaran ay dumaan sa \textit{kunpigurasyon} bago ipatupad. (incorrect) \\
-          kumpigurasyon (\(\mathcal{F}\)) from configuración (\(\mathcal{S}\))
+      \item Pumasok si Cormen sa \textbf{kumbento}. (correct) \\
+            Pumasok si Cormen sa \textit{konbento}. (incorrect) \\
+            kumbento (\(\mathcal{F}\)) from convento (\(\mathcal{S}\))
+      \item Tinanong ko si Leiserson bilang \textbf{kumpirmasyon}. (correct) \\
+            Tinanong ko si Leiserson bilang \textit{kunpirmasyon}. (incorrect) \\
+            kumpirmasyon (\(\mathcal{F}\)) from confirmacion (\(\mathcal{S}\))
+      \item Ang \textbf{kumpetisyon} sa agham ay ginanap sa paaralan. (correct) \\
+            Ang \textit{kunpetisyon} sa agham ay ginanap sa paaralan. (incorrect) \\
+            kumpetisyon (\(\mathcal{F}\)) from competición (\(\mathcal{S}\))
+      \item Nagbigay siya ng \textbf{kumpisal} sa pari noong Linggo. (correct) \\
+            Nagbigay siya ng \textit{kunpisal} sa pari noong Linggo. (incorrect) \\
+            kumpisal (\(\mathcal{F}\)) from confesión (\(\mathcal{S}\))
+      \item Sumali ako sa isang \textbf{kumbento} sa simbahan natin. (correct) \\
+            Sumali ako sa isang \textit{kunbento} sa simbahan natin. (incorrect) \\
+            kumbento (\(\mathcal{F}\)) from convento (\(\mathcal{S}\))
+      \item Hindi ko alam ang \textbf{kumbinasyon} sa Graph Coloring. (correct) \\
+            Hindi ko alam ang \textit{kunbinasyon} sa Graph Coloring. (correct) \\
+            kumbinasyon (\(\mathcal{F}\)) from combinación (\(\mathcal{S}\))
+      \item Ipinahayag niya ang kanyang \textbf{kumbersasyon} sa kanila. (correct) \\
+            Ipinahayag niya ang kanyang \textit{kunbersasyon} sa . (incorrect) \\
+            kumbersasyon (\(\mathcal{F}\)) from conversación (\(\mathcal{S}\))
+      \item Ang patakaran ay dumaan sa \textbf{kumpigurasyon} bago ipatupad. (correct) \\
+            Ang patakaran ay dumaan sa \textit{kunpigurasyon} bago ipatupad. (incorrect) \\
+            kumpigurasyon (\(\mathcal{F}\)) from configuración (\(\mathcal{S}\))
 \end{enumerate}
 
 \begin{example}
-    Here are some examples of literature and webpages where the "kump-" and "kumb-"
-    prefixes are misused:
+      Here are some examples of literature and webpages where the "kump" and "kumb"
+      prefixes are misused:
 \end{example}
 \begin{enumerate}
-    \item \textbf{TODO}
+      \item \textbf{TODO}
 \end{enumerate}
 
 \subsubsection{Morphophonemic Alteration with Suffixes}
@@ -182,8 +182,8 @@ and \(\text{root}_\text{allomorph}\) is the root allomorph of \(k\).
 
 The morphophonemic alteration of the root word is given by:
 \begin{center}
-    If the root ends in "e", then \(\text{root}_\text{allomorph}\) ends in "i". \\
-    If the root ends in "o", then the \(\text{root}_\text{allomorph}\) ends in "u".
+      If the root ends in "e", then \(\text{root}_\text{allomorph}\) ends in "i". \\
+      If the root ends in "o", then the \(\text{root}_\text{allomorph}\) ends in "u".
 \end{center}
 
 That is to say, that if a Filipino word is the concatenation of a root word that
@@ -191,41 +191,41 @@ ends in "e" or "o" and a suffix. Then, "e" will change to "i" and "o" will chang
 to "u" \cite{Yap_1967}.
 
 \begin{example}
-    Here are examples of morphophonemic alterations in Filipino:
+      Here are examples of morphophonemic alterations in Filipino:
 \end{example}
 \begin{enumerate}
-    \item \textbf{Tinakbuhan} niya ang kanyang problema. \\
-          takbo \(\rightarrow\) takbu \(\cdot\) han \(\rightarrow\) tinakbuhan
-    \item \textbf{Pinasukan} niya ang silid-aralan. \\
-          pasok \(\rightarrow\) pasuk \(\cdot\) an \(\rightarrow\) pinasukan
-    \item \textbf{Pinayuhan} siya ng kanyang guro. \\
-          payo \(\rightarrow\) payu \(\cdot\) han \(\rightarrow\) pinayuhan
-    \item \textbf{Babaihan} ang tawag sa lugar kung saan maraming babae. \\
-          babae \(\rightarrow\) babai \(\cdot\) han \(\rightarrow\) babaíhan
-    \item \textbf{Biniruan} niya ang kanyang kaibigan. \\
-          biro \(\rightarrow\) biru \(\cdot\) an \(\rightarrow\) biniruan
-    \item Gusto naming \textbf{laruin} ni Knuth iyan! \\
-          laro  \(\rightarrow\) laru \(\cdot\) in \(\rightarrow\) laruin
-    \item Tinanong ko siya kung hahaluin iyong pagkain... \\
-          halo  \(\rightarrow\) halu \(\cdot\) in \(\rightarrow\) haluin
-    \item Kakayanin kitang \textbf{talunin} sa Catan! \\
-          talo  \(\rightarrow\) talu \(\cdot\) nin  \(\rightarrow\) talunin
+      \item \textbf{Tinakbuhan} niya ang kanyang problema. \\
+            takbo \(\rightarrow\) takbu \(\cdot\) han \(\rightarrow\) tinakbuhan
+      \item \textbf{Pinasukan} niya ang silid-aralan. \\
+            pasok \(\rightarrow\) pasuk \(\cdot\) an \(\rightarrow\) pinasukan
+      \item \textbf{Pinayuhan} siya ng kanyang guro. \\
+            payo \(\rightarrow\) payu \(\cdot\) han \(\rightarrow\) pinayuhan
+      \item \textbf{Babaihan} ang tawag sa lugar kung saan maraming babae. \\
+            babae \(\rightarrow\) babai \(\cdot\) han \(\rightarrow\) babaíhan
+      \item \textbf{Biniruan} niya ang kanyang kaibigan. \\
+            biro \(\rightarrow\) biru \(\cdot\) an \(\rightarrow\) biniruan
+      \item Gusto naming \textbf{laruin} ni Knuth iyan! \\
+            laro  \(\rightarrow\) laru \(\cdot\) in \(\rightarrow\) laruin
+      \item Tinanong ko siya kung hahaluin iyong pagkain... \\
+            halo  \(\rightarrow\) halu \(\cdot\) in \(\rightarrow\) haluin
+      \item Kakayanin kitang \textbf{talunin} sa Catan! \\
+            talo  \(\rightarrow\) talu \(\cdot\) nin  \(\rightarrow\) talunin
 \end{enumerate}
 
 
 \begin{example}
-    Here are some examples of literature and webpages where that have the incorrect
-    root allomorph:
+      Here are some examples of literature and webpages where that have the incorrect
+      root allomorph:
 \end{example}
 \begin{enumerate}
-    \item \textbf{TODO}
+      \item \textbf{TODO}
 \end{enumerate}
 
 \subsubsection{Reduplications}
 
 A full reduplication is a word \(k \in \mathbb{L}*\) and is defined by the concatenation
 \[
-    k = "\text{b}" \cdot "\text{-}" \cdot "\text{b}"
+      k = "\text{b}" \cdot "\text{-}" \cdot "\text{b}"
 \]
 or it is a repetition of a root word \(b\) joined by the \textit{gitling} "-".
 In a full reduplication, the repetition of the \(b\) has no variation from the first \(b\).
@@ -234,7 +234,7 @@ On the otherhand, an ablaut reduplication is a word \(j \in \mathbb{L}*\) and is
 concatenation
 
 \[
-    j = "\text{x}" \cdot "\text{r}"
+      j = "\text{x}" \cdot "\text{r}"
 \]
 or it is the repetition of the root word \(x\) and the root word with a vowel alteration \(r\). Notice
 that for ablaut repetitions, there is no \textit{gitling} joining the repetitions. Furthermore,
@@ -242,37 +242,37 @@ the ablaut repetition of a root word creates a word with a different meaning. Th
 alteration is defined by:
 
 \begin{center}
-    If the root ends in "e", then the ablaut ends in "i". \\
-    If the root ends in "o", then the ablaut ends in "u".
+      If the root ends in "e", then the ablaut ends in "i". \\
+      If the root ends in "o", then the ablaut ends in "u".
 \end{center}
 
 \begin{example}
-    Here are examples of reduplications in Filipino:
+      Here are examples of reduplications in Filipino:
 \end{example}
 \begin{enumerate}
-    \item Kung \textbf{ano-ano} ginawa ni Hopcroft kanina. (correct) \\
-          Kung \textit{anu-ano} ginawa ni Hopcroft kanina. (incorrect) \\
-          ano-ano is a full reduplication
-    \item Pupunta kami mamaya sa \textbf{sari-sari} store. (correct) \\
-          Pupunta kami mamaya sa \textit{sarisari} store. (incorrect) \\
-          sari-sari is a full reduplication
-    \item Gagawin natin iyong \textbf{kanya-kanyang} gawain mamaya. (correct) \\
-          Gagawin natin iyong \textit{kanyakanyang} gawain mamaya. (incorrect) \\
-          kanya-kanya is a full reduplication
-    \item Paulit-ulit ka nang tanong! (correct) \\
-          Paulet-ulit ka nang tanong! (incorrect) \\
-          ulit-ulit is a full reduplication
-    \item Bumili kami ng \textbf{haluhalo} kaninang umaga. (correct) \\
-          Bumili kami ng \textit{halo-halo} kaninang umaga. (incorrect) \\
-          haluhalo is an ablaut reduplication
+      \item Kung \textbf{ano-ano} ginawa ni Hopcroft kanina. (correct) \\
+            Kung \textit{anu-ano} ginawa ni Hopcroft kanina. (incorrect) \\
+            ano-ano is a full reduplication
+      \item Pupunta kami mamaya sa \textbf{sari-sari} store. (correct) \\
+            Pupunta kami mamaya sa \textit{sarisari} store. (incorrect) \\
+            sari-sari is a full reduplication
+      \item Gagawin natin iyong \textbf{kanya-kanyang} gawain mamaya. (correct) \\
+            Gagawin natin iyong \textit{kanyakanyang} gawain mamaya. (incorrect) \\
+            kanya-kanya is a full reduplication
+      \item Paulit-ulit ka nang tanong! (correct) \\
+            Paulet-ulit ka nang tanong! (incorrect) \\
+            ulit-ulit is a full reduplication
+      \item Bumili kami ng \textbf{haluhalo} kaninang umaga. (correct) \\
+            Bumili kami ng \textit{halo-halo} kaninang umaga. (incorrect) \\
+            haluhalo is an ablaut reduplication
 \end{enumerate}
 
 \begin{example}
-    Here are some examples of literature and webpages where the wrong reduplicant is
-    used:
+      Here are some examples of literature and webpages where the wrong reduplicant is
+      used:
 \end{example}
 \begin{enumerate}
-    \item \textbf{TODO}
+      \item \textbf{TODO}
 \end{enumerate}
 
 \subsubsection{Raw v. Daw (Enclitic Particles); Rin v. Din}
@@ -284,14 +284,14 @@ sentence structure \(S = \alpha + p + EP\). The \textit{enclitic particles}
 particles are given by:
 
 \[
-    \left(\alpha \matches \left[\text{a-zñ(ng)A-ZÑ(Ng)}\right]+\left[\text{aeiou}\right] \equiv (\mathbb{V}\cup\mathbb{C}) + \mathbb{V}_\text{lower}\right)
-    \longrightarrow EP = \text{"raw"}
+      \left(\alpha \matches \left[\text{a-zñ(ng)A-ZÑ(Ng)}\right]+\left[\text{aeiou}\right] \equiv (\mathbb{V}\cup\mathbb{C}) + \mathbb{V}_\text{lower}\right)
+      \longrightarrow EP = \text{"raw"}
 \]
 
 Otherwise,
 
 \[
-    EP = \text{"daw"}
+      EP = \text{"daw"}
 \]
 
 In other words, if the preceeding word to the enclitic particle ends in vowel,
@@ -304,7 +304,7 @@ then the adverb used is "rin". Otherwise, the adverb is "din".
 Here are some examples of literature and webpages where the enclitic particles,
 and the adverbs "raw" and "daw" are misused:
 \begin{enumerate}
-    \item \textbf{TODO}
+      \item \textbf{TODO}
 \end{enumerate}
 
 \subsubsection{Ng v. Nang}
