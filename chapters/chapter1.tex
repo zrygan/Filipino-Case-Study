@@ -58,7 +58,7 @@ but is not pronounced as the velar nasal sound. Instead, its pronunciation is
 
 \subsection{Common Errors}
 
-\subsubsection{Loan Words, U/O, and I/E}
+\subsubsection{"es"-words and "is"-words}
 
 Given the Spanish and English roots of Filipino, some \textit{loan} words have
 rules for Filipino spelling. Let \(s\) be any string, the English language
@@ -66,9 +66,9 @@ rules for Filipino spelling. Let \(s\) be any string, the English language
 the translation of \(s\) in \(\mathcal{F}\)
 
 \begin{enumerate}
-    \item \(s\in \mathcal{S} \rightarrow \mathcal{F}(s) : \text{ es}\cdot
+    \item \(\forall s\in \mathcal{S} \rightarrow \mathcal{F}(s) \models \text{es}\cdot
           (\mathbb{M}|\mathbb{C})* \)
-    \item \(s\in \mathcal{E} \rightarrow \mathcal{F}(s) : \text{ is}\cdot
+    \item \(\forall s\in \mathcal{E} \rightarrow \mathcal{F}(s) \models \text{is}\cdot
           (\mathbb{M}|\mathbb{C})* \)
 \end{enumerate}
 
@@ -78,37 +78,148 @@ is a word of Spanish origin. On the other hand, for rule (2), if \(s\) is an
 English word, then \(\mathcal{F}(s)\) would use "is" as the prefix to the word
 to denote that it is of English origin.
 
-Another rule for Spanish loan words is the "o" to "u" change. If \(s\in \mathcal{S}\)
-was translated to \(\mathcal{F}\), and the the prefix of \(s\) is given by the
+\begin{example}
+    Here are examples for English and Spanish loan words in Filipino:
+\end{example}
+\begin{enumerate}
+    \item Ako ay papasok sa \textbf{eskwelahan}. (correct) \\
+          Ako ay papasok sa \textit{iskwelahan}. (incorrect) \\
+          eskwelahan (\(\mathcal{F}\)) from escuela (\(\mathcal{S}\))
+    \item Aba! Malaki pala ang \textbf{espasyo} rito. (correct) \\
+          Aba! Malaki pala ang \textit{ispasyo} rito. (incorrect) \\
+          espasyo (\(\mathcal{F}\)) from espacio (\(\mathcal{S}\))
+    \item Marami kaming \textbf{estudyante} sa Computer Science. (correct) \\
+          Marami kaming \textit{istudyante} sa Computer Science. (incorrect)\\
+          estudyante (\(\mathcal{F}\)) from estudiante (\(\mathcal{S}\))
+    \item Mahilig sila Turing at Sipser maglaro ng \textbf{eskrima}. (correct) \\
+          Mahilig sila Turing at Sipser maglaro ng \textit{iskrima}. (incorrect) \\
+          eskrima  (\(\mathcal{F}\)) from esgrima (\(\mathcal{S}\))
+    \item Marami raw \textbf{espiritu} rito. (correct) \\
+          Marami raw \textit{ispiritu} rito. (incorrect) \\
+          espiritu (\(\mathcal{F}\)) from espiritu (\(\mathcal{S}\))
+    \item Kinausap mo na ba iyung \textbf{ispiker}. (correct) \\
+          Kinausap mo na ba iyung \textit{espiker}. (incorrect) \\
+          ispiker (\(\mathcal{F}\)) from speaker (\(\mathcal{E}\))
+    \item Marami naman daw \textbf{isports} na puwedeng pagpilian. (correct) \\
+          Marami naman daw \textit{esports} na puwedeng pagpilian. (incorrect) \\
+          isports (\(\mathcal{F}\)) from sports (\(\mathcal{E}\))
+    \item Si Dijkstra ay hindi raw \textbf{iskolar}. (correct) \\
+          Si Dijkstra ay hindi raw \textit{eskolar}. (incorrect) \\
+          iskolar (\(\mathcal{F}\)) from scholar (\(\mathcal{E}\))
+\end{enumerate}
+
+\begin{example}
+    Here are some examples of literature and webpages where the "es-" and "is-"
+    prefixes are misused:
+\end{example}
+
+\begin{enumerate}
+    \item \textbf{TODO}
+\end{enumerate}
+
+\subsubsection{"kump"-words and "kumb"-words}
+
+If \(s\in \mathcal{S}\) and the the prefix of \(s\) is given by the
 regular expression \((\text{C}|\text{c})\text{on}(\text{f}|\text{v})\). Then,
 \(\mathcal{F}(s)\) is prefixed with
-\((\text{C}|\text{c})\text{um}(\text{p}|\text{b})\). In particular, if the
-\(s \models \text{conf} \rightarrow \mathcal{F}(s) \models \text{kump}\),
-otherwise \(\mathcal{F}(s) \models \text{ kumb}\).
+\((\text{C}|\text{c})\text{um}(\text{p}|\text{b})\).
 
-In addition to this, let \(\alpha\) be the prefix, \(\omega\) be the suffix, and
-\(s\in\mathcal{F}\) be any Filipino word and \(s \models \mathbb{(M|C)}+(\text{e}|\text{o})\).
-If another word \(k\in\mathcal{F}\) and \(k=\alpha\cdot s\cdot\omega\), then
-\(k\models\alpha\mathbb{(M|C)}+(\text{i}|\text{u})\omega\). That is to say, that
-if a Filipino word is the concatenation of a root word that ends in "e" or "o" and
-a suffix. Then, "e" will change to "i" and "o" will change to "u".
+In particular:
+\begin{itemize}
+    \item \(s \models (\text{conf})\mathbb{L}* \rightarrow \mathcal{F}(s) \models (\text{kump})\mathbb{L}*\)
+    \item \(s \models (\text{conv})\mathbb{L}* \rightarrow \mathcal{F}(s) \models (\text{kumb})\mathbb{L}*\)
+\end{itemize}
 
-Finally, "e" changes to "i" and "o" changes to "u" if the word is a concatenation
-of a root word with itself without a \textit{gitling}. Let
-\(s\in\mathcal{F}\) and \(s\models s'\text{\textbackslash}\text{-}s\)
-for \(s'\) is the word \(s\) but if \(s\) ends in "e" \(s'\) ends in "i", or if
-\(s\) ends in "o" then \(s'\) ends in "u".
+\begin{example}
+    Here are examples for Spanish words in Filipino with the "kump-" and "kumb-"
+    prefixes:
+\end{example}
+\begin{enumerate}
+    \item Pumasok si Cormen sa \textbf{kumbento}. (correct) \\
+          Pumasok si Cormen sa \textit{konbento}. (incorrect) \\
+          kumbento (\(\mathcal{F}\)) from convento (\(\mathcal{S}\))
+    \item Tinanong ko si Leiserson bilang \textbf{kumpirmasyon}. (correct) \\
+          Tinanong ko si Leiserson bilang \textit{kunpirmasyon}. (incorrect) \\
+          kumpirmasyon (\(\mathcal{F}\)) from confirmacion (\(\mathcal{S}\))
+    \item Ang \textbf{kumpetisyon} sa agham ay ginanap sa paaralan. (correct) \\
+          Ang \textit{kunpetisyon} sa agham ay ginanap sa paaralan. (incorrect) \\
+          kumpetisyon (\(\mathcal{F}\)) from competición (\(\mathcal{S}\))
+    \item Nagbigay siya ng \textbf{kumpisal} sa pari noong Linggo. (correct) \\
+          Nagbigay siya ng \textit{kunpisal} sa pari noong Linggo. (incorrect) \\
+          kumpisal (\(\mathcal{F}\)) from confesión (\(\mathcal{S}\))
+    \item Sumali ako sa isang \textbf{kumbento} sa simbahan natin. (correct) \\
+          Sumali ako sa isang \textit{kunbento} sa simbahan natin. (incorrect) \\
+          kumbento (\(\mathcal{F}\)) from convento (\(\mathcal{S}\))
+    \item Hindi ko alam ang \textbf{kumbinasyon} sa Graph Coloring. (correct) \\
+          Hindi ko alam ang \textit{kunbinasyon} sa Graph Coloring. (correct) \\
+          kumbinasyon (\(\mathcal{F}\)) from combinación (\(\mathcal{S}\))
+    \item Ipinahayag niya ang kanyang \textbf{kumbersasyon} sa kanila. (correct) \\
+          Ipinahayag niya ang kanyang \textit{kunbersasyon} sa kanila. (incorrect) \\
+          kumbersasyon (\(\mathcal{F}\)) from conversación (\(\mathcal{S}\))
+
+\end{enumerate}
+
+\begin{example}
+    Here are some examples of literature and webpages where the "kump-" and "kumb-"
+    prefixes are misused:
+\end{example}
+\begin{enumerate}
+    \item \textbf{TODO}
+\end{enumerate}
+
+\subsubsection{Morphophonemic Alteration with Suffixes}
+
+For a \(k \in \mathcal{F}\) that is constructed with  the concatenation
+\(k = \alpha \cdot \text{root}_\text{allomorph} \cdot \omega \)
+for \(\alpha\) is the prefix of \(k\), \(\omega\) is the suffix of \(k\),
+and \(\text{root}_\text{allomorph}\) is the root allomorph word of \(k\).
+
+The morphophonemic alteration of the root word is given by:
+\begin{enumerate}
+    \item \(\text{root} \models \mathbb{L}+e \rightarrow
+          \text{root}_\text{allomorph} \models \mathbb{L}+i \)
+    \item \(\text{root} \models \mathbb{L}+o \rightarrow
+          \text{root}_\text{allomorph} \models \mathbb{L}+u \)
+\end{enumerate}
+
+That is to say, that if a Filipino word is the concatenation of a root word that
+ends in "e" or "o" and a suffix. Then, "e" will change to "i" and "o" will change
+to "u" \cite{Yap_1967}.
+
+Here are some examples of literature and webpages where that have the incorrect
+root allomorph:
+\begin{enumerate}
+    \item \textbf{TODO}
+\end{enumerate}
+
+\subsubsection{Hyphenated Reduplications}
+
+For a \(k \in \mathcal{F} \text{such that} k\models b\text{\textbackslash-} r\)
+for \(b\) is the base word of \(k\) and \(r\) is the reduplicant of \(b\). The
+reduplicant \(r\) is given by:
+
+\begin{enumerate}
+    \item \(b\models \mathbb{L}+e \rightarrow r\models\mathbb{L}+i\)
+    \item \(b\models \mathbb{L}+o \rightarrow r\models\mathbb{L}+u\)
+\end{enumerate}
+
+Here are some examples of literature and webpages where the wrong reduplicant is
+used:
+\begin{enumerate}
+    \item \textbf{TODO}
+\end{enumerate}
 
 \subsubsection{Raw v. Daw (Enclitic Particles); Rin v. Din}
 
 Let \(p = "\,"\) the blank symbol or the symbol containing space. And, we have the
-sentence structure \(S = \alpha + p + EP\). The Enclitic Particles (\(\mathbb{EP}\))
-is the set \(\mathbb{EP} = \{"\text{raw}", "\text{daw}"\}\) and \(n\) is any \(\alpha\)
-is any noun, adjective, verb, or adverb. The usage of "raw" and "daw" is given by:
+sentence structure \(S = \alpha + p + EP\). The \textit{enclitic particles}
+(\(\mathbb{EP}\)) is the set \(\mathbb{EP} = \{"\text{raw}", "\text{daw}"\}\) and
+\(\alpha\) is any noun, adjective, verb, or adverb. The proper usage of the enclitic
+particles are given by:
 
 \[
     \left(\alpha \models \left[\text{a-zñ(ng)A-ZÑ(Ng)}\right]+\left[\text{aeiou}\right] \equiv (\mathbb{V}\cup\mathbb{C}) + \mathbb{V}_\text{lower}\right)
-    \Longrightarrow EP = \text{"raw"}
+    \longrightarrow EP = \text{"raw"}
 \]
 
 Otherwise,
@@ -123,6 +234,12 @@ then the enclitic particle is "raw". If it is a consonant, then it is "daw".
 This is the same idea with the adverbs "rin" and "din". If the sentence structure
 \(S = \omega + p + (\text{"rin"}|\text{"din"})\) and \(\omega\) ends in a vowel
 then the adverb used is "rin". Otherwise, the adverb is "din".
+
+Here are some examples of literature and webpages where the enclitic particles,
+and the adverbs "raw" and "daw" are misused:
+\begin{enumerate}
+    \item \textbf{TODO}
+\end{enumerate}
 
 \subsubsection{Ng v. Nang}
 
