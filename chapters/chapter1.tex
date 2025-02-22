@@ -1,7 +1,8 @@
 \section{Preliminaries}
 \subsection{The Filipino Alphabet}
 
-Let \(\mathcal{F}\) be the Alphabet for the Filipino language, this alphabet is
+Let \(\mathcal{F}\) the Filipino language
+and \(\mathbb{F}\) be the Alphabet of \(\mathcal{F}\), this alphabet is
 composed of 56 scripts and 11 punctuation marks \cite{OOP}. The 56 scripts are divided into
 two, the first half being the capital letters of the modern Latin script with
 the addition of "Ñ" and "Ng"; while the other half is the lower case variants
@@ -13,18 +14,18 @@ The 11 punctuation marks in the Filipino language are the: \textit{tuldok} (.),
 \textit{tuldok-kuwit} (;), \textit{panipi} ("), \textit{pambukas na panaklong}
 ((), \textit{pampasarang panaklong} ()), at ang \textit{tutuldok-tuldok} (...)
 
-In mathematical notation, we can represent \(\mathcal{F}\) as the set:
+In mathematical notation, we can represent \(\mathbb{F}\) as the set:
 
 \[
-    \mathcal{F} = \{\text{a},\text{b},\dots,\text{z},\text{ñ},\text{ng},   \
+    \mathbb{F} = \{\text{a},\text{b},\dots,\text{z},\text{ñ},\text{ng},   \
     \text{A},\text{B},\text{C},\dots,\text{Z},\text{Ñ},\text{Ng}\}         \
     \cup \{\text{.},\text{?},\text{!},\text{,},\text{'},\text{-},\text{:}, \
     \text{;},\text{"},\text{(},\text{)}, \ldots\}
 \]
 
-and the size of \(\mathcal{F}\), \(\left|\mathcal{F}\right| = 67\).
+and the size of \(\mathbb{F}\), \(\left|\mathbb{F}\right| = 67\).
 
-We can also introduce subsets the following which are subsets of \(\mathcal{F}\).
+From this we can introduce the following sets:
 \begin{enumerate}
     \item \(\mathbb{M}\) = \{.,?,!,,,',-,:,;,",(,),...\}, the set of punctuation marks
     \item \(\mathbb{V}\) = \{a,e,i,o,u,A,E,I,O,I\}, the set of upper and lower case vowels
@@ -34,16 +35,17 @@ We can also introduce subsets the following which are subsets of \(\mathcal{F}\)
     \item \(\mathbb{V}_\text{lower}\) is the set of lower case vowels
     \item \(\mathbb{C}_\text{upper}\) is the set of upper case consonants
     \item \(\mathbb{C}_\text{lower}\) is the set of lower case consonants
-    \item \(\mathbb{L}\) = \(\mathcal{F} - \mathbb{M}\), the set of consonants and vowels
+    \item \(\mathbb{L}\) = \(\mathbb{F} - \mathbb{M}\), is the set of consonants and vowels
+    \item \(\mathbb{L}*\), is the set of words in \(\mathcal{F}\)
 \end{enumerate}
 
-\subsubsection{Remarks on the Digraph: \text{ng/Ng} or "\textit{en dyi}"}
+\paragraph{Remark on the Digraph: \text{ng/Ng} or "\textit{en dyi}"}
 
 Although the letter "Ng" or "ng" is a concatenation of two separate graphemes or
-symbols in \(\mathcal{F}\) (since \(\text{Ng} = \text{N}\cdot\text{g}\) and
+symbols in \(\mathbb{F}\) (since \(\text{Ng} = \text{N}\cdot\text{g}\) and
 \(\text{ng} = \text{n}\cdot\text{g}\)), the letter "Ng" is officially recognized
-as a symbol in \(\mathcal{F}\) since it represents a distinct Filipino sound.
-In particular, it represents the voiced velar nasal sound, or in the International
+as a grapheme in \(\mathbb{F}\) since it represents a distinct Filipino sound.
+In particular, it represents the \textit{voiced velar nasal sound}, or in the International
 Phonetic Alphabet (IPA), the \textipa{N} sound \cite{Malabonga_2009}.
 
 For instance, the word "hangin" has 5 letters namely: "h", "a", "ng", "i", "n",
@@ -63,13 +65,15 @@ but is not pronounced as the velar nasal sound. Instead, its pronunciation is
 Given the Spanish and English roots of Filipino, some \textit{loan} words have
 rules for Filipino spelling. Let \(s\) be any string, the English language
 \(\mathcal{E}\), the Spanish language \(\mathcal{S}\), and \(\mathcal{F}(s)\) is
-the translation of \(s\) in \(\mathcal{F}\)
+the translation of \(s\) in \(\mathcal{F}\). Furthermore, let \(\mathbb{S}*\) be
+the set of words in \(\mathcal{S}\) and \(\mathbb{E}*\) be the set of words in
+\(\mathcal{E}\).
 
 \begin{enumerate}
-    \item \(\forall s\in \mathcal{S} \rightarrow \mathcal{F}(s) \models \text{es}\cdot
-          (\mathbb{M}|\mathbb{C})* \)
-    \item \(\forall s\in \mathcal{E} \rightarrow \mathcal{F}(s) \models \text{is}\cdot
-          (\mathbb{M}|\mathbb{C})* \)
+    \item \(\left(\forall s\in \mathbb{S}*,s \matches \text{es}(\mathbb{S}*) \right) \rightarrow \left(\mathcal{F}(s) \matches \text{es}
+              (\mathbb{M}|\mathbb{C})*\right) \)
+    \item \(\left(\forall s\in \mathbb{E}*,s \matches \text{s}(\mathbb{E}*)\right) \rightarrow  \left(\mathcal{F}(s) \matches \text{is}
+              (\mathbb{M}|\mathbb{C})* \right)\)
 \end{enumerate}
 
 Rule (1) denotes that if \(s\) is a Spanish word, translating \(s\) to a Filipino
@@ -119,15 +123,15 @@ to denote that it is of English origin.
 
 \subsubsection{"kump"-words and "kumb"-words}
 
-If \(s\in \mathcal{S}\) and the the prefix of \(s\) is given by the
+If \(s\in \mathbb{S}*\) and the the prefix of \(s\) is given by the
 regular expression \((\text{C}|\text{c})\text{on}(\text{f}|\text{v})\). Then,
 \(\mathcal{F}(s)\) is prefixed with
 \((\text{C}|\text{c})\text{um}(\text{p}|\text{b})\).
 
 In particular:
 \begin{itemize}
-    \item \(s \models (\text{conf})\mathbb{L}* \rightarrow \mathcal{F}(s) \models (\text{kump})\mathbb{L}*\)
-    \item \(s \models (\text{conv})\mathbb{L}* \rightarrow \mathcal{F}(s) \models (\text{kumb})\mathbb{L}*\)
+    \item \(s \matches (\text{conf})\mathbb{S}* \rightarrow \mathcal{F}(s) \matches (\text{kump})\mathbb{L}*\)
+    \item \(s \matches (\text{conv})\mathbb{S}* \rightarrow \mathcal{F}(s) \matches (\text{kumb})\mathbb{L}*\)
 \end{itemize}
 
 \begin{example}
@@ -171,18 +175,16 @@ In particular:
 
 \subsubsection{Morphophonemic Alteration with Suffixes}
 
-For a \(k \in \mathcal{F}\) that is constructed with  the concatenation
+Let \(k \in \mathbb{L}*\) be a word formed by the concatenation as follows
 \(k = \alpha \cdot \text{root}_\text{allomorph} \cdot \omega \)
-for \(\alpha\) is the prefix of \(k\), \(\omega\) is the suffix of \(k\),
-and \(\text{root}_\text{allomorph}\) is the root allomorph word of \(k\).
+where  \(\alpha\) is the prefix of \(k\), \(\omega\) is the suffix of \(k\),
+and \(\text{root}_\text{allomorph}\) is the root allomorph of \(k\).
 
 The morphophonemic alteration of the root word is given by:
-\begin{enumerate}
-    \item \(\text{root} \models \mathbb{L}+e \rightarrow
-          \text{root}_\text{allomorph} \models \mathbb{L}+i \)
-    \item \(\text{root} \models \mathbb{L}+o \rightarrow
-          \text{root}_\text{allomorph} \models \mathbb{L}+u \)
-\end{enumerate}
+\begin{center}
+    If the root ends in "e", then \(\text{root}_\text{allomorph}\) ends in "i". \\
+    If the root ends in "o", then the \(\text{root}_\text{allomorph}\) ends in "u".
+\end{center}
 
 That is to say, that if a Filipino word is the concatenation of a root word that
 ends in "e" or "o" and a suffix. Then, "e" will change to "i" and "o" will change
@@ -219,20 +221,56 @@ to "u" \cite{Yap_1967}.
     \item \textbf{TODO}
 \end{enumerate}
 
-\subsubsection{Hyphenated Reduplications}
+\subsubsection{Reduplications}
 
-For a \(k \in \mathcal{F} \text{ such that } k\models b\text{\textbackslash-} r\)
+A full reduplication is a word \(k \in \mathbb{L}*\) and is defined by the concatenation
+\[
+    k = "\text{b}" \cdot "\text{-}" \cdot "\text{b}"
+\]
+or it is a repetition of a root word \(b\) joined by the \textit{gitling} "-".
+In a full reduplication, the repetition of the \(b\) has no variation from the first \(b\).
 
-for \(b\) is the base word of \(k\) and \(r\) is the reduplicant of \(b\). The
-reduplicant \(r\) is given by:
+On the otherhand, an ablaut reduplication is a word \(j \in \mathbb{L}*\) and is defined by the
+concatenation
 
+\[
+    j = "\text{x}" \cdot "\text{r}"
+\]
+or it is the repetition of the root word \(x\) and the root word with a vowel alteration \(r\). Notice
+that for ablaut repetitions, there is no \textit{gitling} joining the repetitions. Furthermore,
+the ablaut repetition of a root word creates a word with a different meaning. The ablaut or vowel
+alteration is defined by:
+
+\begin{center}
+    If the root ends in "e", then the ablaut ends in "i". \\
+    If the root ends in "o", then the ablaut ends in "u".
+\end{center}
+
+\begin{example}
+    Here are examples of reduplications in Filipino:
+\end{example}
 \begin{enumerate}
-    \item \(b\models \mathbb{L}+e \rightarrow r\models\mathbb{L}+i\)
-    \item \(b\models \mathbb{L}+o \rightarrow r\models\mathbb{L}+u\)
+    \item Kung \textbf{ano-ano} ginawa ni Hopcroft kanina. (correct) \\
+          Kung \textit{anu-ano} ginawa ni Hopcroft kanina. (incorrect) \\
+          ano-ano is a full reduplication
+    \item Pupunta kami mamaya sa \textbf{sari-sari} store. (correct) \\
+          Pupunta kami mamaya sa \textit{sarisari} store. (incorrect) \\
+          sari-sari is a full reduplication
+    \item Gagawin natin iyong \textbf{kanya-kanyang} gawain mamaya. (correct) \\
+          Gagawin natin iyong \textit{kanyakanyang} gawain mamaya. (incorrect) \\
+          kanya-kanya is a full reduplication
+    \item Paulit-ulit ka nang tanong! (correct) \\
+          Paulet-ulit ka nang tanong! (incorrect) \\
+          ulit-ulit is a full reduplication
+    \item Bumili kami ng \textbf{haluhalo} kaninang umaga. (correct) \\
+          Bumili kami ng \textit{halo-halo} kaninang umaga. (incorrect) \\
+          haluhalo is an ablaut reduplication
 \end{enumerate}
 
-Here are some examples of literature and webpages where the wrong reduplicant is
-used:
+\begin{example}
+    Here are some examples of literature and webpages where the wrong reduplicant is
+    used:
+\end{example}
 \begin{enumerate}
     \item \textbf{TODO}
 \end{enumerate}
@@ -246,7 +284,7 @@ sentence structure \(S = \alpha + p + EP\). The \textit{enclitic particles}
 particles are given by:
 
 \[
-    \left(\alpha \models \left[\text{a-zñ(ng)A-ZÑ(Ng)}\right]+\left[\text{aeiou}\right] \equiv (\mathbb{V}\cup\mathbb{C}) + \mathbb{V}_\text{lower}\right)
+    \left(\alpha \matches \left[\text{a-zñ(ng)A-ZÑ(Ng)}\right]+\left[\text{aeiou}\right] \equiv (\mathbb{V}\cup\mathbb{C}) + \mathbb{V}_\text{lower}\right)
     \longrightarrow EP = \text{"raw"}
 \]
 
@@ -271,4 +309,4 @@ and the adverbs "raw" and "daw" are misused:
 
 \subsubsection{Ng v. Nang}
 
-\subsubsection{\textit{Gitling} Usage}
+\subsubsection{\textit{Gitling} Usage}\texttt{}
