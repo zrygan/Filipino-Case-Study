@@ -429,9 +429,45 @@ of an action in a sentence.
 \end{itemize}
 
 \subsubsection{\textit{Gitling} Usage}
-The usage of a \textit{gitling} in the Filipino language is quite common and can often lead to its improper use. The most common instances where the \textit{gitling} discussed in 1.2.4. This section will focus on more ways the \textit{gitling} can be properly used.
+The usage of a \textit{gitling} (hyphen in English) in the Filipino language is quite common and can often lead to its improper use. One of the proper ways to use the \textit{gitling} was discussed earlier in 1.2.4. This section will primarily focus on the proper usage of the \textit{gitling}.
 
 \begin{enumerate}
+      \item
+            Let \(k \in \mathbb{L}^*\) be a reduplication. And the root word structure
+            \\ \(b = s_0\cdots s_n\), where \(s_n\) are syllables.
+
+            \[
+                  k = b \cdot "\text{-}" \cdot b = (s_0) \cdot "\text{-}" \cdot (s_0)
+            \]
+            For reduplications with $|k|_{\text{s}}>$ 2 (syllable count). It follows the form:
+
+            \[
+                  k = (s_0 \cdot s_1) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
+            \]
+
+            For when the regex \([\verb|^|aeiou]\$\) accepts $s_1$. It follows the form:
+
+            \[
+                  k = (s_0 \cdot (s_1-[\verb|^|aeiou]\$)) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
+            \]
+
+            For when a prefix \((p)\) is applied to k it is applied before \((s_0) | (s_0 \cdot s_1)\). It follows the form
+
+            \[
+                  k = p \cdot (s_0) \cdot "\text{-}" \cdot (s_0)
+            \]
+            \[
+                  k = p \cdot (s_0 \cdot s_1) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
+            \]
+      \item
+            Let \( k \in \mathbb{L}^* \) be an onomatopoeic word, where \( s_n \in \mathbb{O} \) represents an \textit{onomatopoeic syllable} and \( \mathbb{O} \) is the set of all such syllables.
+
+            The general form for an \textbf{onomatopoeic word with reduplication} is given by:
+            \[
+                  k = s_0 \cdot "\text{-}" \cdot s_1 \cdot "\text{-}" \cdot s_n \cdots
+            \]
+            where \( n \geq 1 \), and each \( s_n \) is a single-syllable onomatopoeic unit. The word consists of at least two such syllables, separated by a \textit{gitling} (hyphen).
+
       \item
             Let \(s \in \mathbb{R}\), \(\mathbb{R} \subset \mathbb{S}1\), and \(\mathbb{S}1 \subset \mathbb{O}\)
             \[
