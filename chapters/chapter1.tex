@@ -432,25 +432,26 @@ The usage of a \textit{gitling} (hyphen in English) in the Filipino language is 
 
 \begin{enumerate}
       \item
-            Let \(k \in \mathbb{L}^*\) be a reduplication. And the root word structure
+            Let \(k \in \mathbb{L}*\) be a \textit{reduplication}. And the root word structure
             \\ \(b = s_0\cdots s_n\), where \(s_n\) are syllables.
 
             \[
                   k = b \cdot "\text{-}" \cdot b = (s_0) \cdot "\text{-}" \cdot (s_0)
             \]
-            For reduplications with $|k|_{\text{s}}>$ 2 (syllable count). It follows the form:
+            For \textit{reduplication} with $|k|_{\text{s}}>$ 2 (syllable count). It follows the form:
 
             \[
                   k = (s_0 \cdot s_1) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
             \]
 
-            For when the regex \([\verb|^|aeiou]\$\) accepts $s_1$. It follows the form:
+            For when the second syllable ends with a consonant, let u be\\
+            \((s_1-[\verb|^|aeiou]\$)\). It follows the form:
 
             \[
-                  k = (s_0 \cdot (s_1-[\verb|^|aeiou]\$)) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
+                  k = (s_0 \cdot u) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
             \]
 
-            For when a prefix \((p)\) is applied to k it is applied before \((s_0) | (s_0 \cdot s_1)\). It follows the form
+            For when a prefix \((p)\) is applied to k it is applied before \((s_0) | (s_0 \cdot s_1)\). It follows the form:
 
             \[
                   k = p \cdot (s_0) \cdot "\text{-}" \cdot (s_0)
@@ -459,48 +460,48 @@ The usage of a \textit{gitling} (hyphen in English) in the Filipino language is 
                   k = p \cdot (s_0 \cdot s_1) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
             \]
       \item
-            Let \( k \in \mathbb{L}^* \) be an onomatopoeic word, where \( s_n \in \mathbb{O} \) represents an \textit{onomatopoeic syllable} and \( \mathbb{O} \) is the set of all such syllables.
+            Let \( k \in \mathbb{L}* \) be an onomatopoeic word, where \( s_n \in \mathbb{O} \) represents an \textit{onomatopoeic syllable} and \( \mathbb{O} \) is the set of all such syllables.
 
-            The general form for an \textbf{onomatopoeic word with reduplication} is given by:
+            The general form for an \textit{onomatopoeic word with reduplication} is given by:
             \[
                   k = s_0 \cdot "\text{-}" \cdot s_1 \cdot "\text{-}" \cdot s_n \cdots
             \]
             where \( n \geq 1 \), and each \( s_n \) is a single-syllable onomatopoeic unit. The word consists of at least two such syllables, separated by a \textit{gitling} (hyphen).
 
       \item
-            Let \(k \in \mathcal{F}\) be a Filipino word, and $s_0$, $s_1$ be respectively accepted by \([\verb|^|aeiou]\$\) and \(\verb|^|[aeiou]\).
+            Let \(k \in \mathbb{L}*\) be a Filipino word, and $s$ is a syllable, $s_0$, $s_1$ be syllables that respectively accepted by \([\verb|^|aeiou]\$\) and \(\verb|^|[aeiou]\).
             \[
-                  k = s_0 \cdot "\text{-}" \cdot s_1
+            k = s_0 \cdot "\text{-}" \cdot s_1
             \]
             A gitling is used to separate a syllable that ends with a consonant from a syllable that begins with a vowel.\\
 
             In cases where the syllable is followed by a foreign word or a proper noun. Let \(p \in \mathbb{PN}\) be a proper noun and \((\mathbb{PN})\) be the set of proper nouns.
             \[
-                  k = s \cdot "\text{-}" \cdot p
+            k = s \cdot "\text{-}" \cdot p
             \]
-            Let \(w \in \mathcal{(L^*-F)}\) be a foreign word.
+            Let \(w \in \mathbb{L*'}\) be a foreign word.
             \[
-                  k = s \cdot "\text{-}" \cdot w
+            k = s \cdot "\text{-}" \cdot w
             \]
             In these cases, the final letter of the syllable is not considered.
       \item
-            Let \(t \in \mathcal{T}\) be the hour.
+            Let $t$ be the hour of the day.
             \[
-                  k = (\text{"rin"}|\text{"din"}) \cdot "\text{-}" \cdot t
+            k = (\text{"ika"}|\text{"alas"}) \cdot "\text{-}" \cdot t
             \]
-            A gitling is used to separate the syllable $(ika, alas)$ with the time. The two syllables vary in formality, $(alas)$ is for casual conversations while $(ika)$ is used in formal ones.
+            A gitling is used to separate the syllable ("ika", "alas") with the time. The two syllables vary in formality, ("alas") is for casual conversations while ("ika") is used in formal ones. 
       \item
-            Let \(d_0, d_1 \in \mathcal{T}\) be a date, where \(d = (day | month | year)\) and \(d_0 < d_1\).
+            Let \(d_0, d_1\) be dates, where \(d = (day | month | year)\) and \(d_0 < d_1\).
             \[
-                  k = d_0 \cdot "\text{-}" \cdot d_1
+            k = d_0 \cdot "\text{-}" \cdot d_1
             \]
             The gitling acts as the word "$to$", from earlier date \textbf{to} later date.
-      \item
-            Let \(w \in \mathcal{F}\) a Filipino word, where \(k \ne w\).
+    \item 
+            Let \(w \in \mathbb{F}*\) be a Filipino root word.
             \[
-                  k = (\text{"di"}) \cdot "\text{-}" \cdot w
+            k = (\text{"di"}) \cdot "\text{-}" \cdot w
             \]
-            The syllable "$di$" is a shortened format for the word "$hindi$", it acts as a negation of the word it is followed by.
-
-
+            The syllable "di" is a shortened format for the word "hindi", and it acts as a negation to the root word.
+            
+      
 \end{enumerate}
