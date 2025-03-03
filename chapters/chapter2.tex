@@ -49,3 +49,36 @@
 \subsubsection{Case 2}
 
 \paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{"noong" Space Verb {\textpipe} "noong" Space Adverb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Adverb} &\rightarrow \text{any\_adverb}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{NS Verb {\textpipe} NS Adverb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Adverb} &\rightarrow \text{any\_adverb} \\
+        \text{Noong} &\rightarrow \text{"noong"} \\
+        \text{NS} &\rightarrow \text{Noong Space}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{"noong" Space Verb {\textpipe} "noong" Space Adverb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Adverb} &\rightarrow \text{any\_adverb}
+    \end{aligned}
+\end{equation*}
