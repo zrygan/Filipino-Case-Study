@@ -1,2 +1,200 @@
 \section{Grammar, Greibach, and Chomsky}
+\subsection{Context-Free Grammar for Ng v. Nang}
 
+
+\subsubsection{Case 1}
+
+\paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{Verb Space PS "nang" Space Adverb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Pronoun} &\rightarrow \text{any\_pronoun} \\
+        \text{Adverb} &\rightarrow \text{any\_adverb} \\
+        \text{PS} &\rightarrow \text{Pronoun Space {\textpipe} } \epsilon
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF (Chomsky Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{VP NA {\textpipe} VS NA} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Pronoun} &\rightarrow \text{any\_pronoun} \\
+        \text{Adverb} &\rightarrow \text{any\_adverb} \\
+        \text{PS} &\rightarrow \text{Pronoun Space} \\
+        \text{N} &\rightarrow \text{"nang"} \\
+        \text{VS} &\rightarrow \text{Verb Space} \\
+        \text{SA} &\rightarrow \text{Space Adverb} \\
+        \text{VP} &\rightarrow \text{VS PS} \\
+        \text{NA} &\rightarrow \text{N SA}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF (Greibach Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{any\_verb Space PS NA {\textpipe} any\_verb Space NA} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Adverb} &\rightarrow \text{any\_adverb} \\
+        \text{PS} &\rightarrow \text{any\_pronoun Space} \\
+        \text{SA} &\rightarrow \text{" " Adverb} \\
+        \text{NA} &\rightarrow \text{"nang" SA}
+    \end{aligned}
+\end{equation*}
+
+
+\subsubsection{Case 2}
+
+\paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{"noong" Space Verb {\textpipe} "noong" Space Adverb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Adverb} &\rightarrow \text{any\_adverb}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{NS Verb {\textpipe} NS Adverb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Adverb} &\rightarrow \text{any\_adverb} \\
+        \text{Noong} &\rightarrow \text{"noong"} \\
+        \text{NS} &\rightarrow \text{Noong Space}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{"noong" Space Verb {\textpipe} "noong" Space Adverb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Adverb} &\rightarrow \text{any\_adverb}
+    \end{aligned}
+\end{equation*}
+
+
+\subsubsection{Case 3}
+
+\paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{Verb Space "na" "-ng"} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{VS Nang} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{VS} &\rightarrow \text{Verb Space} \\
+        \text{Na} &\rightarrow \text{"na"} \\
+        \text{Ng} &\rightarrow \text{"-ng"} \\
+        \text{Nang} &\rightarrow \text{Na Ng}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{any\_verb Space Nang} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Ng} &\rightarrow \text{"ng"} \\
+        \text{Nang} &\rightarrow \text{"na" Ng}
+    \end{aligned}
+\end{equation*}
+
+
+\subsubsection{Case 4}
+
+\paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{"upang" Space Verb {\textpipe} "para" Space Verb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{US Verb {\textpipe} PS Verb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{US} &\rightarrow \text{Upang Space} \\
+        \text{PS} &\rightarrow \text{Para Space} \\
+        \text{Upang} &\rightarrow \text{"upang"} \\
+        \text{Para} &\rightarrow \text{"para"}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{"upang" Space Verb {\textpipe} "para" Space Verb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "}
+    \end{aligned}
+\end{equation*}
+
+
+\subsubsection{Case 5}
+
+\paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{Verb Space "nang" Space Verb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{VS NSV} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Nang} &\rightarrow \text{"nang"} \\
+        \text{VS} &\rightarrow \text{Verb Space} \\
+        \text{SV} &\rightarrow \text{Space Verb} \\
+        \text{NSV} &\rightarrow \text{Nang SV}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{any\_verb Space NSV} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{SV} &\rightarrow \text{" " Verb} \\
+        \text{NSV} &\rightarrow \text{"nang" SV}
+    \end{aligned}
+\end{equation*}
