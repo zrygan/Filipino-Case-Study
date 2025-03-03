@@ -123,3 +123,40 @@
         \text{Nang} &\rightarrow \text{"na" Ng}
     \end{aligned}
 \end{equation*}
+
+
+\subsubsection{Case 4}
+
+\paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{"upang" Space Verb {\textpipe} "para" Space Verb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{US Verb {\textpipe} PS Verb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{US} &\rightarrow \text{Upang Space} \\
+        \text{PS} &\rightarrow \text{Para Space} \\
+        \text{Upang} &\rightarrow \text{"upang"} \\
+        \text{Para} &\rightarrow \text{"para"}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{"upang" Space Verb {\textpipe} "para" Space Verb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "}
+    \end{aligned}
+\end{equation*}
