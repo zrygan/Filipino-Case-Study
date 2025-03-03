@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../print.xsl" ?>
+<?xml-stylesheet type="text/css" href="../rules.css" title="Easy editing stylesheet" ?>
+
+<!-- 
+    If you disagree with this
+    CONTANT ME JUSTIN ETHAN CHING
+    I AM a PROFESSIONAL researcher of NLP and the Filipino Language
+    NOBODY disagrees with me
+
+    If you disagree with me,
+
+    most likely you are retarded
+
+    ggs go next life i guess
+    maybe
+ -->
+
+<rules>
+    <category name="-es and -is words">
+        <rule>
+
+        </rule>
+    </category>
+
+    <category name="kump- and kumb- words">
+        <rule>
+
+        </rule>
+    </category>
+
+    <category name="Morphophonemic Alteration with Suffixes">
+        <rule>
+
+        </rule>
+    </category>
+
+    <category name="Reduplications">
+        <rule>
+
+        </rule>
+    </category>
+
+    <category name="Sound and Letter Change for Words Ending with a Consonants 
+                    and Vowels">
+        <rule>
+
+        </rule>
+    </category>
+
+    <category name="Ng v. Nang">
+        <rule>
+
+        </rule>
+    </category>
+
+    <category name="Gitling Usage">
+        <rule>
+
+        </rule>
+    </category>
+</rules>
