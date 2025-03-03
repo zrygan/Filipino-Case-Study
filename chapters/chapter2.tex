@@ -1,2 +1,51 @@
 \section{Grammar, Greibach, and Chomsky}
+\subsection{Context-Free Grammar for Ng v. Nang}
+\subsubsection{Case 1}
 
+\paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{Verb Space PS "nang" Space Adverb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Pronoun} &\rightarrow \text{any\_pronoun} \\
+        \text{Adverb} &\rightarrow \text{any\_adverb} \\
+        \text{PS} &\rightarrow \text{Pronoun Space {\textpipe} } \epsilon
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF (Chomsky Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{VP NA {\textpipe} VS NA} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Pronoun} &\rightarrow \text{any\_pronoun} \\
+        \text{Adverb} &\rightarrow \text{any\_adverb} \\
+        \text{PS} &\rightarrow \text{Pronoun Space} \\
+        \text{N} &\rightarrow \text{"nang"} \\
+        \text{VS} &\rightarrow \text{Verb Space} \\
+        \text{SA} &\rightarrow \text{Space Adverb} \\
+        \text{VP} &\rightarrow \text{VS PS} \\
+        \text{NA} &\rightarrow \text{N SA}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF (Greibach Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{any\_verb Space PS NA {\textpipe} any\_verb Space NA} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Adverb} &\rightarrow \text{any\_adverb} \\
+        \text{PS} &\rightarrow \text{any\_pronoun Space} \\
+        \text{SA} &\rightarrow \text{" " Adverb} \\
+        \text{NA} &\rightarrow \text{"nang" SA}
+    \end{aligned}
+\end{equation*}
+
+\subsubsection{Case 2}
+
+\paragraph{CFG:}
