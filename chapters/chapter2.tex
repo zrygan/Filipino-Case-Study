@@ -160,3 +160,41 @@
         \text{Space} &\rightarrow \text{" "}
     \end{aligned}
 \end{equation*}
+
+
+\subsubsection{Case 5}
+
+\paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{Verb Space "nang" Space Verb} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{VS NSV} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Nang} &\rightarrow \text{"nang"} \\
+        \text{VS} &\rightarrow \text{Verb Space} \\
+        \text{SV} &\rightarrow \text{Space Verb} \\
+        \text{NSV} &\rightarrow \text{Nang SV}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{any\_verb Space NSV} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{SV} &\rightarrow \text{" " Verb} \\
+        \text{NSV} &\rightarrow \text{"nang" SV}
+    \end{aligned}
+\end{equation*}
