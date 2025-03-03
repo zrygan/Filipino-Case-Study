@@ -1,5 +1,7 @@
 \section{Grammar, Greibach, and Chomsky}
 \subsection{Context-Free Grammar for Ng v. Nang}
+
+
 \subsubsection{Case 1}
 
 \paragraph{CFG:}
@@ -46,6 +48,7 @@
     \end{aligned}
 \end{equation*}
 
+
 \subsubsection{Case 2}
 
 \paragraph{CFG:}
@@ -80,5 +83,43 @@
         \text{Verb} &\rightarrow \text{any\_verb} \\
         \text{Space} &\rightarrow \text{" "} \\
         \text{Adverb} &\rightarrow \text{any\_adverb}
+    \end{aligned}
+\end{equation*}
+
+
+\subsubsection{Case 3}
+
+\paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{Verb Space "na" "-ng"} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{VS Nang} \\
+        \text{Verb} &\rightarrow \text{any\_verb} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{VS} &\rightarrow \text{Verb Space} \\
+        \text{Na} &\rightarrow \text{"na"} \\
+        \text{Ng} &\rightarrow \text{"ng"} \\
+        \text{Nang} &\rightarrow \text{Na Ng}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start} &\rightarrow \text{any\_verb Space Nang} \\
+        \text{Space} &\rightarrow \text{" "} \\
+        \text{Ng} &\rightarrow \text{"ng"} \\
+        \text{Nang} &\rightarrow \text{"na" Ng}
     \end{aligned}
 \end{equation*}
