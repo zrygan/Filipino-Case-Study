@@ -2,25 +2,28 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
-
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{xcolor}
 \usepackage{hyperref}
-\usepackage{biblatex}
+\usepackage[backend=biber]{biblatex}
 
 \usepackage{tipx} % for Chapter 1.1.1
 
 
 % REFERENCES
-\addbibresource{bibliography/chapter1.bib}
+\addbibresource{bibliography/references.bib}
 
 % FUNCTIONS
 \newtheorem{example}{Example}
-\newcommand{\matches}{\overset{\text{regex}}{\longrightarrow}}
+\newtheorem{thm_rule}{Rule}
+% \newcommand{\matches}{\overset{\text{regex}}{\longrightarrow}}
+\newcommand{\regex}[1]{\(\texttt{#1}\)}
+\newcommand{\blankspace}{\(\psi\)}
+\newcommand{\emptystring}{\(\lambda\)}
 
-\title{Filipino Grammar}
+\title{Formalizing Filipino}
 \author{Stephen Borja, Justin Ching, Zhean Ganituen}
 \date{\today}
 
@@ -28,10 +31,11 @@
 
 \maketitle
 
-\tableofcontents % FIXME: remove comment here later on 
+% \tableofcontents % FIXME: remove comment here later on 
 
+\include{chapters/chapter0}
 \include{chapters/chapter1}
-\include{chapters/chapter2}
+% \include{chapters/chapter2}
 
 \printbibliography % FIXME: remove comment here later on  
 

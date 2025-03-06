@@ -17,26 +17,26 @@ The 11 punctuation marks in the Filipino language are the: \textit{tuldok} (.),
 In mathematical notation, we can represent \(\mathbb{F}\) as the set:
 
 \[
-      \mathbb{F} = \{\text{a},\text{b},\dots,\text{z},\text{ñ},\text{ng},   \
-      \text{A},\text{B},\text{C},\dots,\text{Z},\text{Ñ},\text{Ng}\}         \
-      \cup \{\text{.},\text{?},\text{!},\text{,},\text{'},\text{-},\text{:}, \
-      \text{;},\text{"},\text{(},\text{)}, \ldots\}
+    \mathbb{F} = \{\texttt{a}, \texttt{b}, \dots, \texttt{z}, \texttt{ñ}, \texttt{ng}, \\
+    \texttt{A}, \texttt{B}, \texttt{C}, \dots, \texttt{Z}, \texttt{Ñ}, \texttt{Ng}\} \\
+    \cup \{\texttt{.}, \texttt{?}, \texttt{!}, \texttt{,}, \texttt{'}, \texttt{-}, \texttt{:}, \\
+    \texttt{;}, \texttt{"}, \texttt{(}, \texttt{)}, \texttt{\ldots}\}
 \]
 
 and the size of \(\mathbb{F}\), \(\left|\mathbb{F}\right| = 67\).
 
 From this we can introduce the following sets:
 \begin{enumerate}
-      \item \(\mathbb{M}\) = \{.,?,!,,,',-,:,;,",(,),...\}, the set of punctuation marks
-      \item \(\mathbb{V}\) = \{a,e,i,o,u,A,E,I,O,I\}, the set of upper and lower case vowels
-      \item \(\mathbb{C}\) = \(\mathcal{F} - (\mathbb{M}\cup\mathbb{V})\),
-            the set of upper and lower case consonants
-      \item \(\mathbb{V}_\text{upper}\) is the set of upper case vowels
-      \item \(\mathbb{V}_\text{lower}\) is the set of lower case vowels
-      \item \(\mathbb{C}_\text{upper}\) is the set of upper case consonants
-      \item \(\mathbb{C}_\text{lower}\) is the set of lower case consonants
-      \item \(\mathbb{L}\) = \(\mathbb{F} - \mathbb{M}\), is the set of consonants and vowels
-      \item \(\mathbb{L}*\), is the set of words in \(\mathcal{F}\)
+    \item \(\mathbb{M}\) = \regex{\{.,?,!,,,',-,:,;,",(,),...\}}, the set of punctuation marks
+    \item \(\mathbb{V}\) = \regex{\{a,e,i,o,u,A,E,I,O,I\}}, the set of upper and lower case vowels
+    \item \(\mathbb{C}\) = \(\mathcal{F} - (\mathbb{M}\cup\mathbb{V})\),
+          the set of upper and lower case consonants
+    \item \(\mathbb{V}_\text{upper}\) is the set of upper case vowels
+    \item \(\mathbb{V}_\text{lower}\) is the set of lower case vowels
+    \item \(\mathbb{C}_\text{upper}\) is the set of upper case consonants
+    \item \(\mathbb{C}_\text{lower}\) is the set of lower case consonants
+    \item \(\mathbb{L}\) = \(\mathbb{F} - \mathbb{M}\), is the set of consonants and vowels
+    \item \(\mathbb{L}*\), is the set of words in \(\mathcal{F}\)
 \end{enumerate}
 
 \paragraph{Remark on the Digraph: \text{ng/Ng} or "\textit{en dyi}"}
@@ -63,237 +63,228 @@ but is not pronounced as the velar nasal sound. Instead, its pronunciation is
 \subsubsection{"es"-words and "is"-words}
 
 Given the Spanish and English roots of Filipino, some \textit{loan} words have
-rules for Filipino spelling. Let \(s\) be any string, the English language
-\(\mathcal{E}\), the Spanish language \(\mathcal{S}\), and \(\mathcal{F}(s)\) is
-the translation of \(s\) in \(\mathcal{F}\). Furthermore, let \(\mathbb{S}*\) be
-the set of words in \(\mathcal{S}\) and \(\mathbb{E}*\) be the set of words in
-\(\mathcal{E}\).
+rules for Filipino spelling. Let \(s\) be any string, \(\mathcal{E}\) be the
+English language, \(\mathcal{S}\) be the Spanish language, and \(\mathcal{F}(s)\)
+be the translation of any string \(s\) in \(\mathcal{F}\). That is to say, if
+\(s \notin \mathcal{F}\) then \(\mathcal{F}(s) \in \mathcal{F}\).
+
+Finally, let \(\mathbb{S}\) be the alphabet of Spanish language, and \(\mathbb{E}\) be the
+alphabet of English language.
+
+There are some words \(s\) that are either in \(\mathcal{S}\) or \(\mathcal{E}\),
+and these words go through nativization to Filipino \cite{Pitogo}. That is to say, suppose we have
+some English word \(e\), this can be used in a Filipino setting word if it is
+nativized following rules below:
 
 \begin{enumerate}
-      \item \(\left(\forall s\in \mathbb{S}*,s \matches \text{es}(\mathbb{S}*) \right) \rightarrow \left(\mathcal{F}(s) \matches \text{es}
-                  (\mathbb{M}|\mathbb{C})*\right) \)
-      \item \(\left(\forall s\in \mathbb{E}*,s \matches \text{s}(\mathbb{E}*)\right) \rightarrow  \left(\mathcal{F}(s) \matches \text{is}
-                  (\mathbb{M}|\mathbb{C})* \right)\)
+    \item \(\left(\forall s \in \mathcal{S}, s \in \texttt{es}\cdot\mathbb{S}^* \right) \rightarrow \left(\mathcal{F}(s) \in \texttt{es}\cdot\mathbb{L}^* \right)\)
+    \item \(\left(\forall s \in \mathcal{E}, s \in \texttt{s}\cdot\mathbb{E}^* \right) \rightarrow  \left(\mathcal{F}(s) \in \texttt{is}\cdot\mathbb{L}^* \right)\)
 \end{enumerate}
 
-Rule (1) denotes that if \(s\) is a Spanish word, translating \(s\) to a Filipino
-word would use "es" as the prefix to the word to denote that \(\mathcal{F}(s)\)
-is a word of Spanish origin. On the other hand, for rule (2), if \(s\) is an
-English word, then \(\mathcal{F}(s)\) would use "is" as the prefix to the word
-to denote that it is of English origin.
+Rule (1) denotes that if \(s\) is a Spanish word, then \(\mathcal{F}(s)\)
+would use \texttt{es} as the prefix to the word to denote that it is of Spanish origin.
+Similarly, for rule (2), if \(s\) is an English word, then \(\mathcal{F}(s)\)
+would use \texttt{is} as the prefix to the word to denote that it is of English origin.
 
 \begin{example}
-      Here are examples of English and Spanish loan words in Filipino:
+    Here are examples of English and Spanish loan words in Filipino:
 \end{example}
 \begin{enumerate}
-      \item Ako ay papasok sa \textbf{eskwelahan}. (correct) \\
-            Ako ay papasok sa \textit{iskwelahan}. (incorrect) \\
-            eskwelahan (\(\mathcal{F}\)) from escuela (\(\mathcal{S}\))
-      \item Aba! Malaki pala ang \textbf{espasyo} rito. (correct) \\
-            Aba! Malaki pala ang \textit{ispasyo} rito. (incorrect) \\
-            espasyo (\(\mathcal{F}\)) from espacio (\(\mathcal{S}\))
-      \item Marami kaming \textbf{estudyante} sa Computer Science. (correct) \\
-            Marami kaming \textit{istudyante} sa Computer Science. (incorrect)\\
-            estudyante (\(\mathcal{F}\)) from estudiante (\(\mathcal{S}\))
-      \item Mahilig sila Turing at Sipser maglaro ng \textbf{eskrima}. (correct) \\
-            Mahilig sila Turing at Sipser maglaro ng \textit{iskrima}. (incorrect) \\
-            eskrima  (\(\mathcal{F}\)) from esgrima (\(\mathcal{S}\))
-      \item Marami raw \textbf{espiritu} rito. (correct) \\
-            Marami raw \textit{ispiritu} rito. (incorrect) \\
-            espiritu (\(\mathcal{F}\)) from espiritu (\(\mathcal{S}\))
-      \item Kinausap mo na ba iyung \textbf{ispiker}. (correct) \\
-            Kinausap mo na ba iyung \textit{espiker}. (incorrect) \\
-            ispiker (\(\mathcal{F}\)) from speaker (\(\mathcal{E}\))
-      \item Marami naman daw \textbf{isports} na puwedeng pagpilian. (correct) \\
-            Marami naman daw \textit{esports} na puwedeng pagpilian. (incorrect) \\
-            isports (\(\mathcal{F}\)) from sports (\(\mathcal{E}\))
-      \item Si Dijkstra ay hindi raw \textbf{iskolar}. (correct) \\
-            Si Dijkstra ay hindi raw \textit{eskolar}. (incorrect) \\
-            iskolar (\(\mathcal{F}\)) from scholar (\(\mathcal{E}\))
+    \item Ako ay papasok sa \textbf{eskwelahan}. (correct) \\
+          Ako ay papasok sa \textit{iskwelahan}. (incorrect) \\
+          eskwelahan (\(\mathcal{F}\)) from escuela (\(\mathcal{S}\))
+    \item Aba! Malaki pala ang \textbf{espasyo} rito. (correct) \\
+          Aba! Malaki pala ang \textit{ispasyo} rito. (incorrect) \\
+          espasyo (\(\mathcal{F}\)) from espacio (\(\mathcal{S}\))
+    \item Marami kaming \textbf{estudyante} sa Computer Science. (correct) \\
+          Marami kaming \textit{istudyante} sa Computer Science. (incorrect)\\
+          estudyante (\(\mathcal{F}\)) from estudiante (\(\mathcal{S}\))
+    \item Mahilig sila Turing at Sipser maglaro ng \textbf{eskrima}. (correct) \\
+          Mahilig sila Turing at Sipser maglaro ng \textit{iskrima}. (incorrect) \\
+          eskrima  (\(\mathcal{F}\)) from esgrima (\(\mathcal{S}\))
+    \item Marami raw \textbf{espiritu} rito. (correct) \\
+          Marami raw \textit{ispiritu} rito. (incorrect) \\
+          espiritu (\(\mathcal{F}\)) from espiritu (\(\mathcal{S}\))
+    \item Kinausap mo na ba iyung \textbf{ispiker}. (correct) \\
+          Kinausap mo na ba iyung \textit{espiker}. (incorrect) \\
+          ispiker (\(\mathcal{F}\)) from speaker (\(\mathcal{E}\))
+    \item Marami naman daw \textbf{isports} na puwedeng pagpilian. (correct) \\
+          Marami naman daw \textit{esports} na puwedeng pagpilian. (incorrect) \\
+          isports (\(\mathcal{F}\)) from sports (\(\mathcal{E}\))
+    \item Si Dijkstra ay hindi raw \textbf{iskolar}. (correct) \\
+          Si Dijkstra ay hindi raw \textit{eskolar}. (incorrect) \\
+          iskolar (\(\mathcal{F}\)) from scholar (\(\mathcal{E}\))
 \end{enumerate}
 
 \begin{example}
-      Here are some examples of literature and webpages where the "es-" and "is-"
-      prefixes are misused:
+    Here are some examples of literature and webpages where the "es-" and "is-"
+    prefixes are misused:
 \end{example}
 
 \begin{enumerate}
-      \item \textbf{TODO}
+    \item \textbf{TODO}
 \end{enumerate}
 
 \subsubsection{"kump"-words and "kumb"-words}
 
-If \(s\in \mathbb{S}*\) and the the prefix of \(s\) is given by the
-regular expression \((\text{C}|\text{c})\text{on}(\text{f}|\text{v})\). Then,
-\(\mathcal{F}(s)\) is prefixed with
-\((\text{C}|\text{c})\text{um}(\text{p}|\text{b})\).
+Let \(s \in \mathcal{S}\) or \(s\) and \(s \in con(v|f)\), or \(s\) is a Spanish
+word with \texttt{conv} or \texttt{conf} as their prefix. We have a particular rule
+for the nativization of the following words. If \(s\) is a \texttt{conf} word, then
+\(\mathcal{F}(s)\) is a \texttt{kump} word. If \(s\) is a \texttt{conv} word,
+\(\mathcal{F}(s)\) is a \texttt{kumb} word.
 
 In particular:
 \begin{itemize}
-      \item \(s \matches (\text{conf})\mathbb{S}* \rightarrow \mathcal{F}(s) \matches (\text{kump})\mathbb{L}*\)
-      \item \(s \matches (\text{conv})\mathbb{S}* \rightarrow \mathcal{F}(s) \matches (\text{kumb})\mathbb{L}*\)
+    \item \(s \in \texttt{conf}\cdot \mathbb{S}^* \rightarrow \mathcal{F}(s) \in \texttt{kump}\cdot \mathbb{L}^*\)
+    \item \(s \in \texttt{conv}\cdot \mathbb{S}^* \rightarrow \mathcal{F}(s) \in \texttt{kumb}\cdot \mathbb{L}^*\)
 \end{itemize}
 
 \begin{example}
-      Here are examples of Spanish words in Filipino with the "kump" and "kumb"
-      prefixes:
+    Here are examples of Spanish words in Filipino with the "kump" and "kumb"
+    prefixes:
 \end{example}
 \begin{enumerate}
-      \item Pumasok si Cormen sa \textbf{kumbento}. (correct) \\
-            Pumasok si Cormen sa \textit{konbento}. (incorrect) \\
-            kumbento (\(\mathcal{F}\)) from convento (\(\mathcal{S}\))
-      \item Tinanong ko si Leiserson bilang \textbf{kumpirmasyon}. (correct) \\
-            Tinanong ko si Leiserson bilang \textit{kunpirmasyon}. (incorrect) \\
-            kumpirmasyon (\(\mathcal{F}\)) from confirmacion (\(\mathcal{S}\))
-      \item Ang \textbf{kumpetisyon} sa agham ay ginanap sa paaralan. (correct) \\
-            Ang \textit{kunpetisyon} sa agham ay ginanap sa paaralan. (incorrect) \\
-            kumpetisyon (\(\mathcal{F}\)) from competición (\(\mathcal{S}\))
-      \item Nagbigay siya ng \textbf{kumpisal} sa pari noong Linggo. (correct) \\
-            Nagbigay siya ng \textit{kunpisal} sa pari noong Linggo. (incorrect) \\
-            kumpisal (\(\mathcal{F}\)) from confesión (\(\mathcal{S}\))
-      \item Sumali ako sa isang \textbf{kumbento} sa simbahan natin. (correct) \\
-            Sumali ako sa isang \textit{kunbento} sa simbahan natin. (incorrect) \\
-            kumbento (\(\mathcal{F}\)) from convento (\(\mathcal{S}\))
-      \item Hindi ko alam ang \textbf{kumbinasyon} sa Graph Coloring. (correct) \\
-            Hindi ko alam ang \textit{kunbinasyon} sa Graph Coloring. (correct) \\
-            kumbinasyon (\(\mathcal{F}\)) from combinación (\(\mathcal{S}\))
-      \item Ipinahayag niya ang kanyang \textbf{kumbersasyon} sa kanila. (correct) \\
-            Ipinahayag niya ang kanyang \textit{kunbersasyon} sa . (incorrect) \\
-            kumbersasyon (\(\mathcal{F}\)) from conversación (\(\mathcal{S}\))
-      \item Ang patakaran ay dumaan sa \textbf{kumpigurasyon} bago ipatupad. (correct) \\
-            Ang patakaran ay dumaan sa \textit{kunpigurasyon} bago ipatupad. (incorrect) \\
-            kumpigurasyon (\(\mathcal{F}\)) from configuración (\(\mathcal{S}\))
+    \item Pumasok si Cormen sa \textbf{kumbento}. (correct) \\
+          Pumasok si Cormen sa \textit{konbento}. (incorrect) \\
+          kumbento (\(\mathcal{F}\)) from convento (\(\mathcal{S}\))
+    \item Tinanong ko si Leiserson bilang \textbf{kumpirmasyon}. (correct) \\
+          Tinanong ko si Leiserson bilang \textit{kunpirmasyon}. (incorrect) \\
+          kumpirmasyon (\(\mathcal{F}\)) from confirmacion (\(\mathcal{S}\))
+    \item Ang \textbf{kumpetisyon} sa agham ay ginanap sa paaralan. (correct) \\
+          Ang \textit{kunpetisyon} sa agham ay ginanap sa paaralan. (incorrect) \\
+          kumpetisyon (\(\mathcal{F}\)) from competición (\(\mathcal{S}\))
+    \item Nagbigay siya ng \textbf{kumpisal} sa pari noong Linggo. (correct) \\
+          Nagbigay siya ng \textit{kunpisal} sa pari noong Linggo. (incorrect) \\
+          kumpisal (\(\mathcal{F}\)) from confesión (\(\mathcal{S}\))
+    \item Sumali ako sa isang \textbf{kumbento} sa simbahan natin. (correct) \\
+          Sumali ako sa isang \textit{kunbento} sa simbahan natin. (incorrect) \\
+          kumbento (\(\mathcal{F}\)) from convento (\(\mathcal{S}\))
+    \item Hindi ko alam ang \textbf{kumbinasyon} sa Graph Coloring. (correct) \\
+          Hindi ko alam ang \textit{kunbinasyon} sa Graph Coloring. (correct) \\
+          kumbinasyon (\(\mathcal{F}\)) from combinación (\(\mathcal{S}\))
+    \item Ipinahayag niya ang kanyang \textbf{kumbersasyon} sa kanila. (correct) \\
+          Ipinahayag niya ang kanyang \textit{kunbersasyon} sa . (incorrect) \\
+          kumbersasyon (\(\mathcal{F}\)) from conversación (\(\mathcal{S}\))
+    \item Ang patakaran ay dumaan sa \textbf{kumpigurasyon} bago ipatupad. (correct) \\
+          Ang patakaran ay dumaan sa \textit{kunpigurasyon} bago ipatupad. (incorrect) \\
+          kumpigurasyon (\(\mathcal{F}\)) from configuración (\(\mathcal{S}\))
 \end{enumerate}
 
 \begin{example}
-      Here are some examples of literature and webpages where the "kump" and "kumb"
-      prefixes are misused:
+    Here are some examples of literature and webpages where the "kump" and "kumb"
+    prefixes are misused:
 \end{example}
 \begin{enumerate}
-      \item \textbf{TODO}
+    \item \textbf{TODO}
 \end{enumerate}
 
 \subsubsection{Morphophonemic Alteration with Suffixes}
 
-Let \(k \in \mathbb{L}*\) be a word formed by the concatenation as follows
-\(k = \alpha \cdot \text{root}_\text{allomorph} \cdot \omega \)
-where  \(\alpha\) is the prefix of \(k\), \(\omega\) is the suffix of \(k\),
-and \(\text{root}_\text{allomorph}\) is the root allomorph of \(k\).
+Let \(s \in \mathcal{F}\) be any Filipino word that has a root word \(r\). The root word
+\(r\) is the \textit{simplest} form of that word, that is, it has no prefix, infix, or suffix.
+Furthermore, \(k\) is formed by the concatenation \(k = \alpha\cdot\overline{r}\cdot\omega\)
+where \(\alpha\) is the prefix of \(k\), \(\overline{r}\) is the \textit{root allomorph} of \(k\),
+and \(\omega\) is the suffix of \(k\). The root allomorph \(\overline{r}\) is a variant of
+the root word when the root word appears in a different context \cite{OOP}. In this case, \(\overline{r}\)
+is formed by a morphophonemic alteration given below:
 
-The morphophonemic alteration of the root word is given by:
-\begin{center}
-      If the root ends in "e", then \(\text{root}_\text{allomorph}\) ends in "i". \\
-      If the root ends in "o", then the \(\text{root}_\text{allomorph}\) ends in "u".
-\end{center}
+\begin{tabular}{l c r}
+    \textbf{Case 1}: & \(r\in k\cdot \texttt{e} \rightarrow \overline{r} \in k \cdot \texttt{i}\) & where \(k \in \mathbb{L}^*\) \\
+    \textbf{Case 2}: & \(r\in k\cdot \texttt{o} \rightarrow \overline{r} \in k \cdot \texttt{u}\) & where \(k \in \mathbb{L}^*\)
+\end{tabular}
 
-That is to say, that if a Filipino word is the concatenation of a root word that
-ends in "e" or "o" and a suffix. Then, "e" will change to "i" and "o" will change
-to "u" \cite{Yap_1967}.
+That is to say, that if a Filipino word is the concatenation of a prefix, a root word that
+ends in \texttt{e} or \texttt{o}, and a suffix. Then, \texttt{e} will change to \texttt{i} or \texttt{o} will change
+to \texttt{u} \cite{Yap_1967}.
 
 \begin{example}
-      Here are examples of morphophonemic alterations in Filipino:
+    Here are examples of morphophonemic alterations in Filipino:
 \end{example}
 \begin{enumerate}
-      \item \textbf{Tinakbuhan} niya ang kanyang problema. \\
-            takbo \(\rightarrow\) takbu \(\cdot\) han \(\rightarrow\) tinakbuhan
-      \item \textbf{Pinasukan} niya ang silid-aralan. \\
-            pasok \(\rightarrow\) pasuk \(\cdot\) an \(\rightarrow\) pinasukan
-      \item \textbf{Pinayuhan} siya ng kanyang guro. \\
-            payo \(\rightarrow\) payu \(\cdot\) han \(\rightarrow\) pinayuhan
-      \item \textbf{Babaihan} ang tawag sa lugar kung saan maraming babae. \\
-            babae \(\rightarrow\) babai \(\cdot\) han \(\rightarrow\) babaíhan
-      \item \textbf{Biniruan} niya ang kanyang kaibigan. \\
-            biro \(\rightarrow\) biru \(\cdot\) an \(\rightarrow\) biniruan
-      \item Gusto naming \textbf{laruin} ni Knuth iyan! \\
-            laro  \(\rightarrow\) laru \(\cdot\) in \(\rightarrow\) laruin
-      \item Tinanong ko siya kung hahaluin iyong pagkain... \\
-            halo  \(\rightarrow\) halu \(\cdot\) in \(\rightarrow\) haluin
-      \item Kakayanin kitang \textbf{talunin} sa Catan! \\
-            talo  \(\rightarrow\) talu \(\cdot\) nin  \(\rightarrow\) talunin
+    \item \textbf{Tinakbuhan} niya ang kanyang problema. \\
+          takbo \(\rightarrow\) takbu \(\rightarrow\) tinakbuhan
+    \item \textbf{Pinasukan} niya ang silid-aralan. \\
+          pasok \(\rightarrow\) pasuk \(\rightarrow\) pinasukan
+    \item \textbf{Pinayuhan} siya ng kanyang guro. \\
+          payo \(\rightarrow\) payu \(\rightarrow\) pinayuhan
+    \item \textbf{Babaihan} ang tawag sa lugar kung saan maraming babae. \\
+          babae \(\rightarrow\) babai \(\rightarrow\) babaíhan
+    \item \textbf{Biniruan} niya ang kanyang kaibigan. \\
+          biro \(\rightarrow\) biru \(\rightarrow\) biniruan
+    \item Gusto naming \textbf{laruin} ni Knuth iyan! \\
+          laro  \(\rightarrow\) laru \(\rightarrow\) laruin
+    \item Tinanong ko siya kung hahaluin iyong pagkain... \\
+          halo  \(\rightarrow\) halu \(\rightarrow\) haluin
+    \item Kakayanin kitang \textbf{talunin} sa Catan! \\
+          talo  \(\rightarrow\) talu  \(\rightarrow\) talunin
 \end{enumerate}
 
 
 \begin{example}
-      Here are some examples of literature and webpages where that have the incorrect
-      root allomorph:
+    Here are some examples of literature and webpages where that have the incorrect
+    root allomorph:
 \end{example}
 \begin{enumerate}
-      \item \textbf{TODO}
+    \item \textbf{TODO}
 \end{enumerate}
 
 \subsubsection{Reduplications}
 
 A full reduplication is a word \(k \in \mathbb{L}*\) and is defined by the concatenation
-\[
-      k = "\text{b}" \cdot "\text{-}" \cdot "\text{b}"
-\]
-or it is a repetition of a root word \(b\) joined by the \textit{gitling} "-".
-In a full reduplication, the repetition of the \(b\) has no variation from the first \(b\).
+\(k = r \cdot [\texttt{-}] \cdot r\),
+or it is a repetition of a root word \(r\) joined by the \textit{gitling} (-).
+In a full reduplication, the repetition of the every \(r\) has no variation from the first \(r\).
 
-On the otherhand, an ablaut reduplication is a word \(j \in \mathbb{L}*\) and is defined by the
-concatenation
-
-\[
-      j = "\text{x}" \cdot "\text{r}"
-\]
-or it is the repetition of the root word \(x\) and the root word with a vowel alteration \(r\). Notice
+On the other hand, an ablaut reduplication is a word \(j \in \mathcal{F}\) and is defined by the
+concatenation \(j = \overline{r}\cdot r \) or it is the repetition of the root word \(r\) and the root word with a vowel alteration or ablaut \(\overline{r}\). Notice
 that for ablaut repetitions, there is no \textit{gitling} joining the repetitions. Furthermore,
-the ablaut repetition of a root word creates a word with a different meaning. The ablaut or vowel
+the ablaut repetition of a root word creates a word with a different meaning \cite{OOP}. The ablaut or vowel
 alteration is defined by:
 
-\begin{center}
-      If the root ends in "e", then the ablaut ends in "i". \\
-      If the root ends in "o", then the ablaut ends in "u".
-\end{center}
+\begin{tabular}{l c}
+    \textbf{Case 1}: & \(r\in \mathbb{L}^* \cdot \texttt{e} \rightarrow \overline{r} \in \mathbb{L}^* \cdot \texttt{i}\) \\
+    \textbf{Case 2}: & \(r\in \mathbb{L}^* \cdot \texttt{o} \rightarrow \overline{r} \in \mathbb{L}^* \cdot \texttt{u}\)
+\end{tabular}
 
 \begin{example}
-      Here are examples of reduplications in Filipino:
+    Here are examples of reduplications in Filipino:
 \end{example}
 \begin{enumerate}
-      \item Kung \textbf{ano-ano} ginawa ni Hopcroft kanina. (correct) \\
-            Kung \textit{anu-ano} ginawa ni Hopcroft kanina. (incorrect) \\
-            ano-ano is a full reduplication
-      \item Pupunta kami mamaya sa \textbf{sari-sari} store. (correct) \\
-            Pupunta kami mamaya sa \textit{sarisari} store. (incorrect) \\
-            sari-sari is a full reduplication
-      \item Gagawin natin iyong \textbf{kanya-kanyang} gawain mamaya. (correct) \\
-            Gagawin natin iyong \textit{kanyakanyang} gawain mamaya. (incorrect) \\
-            kanya-kanya is a full reduplication
-      \item Paulit-ulit ka nang tanong! (correct) \\
-            Paulet-ulit ka nang tanong! (incorrect) \\
-            ulit-ulit is a full reduplication
-      \item Bumili kami ng \textbf{haluhalo} kaninang umaga. (correct) \\
-            Bumili kami ng \textit{halo-halo} kaninang umaga. (incorrect) \\
-            haluhalo is an ablaut reduplication
+    \item Kung \textbf{ano-ano} ginawa ni Hopcroft kanina. (correct) \\
+          Kung \textit{anu-ano} ginawa ni Hopcroft kanina. (incorrect) \\
+          ano-ano is a full reduplication
+    \item Pupunta kami mamaya sa \textbf{sari-sari} store. (correct) \\
+          Pupunta kami mamaya sa \textit{sarisari} store. (incorrect) \\
+          sari-sari is a full reduplication
+    \item Gagawin natin iyong \textbf{kanya-kanyang} gawain mamaya. (correct) \\
+          Gagawin natin iyong \textit{kanyakanyang} gawain mamaya. (incorrect) \\
+          kanya-kanya is a full reduplication
+    \item Paulit-ulit ka nang tanong! (correct) \\
+          Paulet-ulit ka nang tanong! (incorrect) \\
+          ulit-ulit is a full reduplication
+    \item Bumili kami ng \textbf{haluhalo} kaninang umaga. (correct) \\
+          Bumili kami ng \textit{halo-halo} kaninang umaga. (incorrect) \\
+          haluhalo is an ablaut reduplication
 \end{enumerate}
 
 \begin{example}
-      Here are some examples of literature and webpages where the wrong reduplicant is
-      used:
+    Here are some examples of literature and webpages where the wrong reduplicant is
+    used:
 \end{example}
 \begin{enumerate}
-      \item \textbf{TODO}
+    \item \textbf{TODO}
 \end{enumerate}
 
-\subsubsection{Raw v. Daw (Enclitic Particles); Rin v. Din}
+\subsubsection{Allophonic Variation}
 
-Let \(p = "\,"\) the blank symbol or the symbol containing space. And, we have the
-sentence structure \(S = \alpha + p + EP\). The \textit{enclitic particles}
-(\(\mathbb{EP}\)) is the set \(\mathbb{EP} = \{"\text{raw}", "\text{daw}"\}\) and
-\(\alpha\) is any noun, adjective, verb, or adverb. The proper usage of the enclitic
-particles are given by:
+Suppose we have the sentence structure \(S = \alpha + \psi + EP\), the \textit{enclitic particles}
+(\(\mathbb{EP}\)) is the set of strings \(\mathbb{EP} = \{"\text{raw}", "\text{daw}"\}\) and
+\(\alpha\) is any noun, adjective, verb, or adverb. The selection for the enclitic particle
+is given by the rule:
 
-\[
-      \left(\alpha \matches \left[\text{a-zñ(ng)A-ZÑ(Ng)}\right]+\left[\text{aeiou}\right] \equiv (\mathbb{V}\cup\mathbb{C}) + \mathbb{V}_\text{lower}\right)
-      \longrightarrow EP = \text{"raw"}
+\[    \left( \alpha \in \mathbb{L}^* \cdot \mathbb{V}  \rightarrow \texttt{daw} \right) \wedge
+    \left( \alpha \notin \mathbb{L}^* \cdot \mathbb{V}  \rightarrow \texttt{raw} \right)
 \]
-
-Otherwise,
-
-\[
-      EP = \text{"daw"}
-\]
-
 In other words, if the preceeding word to the enclitic particle ends in vowel,
 then the enclitic particle is "raw". If it is a consonant, then it is "daw".
 
@@ -304,7 +295,7 @@ then the adverb used is "rin". Otherwise, the adverb is "din".
 Here are some examples of literature and webpages where the enclitic particles,
 and the adverbs "raw" and "daw" are misused:
 \begin{enumerate}
-      \item \textbf{TODO}
+    \item \textbf{TODO}
 \end{enumerate}
 
 \subsubsection{Ng v. Nang}
@@ -315,18 +306,18 @@ There are five way to use "nang", for the sentence structures below
 structure of any sentence S is given by:
 
 \begin{center}
-      (S\textsubscript{1} = v \(\cdot\) p \(\cdot\) pron* \(\cdot\) p \(\cdot\)
-      "nang" \(\cdot\) p \(\cdot\) adv)
+    (S\textsubscript{1} = v \(\cdot\) p \(\cdot\) pron* \(\cdot\) p \(\cdot\)
+    "nang" \(\cdot\) p \(\cdot\) adv)
 \end{center}
 
 Where v is a verb, adv is an adverb, and pron is a pronoun.
 
 \begin{example}
-      Example sentences for the first case:
+    Example sentences for the first case:
 \end{example}
 \begin{itemize}
-      \item Kumain nang mabagal.
-      \item             Kumain siya nang mabagal.
+    \item Kumain nang mabagal.
+    \item             Kumain siya nang mabagal.
 
 \end{itemize}
 
@@ -334,59 +325,59 @@ Where v is a verb, adv is an adverb, and pron is a pronoun.
 ligature "-ng".
 
 \begin{center}
-      (S\textsubscript{2} = "noong" \(\cdot\) (v {\textpipe} adv))
+    (S\textsubscript{2} = "noong" \(\cdot\) (v {\textpipe} adv))
 \end{center}
 
 \begin{example}
-      Example sentences for the second case:
+    Example sentences for the second case:
 \end{example}
 
 \begin{itemize}
-      \item (Noong {\textpipe} Nang) pumunta siya sa mall…
-      \item (Noong {\textpipe} Nang) maaraw na araw…
+    \item (Noong {\textpipe} Nang) pumunta siya sa mall…
+    \item (Noong {\textpipe} Nang) maaraw na araw…
 \end{itemize}
 
 \paragraph{Third case:} "Nang" can be used to replace a combined Enclictic Particle
 "na" + ligature "-ng".
 
 \begin{center}
-      (S\textsubscript{3} = v \(\cdot\) p \(\cdot\) "na" \(\cdot\) "-ng")
+    (S\textsubscript{3} = v \(\cdot\) p \(\cdot\) "na" \(\cdot\) "-ng")
 \end{center}
 
 \begin{example}
-      Example sentences for the third case:
+    Example sentences for the third case:
 \end{example}
 \begin{itemize}
-      \item Ang mamatay na-ng dahil sa iyo.
-      \item Ang mamatay nang dahil sa iyo.
+    \item Ang mamatay na-ng dahil sa iyo.
+    \item Ang mamatay nang dahil sa iyo.
 \end{itemize}
 
 \paragraph{Fourth case:} "Nang" can be used to replace "upang" or "para".
 \begin{center}
-      (S\textsubscript{4} = ("upang" {\textpipe} "para") \(\cdot\) p \(\cdot\) v)
+    (S\textsubscript{4} = ("upang" {\textpipe} "para") \(\cdot\) p \(\cdot\) v)
 \end{center}
 
 \begin{example}
-      Example sentences for the fourth case:
+    Example sentences for the fourth case:
 \end{example}
 \begin{itemize}
-      \item (from \cite{OOP}). …kailangang bitayin si Rizal (para {\textpipe} nang)
-            matakot ang mga Filipino.
-      \item (from \cite{OOP}). Dinala si Pedro sa ospital (para {\textpipe} nang)
-            magamot.
+    \item (from \cite{OOP}). …kailangang bitayin si Rizal (para {\textpipe} nang)
+          matakot ang mga Filipino.
+    \item (from \cite{OOP}). Dinala si Pedro sa ospital (para {\textpipe} nang)
+          magamot.
 \end{itemize}
 
 \paragraph{Fifth case:} "Nang" can be used in between repeated verbs.
 \begin{center}
-      (S\textsubscript{5} = v\textsubscript{1} \(\cdot\) p \(\cdot\) "nang"
-      \(\cdot\) p \(\cdot\) v\textsubscript{1})
+    (S\textsubscript{5} = v\textsubscript{1} \(\cdot\) p \(\cdot\) "nang"
+    \(\cdot\) p \(\cdot\) v\textsubscript{1})
 \end{center}
 
 \begin{example}
-      Example sentence for the fifth case:
+    Example sentence for the fifth case:
 \end{example}
 \begin{itemize}
-      \item Kain nang kain...
+    \item Kain nang kain...
 \end{itemize}
 
 Literature on Filipino grammar and style highlights that "nang" should not be
@@ -397,110 +388,110 @@ contraction for them is "na'ng" \cite{OOP}.
 the word "of" in English when the structure of any sentence S is given by:
 
 \begin{center}
-      (S\textsubscript{1} = n \(\cdot\) p \(\cdot\) "ng" \(\cdot\) p \(\cdot\) n)
+    (S\textsubscript{1} = n \(\cdot\) p \(\cdot\) "ng" \(\cdot\) p \(\cdot\) n)
 \end{center}
 
 Where n is a noun. \\
 
 \begin{example}
-      Examples for "ng" as a linker to indicate possession:
+    Examples for "ng" as a linker to indicate possession:
 \end{example}
 \begin{itemize}
-      \item Bag ng bata
-      \item Pinto ng bahay
-      \item Hawakan ng pinto
+    \item Bag ng bata
+    \item Pinto ng bahay
+    \item Hawakan ng pinto
 \end{itemize}
 
 \paragraph{"Ng" and object of actions.}"Ng" can be used to mark the direct object
 of an action in a sentence.
 \begin{center}
-      (S\textsubscript{2} = v \(\cdot\) p \(\cdot\) "ng" \(\cdot\) p \(\cdot\) n)
+    (S\textsubscript{2} = v \(\cdot\) p \(\cdot\) "ng" \(\cdot\) p \(\cdot\) n)
 \end{center}
 
 \begin{example}
-      Examples for "ng" to indicate the object of the verb.
+    Examples for "ng" to indicate the object of the verb.
 \end{example}
 \begin{itemize}
-      \item Binalat at kinain ng bata ang saging.
-      \item Tinapon ng basurero...
-      \item Inalis ng lola...
+    \item Binalat at kinain ng bata ang saging.
+    \item Tinapon ng basurero...
+    \item Inalis ng lola...
 \end{itemize}
 
 \subsubsection{\textit{Gitling} Usage}
 The usage of a \textit{gitling} (hyphen in English) in the Filipino language is quite common and can often lead to its improper use. One of the proper ways to use the \textit{gitling} was discussed earlier in 1.2.4. This section will primarily focus on the proper usage of the \textit{gitling}.
 
 \begin{enumerate}
-      \item
-            Let \(k \in \mathbb{L}*\) be a \textit{reduplication}. And the root word structure
-            \\ \(b = s_0\cdots s_n\), where \(s_n\) are syllables.
+    \item
+          Let \(k \in \mathbb{L}*\) be a \textit{reduplication}. And the root word structure
+          \\ \(b = s_0\cdots s_n\), where \(s_n\) are syllables.
 
-            \[
-                  k = b \cdot "\text{-}" \cdot b = (s_0) \cdot "\text{-}" \cdot (s_0)
-            \]
-            For \textit{reduplication} with $|k|_{\text{s}}>$ 2 (syllable count). It follows the form:
+          \[
+              k = b \cdot "\text{-}" \cdot b = (s_0) \cdot "\text{-}" \cdot (s_0)
+          \]
+          For \textit{reduplication} with $|k|_{\text{s}}>$ 2 (syllable count). It follows the form:
 
-            \[
-                  k = (s_0 \cdot s_1) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
-            \]
+          \[
+              k = (s_0 \cdot s_1) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
+          \]
 
-            For when the second syllable ends with a consonant, let u be\\
-            \((s_1-[\verb|^|aeiou]\$)\). It follows the form:
+          For when the second syllable ends with a consonant, let u be\\
+          \((s_1-[\verb|^|aeiou]\$)\). It follows the form:
 
-            \[
-                  k = (s_0 \cdot u) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
-            \]
+          \[
+              k = (s_0 \cdot u) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
+          \]
 
-            For when a prefix \((p)\) is applied to k it is applied before \((s_0) | (s_0 \cdot s_1)\). It follows the form:
+          For when a prefix \((p)\) is applied to k it is applied before \((s_0) | (s_0 \cdot s_1)\). It follows the form:
 
-            \[
-                  k = p \cdot (s_0) \cdot "\text{-}" \cdot (s_0)
-            \]
-            \[
-                  k = p \cdot (s_0 \cdot s_1) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
-            \]
-      \item
-            Let \( k \in \mathbb{L}* \) be an onomatopoeic word, where \( s_n \in \mathbb{O} \) represents an \textit{onomatopoeic syllable} and \( \mathbb{O} \) is the set of all such syllables.
+          \[
+              k = p \cdot (s_0) \cdot "\text{-}" \cdot (s_0)
+          \]
+          \[
+              k = p \cdot (s_0 \cdot s_1) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
+          \]
+    \item
+          Let \( k \in \mathbb{L}* \) be an onomatopoeic word, where \( s_n \in \mathbb{O} \) represents an \textit{onomatopoeic syllable} and \( \mathbb{O} \) is the set of all such syllables.
 
-            The general form for an \textit{onomatopoeic word with reduplication} is given by:
-            \[
-                  k = s_0 \cdot "\text{-}" \cdot s_1 \cdot "\text{-}" \cdot s_n \cdots
-            \]
-            where \( n \geq 1 \), and each \( s_n \) is a single-syllable onomatopoeic unit. The word consists of at least two such syllables, separated by a \textit{gitling} (hyphen).
+          The general form for an \textit{onomatopoeic word with reduplication} is given by:
+          \[
+              k = s_0 \cdot "\text{-}" \cdot s_1 \cdot "\text{-}" \cdot s_n \cdots
+          \]
+          where \( n \geq 1 \), and each \( s_n \) is a single-syllable onomatopoeic unit. The word consists of at least two such syllables, separated by a \textit{gitling} (hyphen).
 
-      \item
-            Let \(k \in \mathbb{L}*\) be a Filipino word, and $s$ is a syllable, $s_0$, $s_1$ be syllables that respectively accepted by \([\verb|^|aeiou]\$\) and \(\verb|^|[aeiou]\).
-            \[
-            k = s_0 \cdot "\text{-}" \cdot s_1
-            \]
-            A gitling is used to separate a syllable that ends with a consonant from a syllable that begins with a vowel.\\
+    \item
+          Let \(k \in \mathbb{L}*\) be a Filipino word, and $s$ is a syllable, $s_0$, $s_1$ be syllables that respectively accepted by \([\verb|^|aeiou]\$\) and \(\verb|^|[aeiou]\).
+          \[
+              k = s_0 \cdot "\text{-}" \cdot s_1
+          \]
+          A gitling is used to separate a syllable that ends with a consonant from a syllable that begins with a vowel.\\
 
-            In cases where the syllable is followed by a foreign word or a proper noun. Let \(p \in \mathbb{PN}\) be a proper noun and \((\mathbb{PN})\) be the set of proper nouns.
-            \[
-            k = s \cdot "\text{-}" \cdot p
-            \]
-            Let \(w \in \mathbb{L*'}\) be a foreign word.
-            \[
-            k = s \cdot "\text{-}" \cdot w
-            \]
-            In these cases, the final letter of the syllable is not considered.
-      \item
-            Let $t$ be the hour of the day.
-            \[
-            k = (\text{"ika"}|\text{"alas"}) \cdot "\text{-}" \cdot t
-            \]
-            A gitling is used to separate the syllable ("ika", "alas") with the time. The two syllables vary in formality, ("alas") is for casual conversations while ("ika") is used in formal ones. 
-      \item
-            Let \(d_0, d_1\) be dates, where \(d = (day | month | year)\) and \(d_0 < d_1\).
-            \[
-            k = d_0 \cdot "\text{-}" \cdot d_1
-            \]
-            The gitling acts as the word "$to$", from earlier date \textbf{to} later date.
-    \item 
-            Let \(w \in \mathbb{F}*\) be a Filipino root word.
-            \[
-            k = (\text{"di"}) \cdot "\text{-}" \cdot w
-            \]
-            The syllable "di" is a shortened format for the word "hindi", and it acts as a negation to the root word.
-            
-      
+          In cases where the syllable is followed by a foreign word or a proper noun. Let \(p \in \mathbb{PN}\) be a proper noun and \((\mathbb{PN})\) be the set of proper nouns.
+          \[
+              k = s \cdot "\text{-}" \cdot p
+          \]
+          Let \(w \in \mathbb{L*'}\) be a foreign word.
+          \[
+              k = s \cdot "\text{-}" \cdot w
+          \]
+          In these cases, the final letter of the syllable is not considered.
+    \item
+          Let $t$ be the hour of the day.
+          \[
+              k = (\text{"ika"}|\text{"alas"}) \cdot "\text{-}" \cdot t
+          \]
+          A gitling is used to separate the syllable ("ika", "alas") with the time. The two syllables vary in formality, ("alas") is for casual conversations while ("ika") is used in formal ones.
+    \item
+          Let \(d_0, d_1\) be dates, where \(d = (day | month | year)\) and \(d_0 < d_1\).
+          \[
+              k = d_0 \cdot "\text{-}" \cdot d_1
+          \]
+          The gitling acts as the word "$to$", from earlier date \textbf{to} later date.
+    \item
+          Let \(w \in \mathbb{F}*\) be a Filipino root word.
+          \[
+              k = (\text{"di"}) \cdot "\text{-}" \cdot w
+          \]
+          The syllable "di" is a shortened format for the word "hindi", and it acts as a negation to the root word.
+
+
 \end{enumerate}
