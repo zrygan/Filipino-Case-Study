@@ -5,7 +5,7 @@ Let \(\mathcal{F}\) the Filipino language
 and \(\mathbb{F}\) be the Alphabet of \(\mathcal{F}\), this alphabet is
 composed of 56 scripts and 11 punctuation marks \cite{OOP}. The 56 scripts are divided into
 two, the first half being the capital letters of the modern Latin script with
-the addition of "Ñ" and "Ng"; while the other half is the lower case variants
+the addition of \texttt{Ñ} and \texttt{Ng}; while the other half is the lower case variants
 of each letter.
 
 The 11 punctuation marks in the Filipino language are the: \textit{tuldok} (.),
@@ -17,39 +17,35 @@ The 11 punctuation marks in the Filipino language are the: \textit{tuldok} (.),
 In mathematical notation, we can represent \(\mathbb{F}\) as the set:
 
 \[
-      \mathbb{F} = \{\text{a},\text{b},\dots,\text{z},\text{ñ},\text{ng},   \
-      \text{A},\text{B},\text{C},\dots,\text{Z},\text{Ñ},\text{Ng}\}         \
-      \cup \{\text{.},\text{?},\text{!},\text{,},\text{'},\text{-},\text{:}, \
-      \text{;},\text{"},\text{(},\text{)}, \ldots\}
+      \mathbb{F} = \{\texttt{a},\texttt{b},\dots,\texttt{z},\texttt{ñ},\texttt{ng},   \
+      \texttt{A},\texttt{B},\texttt{C},\dots,\texttt{Z},\texttt{Ñ},\texttt{Ng}\}         \
+      \cup \{\texttt{.},\texttt{?},\texttt{!},\texttt{,},\texttt{'},\texttt{-},\texttt{:}, \
+      \texttt{;},\texttt{"},\texttt{(},\texttt{)}, \texttt{...}\}
 \]
 
-and the size of \(\mathbb{F}\), \(\left|\mathbb{F}\right| = 67\).
-
-From this we can introduce the following sets:
+and the size of \(\mathbb{F}\), \(\mid\mathbb{F}\mid = 67\) and the set of all possible Filipino words is $\mathcal{F}$. Furthermore, from this, we can introduce the following sets:
 \begin{enumerate}
-      \item \(\mathbb{M}\) = \{.,?,!,,,',-,:,;,",(,),...\}, the set of punctuation marks
-      \item \(\mathbb{V}\) = \{a,e,i,o,u,A,E,I,O,I\}, the set of upper and lower case vowels
-      \item \(\mathbb{C}\) = \(\mathcal{F} - (\mathbb{M}\cup\mathbb{V})\),
-            the set of upper and lower case consonants
-      \item \(\mathbb{V}_\text{upper}\) is the set of upper case vowels
-      \item \(\mathbb{V}_\text{lower}\) is the set of lower case vowels
-      \item \(\mathbb{C}_\text{upper}\) is the set of upper case consonants
-      \item \(\mathbb{C}_\text{lower}\) is the set of lower case consonants
-      \item \(\mathbb{L}\) = \(\mathbb{F} - \mathbb{M}\), is the set of consonants and vowels
-      \item \(\mathbb{L}*\), is the set of words in \(\mathcal{F}\)
+      \item \(\mathbb{M}\) = \{\texttt{.}, \texttt{?}, \texttt{!}, \texttt{,}, \texttt{,}, \texttt{'}, \texttt{-}, \texttt{:}, \texttt{;}, \texttt{"}, \texttt{(}, \texttt{)}, \texttt{...}\}, the set of punctuation marks.
+      \item \(\mathbb{V}\) = \{\texttt{a}, \texttt{e}, \texttt{i}, \texttt{o}, \texttt{u}, \texttt{A}, \texttt{E}, \texttt{I}, \texttt{O}, \texttt{U}\}, the set of upper and lower case vowels.
+      \item \(\mathbb{C}\) = \(\mathbb{F} - (\mathbb{M} \cup \mathbb{V})\),
+            the set of upper and lower case consonants.
+      \item \(\Sigma\) = \(\mathbb{F} - \mathbb{M}\), the set of consonants and vowels.
+      \item The subscript "lower" on \(\mathbb{C}, \mathbb{V}, \Sigma\) denotes the set of lowercase letters.
+      \item The subscript "upper" on \(\mathbb{C}, \mathbb{V}, \Sigma\) denotes the set of uppercase letters.
 \end{enumerate}
 
-\paragraph{Remark on the Digraph: \text{ng/Ng} or "\textit{en dyi}"}
+
+\paragraph{Remark on the Digraph: \texttt{ng}/\texttt{Ng} or "\textit{en dyi}"}
 
 Although the letter "Ng" or "ng" is a concatenation of two separate graphemes or
-symbols in \(\mathbb{F}\) (since \(\text{Ng} = \text{N}\cdot\text{g}\) and
-\(\text{ng} = \text{n}\cdot\text{g}\)), the letter "Ng" is officially recognized
+symbols in \(\mathbb{F}\) (since \(\texttt{Ng} = \texttt{N}\cdot\texttt{g}\) and
+\(\texttt{ng} = \texttt{n}\cdot\texttt{g}\)), the letter \texttt{Ng} is officially recognized
 as a grapheme in \(\mathbb{F}\) since it represents a distinct Filipino sound.
 In particular, it represents the \textit{voiced velar nasal sound}, or in the International
 Phonetic Alphabet (IPA), the \textipa{N} sound \cite{Malabonga_2009}.
 
-For instance, the word "hangin" has 5 letters namely: "h", "a", "ng", "i", "n",
-since "ng" is pronounced as a velar nasal sound, not as two separate sounds
+For instance, the word "hangin" has 5 letters namely: \texttt{h}, \texttt{a}, \texttt{g}, \texttt{i}, \texttt{n},
+since \texttt{ng} is pronounced as a velar nasal sound, not as two separate sounds
 \textipa{n-g}. So, "hangin" is pronounced as \textipa{haNin} ("ha-ngin").
 Take for instance the English  word "manger" where "ng" is a substring
 but is not pronounced as the velar nasal sound. Instead, its pronunciation is
@@ -65,21 +61,17 @@ but is not pronounced as the velar nasal sound. Instead, its pronunciation is
 Given the Spanish and English roots of Filipino, some \textit{loan} words have
 rules for Filipino spelling. Let \(s\) be any string, the English language
 \(\mathcal{E}\), the Spanish language \(\mathcal{S}\), and \(\mathcal{F}(s)\) is
-the translation of \(s\) in \(\mathcal{F}\). Furthermore, let \(\mathbb{S}*\) be
-the set of words in \(\mathcal{S}\) and \(\mathbb{E}*\) be the set of words in
-\(\mathcal{E}\).
+the translation of \(s\) in \(\mathcal{F}\).
 
 \begin{enumerate}
-      \item \(\left(\forall s\in \mathbb{S}*,s \matches \text{es}(\mathbb{S}*) \right) \rightarrow \left(\mathcal{F}(s) \matches \text{es}
-                  (\mathbb{M}|\mathbb{C})*\right) \)
-      \item \(\left(\forall s\in \mathbb{E}*,s \matches \text{s}(\mathbb{E}*)\right) \rightarrow  \left(\mathcal{F}(s) \matches \text{is}
-                  (\mathbb{M}|\mathbb{C})* \right)\)
+      \item \(\left(\forall s\in \mathcal{S},s \matches \texttt{es}\mathbb{S}^*\right) \rightarrow \left(\mathcal{F}(s) \matches \texttt{es}\Sigma_\text{lower}^*\right) \)
+      \item \(\left(\forall s\in \mathcal{E},s \matches \texttt{s}\mathbb{E}^*\right) \rightarrow  \left(\mathcal{F}(s) \matches \texttt{is} \Sigma_\text{lower}^* \right)\)
 \end{enumerate}
 
 Rule (1) denotes that if \(s\) is a Spanish word, translating \(s\) to a Filipino
-word would use "es" as the prefix to the word to denote that \(\mathcal{F}(s)\)
+word would use \texttt{es} as the prefix to the word to denote that \(\mathcal{F}(s)\)
 is a word of Spanish origin. On the other hand, for rule (2), if \(s\) is an
-English word, then \(\mathcal{F}(s)\) would use "is" as the prefix to the word
+English word, then \(\mathcal{F}(s)\) would use \texttt{is} as the prefix to the word
 to denote that it is of English origin.
 
 \begin{example}
@@ -123,15 +115,15 @@ to denote that it is of English origin.
 
 \subsubsection{"kump"-words and "kumb"-words}
 
-If \(s\in \mathbb{S}*\) and the the prefix of \(s\) is given by the
-regular expression \((\text{C}|\text{c})\text{on}(\text{f}|\text{v})\). Then,
+If \(s\in \mathcal{S}\), and the the prefix of \(s\) is given by the
+regular expression \((\texttt{C}\mid\texttt{c})\texttt{on}(\texttt{f}\mid\texttt{v})\). Then,
 \(\mathcal{F}(s)\) is prefixed with
-\((\text{C}|\text{c})\text{um}(\text{p}|\text{b})\).
+\((\texttt{C}\mid\texttt{c})\texttt{um}(\texttt{p}\mid\texttt{b})\).
 
 In particular:
 \begin{itemize}
-      \item \(s \matches (\text{conf})\mathbb{S}* \rightarrow \mathcal{F}(s) \matches (\text{kump})\mathbb{L}*\)
-      \item \(s \matches (\text{conv})\mathbb{S}* \rightarrow \mathcal{F}(s) \matches (\text{kumb})\mathbb{L}*\)
+      \item \(s \matches (\texttt{conf})\mathbb{S}^* \rightarrow \mathcal{F}(s) \matches (\texttt{kump})\Sigma^*\)
+      \item \(s \matches (\texttt{conv})\mathbb{S}^* \rightarrow \mathcal{F}(s) \matches (\texttt{kumb})\Sigma^*\)
 \end{itemize}
 
 \begin{example}
@@ -175,20 +167,20 @@ In particular:
 
 \subsubsection{Morphophonemic Alteration with Suffixes}
 
-Let \(k \in \mathbb{L}*\) be a word formed by the concatenation as follows
-\(k = \alpha \cdot \text{root}_\text{allomorph} \cdot \omega \)
-where  \(\alpha\) is the prefix of \(k\), \(\omega\) is the suffix of \(k\),
-and \(\text{root}_\text{allomorph}\) is the root allomorph of \(k\).
+Let \( k \in \mathcal{F} \) be a word formed by concatenating the following components:  
+\[
+k = \alpha \cdot \text{root}_\text{allomorph} \cdot \omega
+\]
+where \( \alpha \) is the prefix of \( k \), \( \omega \) is the suffix of \( k \), and \( \text{root}_\text{allomorph} \) is the allomorphic form of the root.  
 
-The morphophonemic alteration of the root word is given by:
-\begin{center}
-      If the root ends in "e", then \(\text{root}_\text{allomorph}\) ends in "i". \\
-      If the root ends in "o", then the \(\text{root}_\text{allomorph}\) ends in "u".
-\end{center}
+The morphophonemic alteration of the root word follows these rules:  
+\begin{enumerate}  
+      \item If the root ends in \texttt{e}, its allomorphic form, \( \text{root}_\text{allomorph} \), ends in \texttt{i}.  
+      \item If the root ends in \texttt{o}, its allomorphic form ends in \texttt{u}.  
+\end{enumerate}  
 
-That is to say, that if a Filipino word is the concatenation of a root word that
-ends in "e" or "o" and a suffix. Then, "e" will change to "i" and "o" will change
-to "u" \cite{Yap_1967}.
+In other words, if a Filipino word consists of a root ending in \texttt{e} or \texttt{o} followed by a suffix, \texttt{e} changes to \texttt{i} and \texttt{o} changes to \texttt{u} \cite{Yap_1967}.  
+
 
 \begin{example}
       Here are examples of morphophonemic alterations in Filipino:
@@ -223,28 +215,28 @@ to "u" \cite{Yap_1967}.
 
 \subsubsection{Reduplications}
 
-A full reduplication is a word \(k \in \mathbb{L}*\) and is defined by the concatenation
+A full reduplication is a word \(k \in \mathcal{F}\) and is defined by the concatenation
 \[
-      k = "\text{b}" \cdot "\text{-}" \cdot "\text{b}"
+      k = \text{r} \cdot \text{-} \cdot \text{r}
 \]
-or it is a repetition of a root word \(b\) joined by the \textit{gitling} "-".
-In a full reduplication, the repetition of the \(b\) has no variation from the first \(b\).
+or it is a repetition of a root word \(r\) joined by the \textit{gitling} "-".
+In a full reduplication, the repetition of the \(r\) has no variation from the first \(r\).
 
-On the otherhand, an ablaut reduplication is a word \(j \in \mathbb{L}*\) and is defined by the
+On the other hand, an ablaut reduplication is a word \(j \in \mathcal{F}\) and is defined by the
 concatenation
 
 \[
-      j = "\text{x}" \cdot "\text{r}"
+      j = \text{r} \cdot \text{r$^\prime$}
 \]
-or it is the repetition of the root word \(x\) and the root word with a vowel alteration \(r\). Notice
+or it is the repetition of the root word \(r\) and the root word with a vowel alteration \(r^\prime\). Notice
 that for ablaut repetitions, there is no \textit{gitling} joining the repetitions. Furthermore,
 the ablaut repetition of a root word creates a word with a different meaning. The ablaut or vowel
 alteration is defined by:
 
-\begin{center}
-      If the root ends in "e", then the ablaut ends in "i". \\
-      If the root ends in "o", then the ablaut ends in "u".
-\end{center}
+\begin{enumerate}
+    \item If the root ends in \texttt{e}, then the ablaut ends in \texttt{i}. 
+    \item If the root ends in \texttt{o}, then the ablaut ends in \texttt{u}.
+\end{enumerate}
 
 \begin{example}
       Here are examples of reduplications in Filipino:
@@ -259,8 +251,8 @@ alteration is defined by:
       \item Gagawin natin iyong \textbf{kanya-kanyang} gawain mamaya. (correct) \\
             Gagawin natin iyong \textit{kanyakanyang} gawain mamaya. (incorrect) \\
             kanya-kanya is a full reduplication
-      \item Paulit-ulit ka nang tanong! (correct) \\
-            Paulet-ulit ka nang tanong! (incorrect) \\
+      \item \textbf{Paulit-ulit} ka nang tanong! (correct) \\
+            \textit{Paulet-ulit} ka nang tanong! (incorrect) \\
             ulit-ulit is a full reduplication
       \item Bumili kami ng \textbf{haluhalo} kaninang umaga. (correct) \\
             Bumili kami ng \textit{halo-halo} kaninang umaga. (incorrect) \\
@@ -283,13 +275,11 @@ sentence structure \(S = \alpha + p + EP\). The \textit{enclitic particles}
 \(\alpha\) is any noun, adjective, verb, or adverb. The proper usage of the enclitic
 particles are given by:
 
+If
 \[
-      \left(\alpha \matches \left[\text{a-zñ(ng)A-ZÑ(Ng)}\right]+\left[\text{aeiou}\right] \equiv (\mathbb{V}\cup\mathbb{C}) + \mathbb{V}_\text{lower}\right)
-      \longrightarrow EP = \text{"raw"}
+    S = \alpha + r + EP \land \alpha \matches (\mathbb{L}_\text{upper}\mathbb{L}_\text{lower}^*\mathbb{V}) \Longrightarrow EP = \texttt{"raw"}. 
 \]
-
 Otherwise,
-
 \[
       EP = \text{"daw"}
 \]
@@ -298,7 +288,7 @@ In other words, if the preceeding word to the enclitic particle ends in vowel,
 then the enclitic particle is "raw". If it is a consonant, then it is "daw".
 
 This is the same idea with the adverbs "rin" and "din". If the sentence structure
-\(S = \omega + p + (\text{"rin"}|\text{"din"})\) and \(\omega\) ends in a vowel
+\(S = \omega + p + (\text{"rin"}\mid\text{"din"})\) and \(\omega\) ends in a vowel
 then the adverb used is "rin". Otherwise, the adverb is "din".
 
 Here are some examples of literature and webpages where the enclitic particles,
@@ -437,20 +427,20 @@ The usage of a \textit{gitling} (hyphen in English) in the Filipino language is 
             \[
                   k = b \cdot "\text{-}" \cdot b = (s_0) \cdot "\text{-}" \cdot (s_0)
             \]
-            For \textit{reduplication} with $|k|_{\text{s}}>$ 2 (syllable count). It follows the form:
+            For \textit{reduplication} with $\mid k\mid_{\text{s}}>$ 2 (syllable count). It follows the form:
 
             \[
                   k = (s_0 \cdot s_1) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
             \]
 
             For when the second syllable ends with a consonant, let u be\\
-            \((s_1-[\verb|^|aeiou]\$)\). It follows the form:
+            \((s_1-[\verb\mid^\midaeiou]\$)\). It follows the form:
 
             \[
                   k = (s_0 \cdot u) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
             \]
 
-            For when a prefix \((p)\) is applied to k it is applied before \((s_0) | (s_0 \cdot s_1)\). It follows the form:
+            For when a prefix \((p)\) is applied to k it is applied before \((s_0) \mid (s_0 \cdot s_1)\). It follows the form:
 
             \[
                   k = p \cdot (s_0) \cdot "\text{-}" \cdot (s_0)
@@ -468,7 +458,7 @@ The usage of a \textit{gitling} (hyphen in English) in the Filipino language is 
             where \( n \geq 1 \), and each \( s_n \) is a single-syllable onomatopoeic unit. The word consists of at least two such syllables, separated by a \textit{gitling} (hyphen).
 
       \item
-            Let \(k \in \mathbb{L}*\) be a Filipino word, and $s$ is a syllable, $s_0$, $s_1$ be syllables that respectively accepted by \([\verb|^|aeiou]\$\) and \(\verb|^|[aeiou]\).
+            Let \(k \in \mathbb{L}*\) be a Filipino word, and $s$ is a syllable, $s_0$, $s_1$ be syllables that respectively accepted by \([\verb\mid^\midaeiou]\$\) and \(\verb\mid^\mid[aeiou]\).
             \[
             k = s_0 \cdot "\text{-}" \cdot s_1
             \]
@@ -486,11 +476,11 @@ The usage of a \textit{gitling} (hyphen in English) in the Filipino language is 
       \item
             Let $t$ be the hour of the day.
             \[
-            k = (\text{"ika"}|\text{"alas"}) \cdot "\text{-}" \cdot t
+            k = (\text{"ika"}\mid\text{"alas"}) \cdot "\text{-}" \cdot t
             \]
             A gitling is used to separate the syllable ("ika", "alas") with the time. The two syllables vary in formality, ("alas") is for casual conversations while ("ika") is used in formal ones. 
       \item
-            Let \(d_0, d_1\) be dates, where \(d = (day | month | year)\) and \(d_0 < d_1\).
+            Let \(d_0, d_1\) be dates, where \(d = (day \mid month \mid year)\) and \(d_0 < d_1\).
             \[
             k = d_0 \cdot "\text{-}" \cdot d_1
             \]
