@@ -64,8 +64,8 @@ rules for Filipino spelling. Let \(s\) be any string, the English language
 the translation of \(s\) in \(\mathcal{F}\).
 
 \begin{enumerate}
-      \item \(\left(\forall s\in \mathcal{S},s \matches \texttt{es}\mathbb{S}^*\right) \rightarrow \left(\mathcal{F}(s) \matches \texttt{es}\Sigma_\text{lower}^*\right) \)
-      \item \(\left(\forall s\in \mathcal{E},s \matches \texttt{s}\mathbb{E}^*\right) \rightarrow  \left(\mathcal{F}(s) \matches \texttt{is} \Sigma_\text{lower}^* \right)\)
+      \item \(\left(\forall s\in \mathcal{S},s \matches \texttt{es}\mathbb{S}^*\right) \Longrightarrow \left(\mathcal{F}(s) \matches \texttt{es}\Sigma_\text{lower}^*\right) \)
+      \item \(\left(\forall s\in \mathcal{E},s \matches \texttt{s}\mathbb{E}^*\right) \Longrightarrow  \left(\mathcal{F}(s) \matches \texttt{is} \Sigma_\text{lower}^* \right)\)
 \end{enumerate}
 
 Rule (1) denotes that if \(s\) is a Spanish word, translating \(s\) to a Filipino
@@ -122,8 +122,8 @@ regular expression \((\texttt{C}\mid\texttt{c})\texttt{on}(\texttt{f}\mid\texttt
 
 In particular:
 \begin{itemize}
-      \item \(s \matches (\texttt{conf})\mathbb{S}^* \rightarrow \mathcal{F}(s) \matches (\texttt{kump})\Sigma^*\)
-      \item \(s \matches (\texttt{conv})\mathbb{S}^* \rightarrow \mathcal{F}(s) \matches (\texttt{kumb})\Sigma^*\)
+      \item \(\left(s \matches (\texttt{conf})\mathbb{S}^*\right) \Longrightarrow \left(\mathcal{F}(s) \matches (\texttt{kump})\Sigma^*\right)\)
+      \item \(\left(s \matches (\texttt{conv})\mathbb{S}^*\right) \Longrightarrow \left(\mathcal{F}(s) \matches (\texttt{kumb})\Sigma^*\right)\)
 \end{itemize}
 
 \begin{example}
@@ -271,25 +271,27 @@ alteration is defined by:
 
 Let \(p = "\,"\) the blank symbol or the symbol containing space. And, we have the
 sentence structure \(S = \alpha + p + EP\). The \textit{enclitic particles}
-(\(\mathbb{EP}\)) is the set \(\mathbb{EP} = \{"\text{raw}", "\text{daw}"\}\) and
+(\(\mathbb{EP}\)) is the set \(\mathbb{EP} = \{\texttt{raw}, \texttt{daw}\}\) and
 \(\alpha\) is any noun, adjective, verb, or adverb. The proper usage of the enclitic
 particles are given by:
 
 If
 \[
-    S = \alpha + r + EP \land \alpha \matches (\mathbb{L}_\text{upper}\mathbb{L}_\text{lower}^*\mathbb{V}) \Longrightarrow EP = \texttt{"raw"}. 
+    \left( S = \alpha + r + EP \land \alpha \matches (\mathbb{L}_\text{upper}\mathbb{L}_\text{lower}^*\mathbb{V}) \right)
+    \Longrightarrow 
+    \left( EP = \texttt{raw} \right)
 \]
 Otherwise,
 \[
-      EP = \text{"daw"}
+      EP = \texttt{daw}
 \]
 
-In other words, if the preceeding word to the enclitic particle ends in vowel,
-then the enclitic particle is "raw". If it is a consonant, then it is "daw".
+In other words, if the preceding word to the enclitic particle ends in a vowel,
+then the enclitic particle is \texttt{raw}. If it is a consonant, then it is \texttt{daw}.
 
-This is the same idea with the adverbs "rin" and "din". If the sentence structure
-\(S = \omega + p + (\text{"rin"}\mid\text{"din"})\) and \(\omega\) ends in a vowel
-then the adverb used is "rin". Otherwise, the adverb is "din".
+This is the same idea with the adverbs \texttt{rin} and \texttt{din}. If the sentence structure
+\(S = \omega + p + (\texttt{rin}\mid\texttt{din})\) and \(\omega\) ends in a vowel
+then the adverb used is \texttt{rin}. Otherwise, the adverb is \texttt{din}.
 
 Here are some examples of literature and webpages where the enclitic particles,
 and the adverbs "raw" and "daw" are misused:
