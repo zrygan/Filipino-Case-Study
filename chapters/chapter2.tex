@@ -198,3 +198,106 @@
         \text{NSV}   & \rightarrow \text{"nang" SV}
     \end{aligned}
 \end{equation*}
+
+\subsection{Context-Free Grammar for \textit{Gitling}}
+
+\subsubsection{Hour of the Day}
+
+\paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{"ika" "-" H {\textpipe} "alas" "-" H}   \\
+        \text{H} & \rightarrow \text{hour\_of\_day}   \\                                \\
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF (Chomsky Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{SG H} \\
+        \text{SG}      & \rightarrow \text{S Gitling}\\
+        \text{S}    & \rightarrow \text{"ika" | "alas"}\\        
+        \text{Gitling} & \rightarrow \text{"-"}\\
+        \text{H}   & \rightarrow \text{hour\_of\_day}\\
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF (Greibach Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{"ika" Gitling H | "alas" Gitling H}\\
+        \text{Gitling} & \rightarrow \text{"-"}\\
+        \text{H}   & \rightarrow \text{hour\_of\_day}\\
+    \end{aligned}
+\end{equation*}
+
+\subsubsection{Usage of "di"}
+
+\paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}  & \rightarrow \text{"di" "-" W}   \\
+        \text{W} & \rightarrow \text{any\_filipino\_root\_word}   \\
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF (Chomsky Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{SG W} \\
+        \text{SG}      & \rightarrow \text{S Gitling}\\
+        \text{S}    & \rightarrow \text{"di"}\\        
+        \text{Gitling} & \rightarrow \text{"-"}\\
+        \text{W} & \rightarrow \text{any\_filipino\_root\_word}   \\
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF (Greibach Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{"di" Gitling W}\\
+        \text{Gitling} & \rightarrow \text{"-"}\\
+        \text{W} & \rightarrow \text{any\_filipino\_root\_word}   \\
+    \end{aligned}
+\end{equation*}
+
+\subsubsection{\(\mathbb{PN}\) and foreign words}
+
+\paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}  & \rightarrow \text{Syllable "-" PN {\textpipe} Syllable "-" W}   \\
+        \text{Syllable}    & \rightarrow \text{any\_syllable}\\        
+        \text{PN} & \rightarrow \text{any\_proper\_noun}   \\
+        \text{W} & \rightarrow \text{any\_foreign\_root\_word}   \\
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF (Chomsky Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{SG W} \\
+        \text{SG}      & \rightarrow \text{S Gitling}\\
+        \text{S}    & \rightarrow \text{any\_syllable}\\        
+        \text{Gitling} & \rightarrow \text{"-"}\\
+        \text{W} & \rightarrow \text{any\_foreign\_root\_word {\textpipe} any\_proper\_noun}   \\
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF (Greibach Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{any\_syllable Gitling W}\\
+        \text{Gitling} & \rightarrow \text{"-"}\\
+        \text{W} & \rightarrow \text{any\_foreign\_root\_word {\textpipe} any\_proper\_noun}   \\
+    \end{aligned}
+\end{equation*}
