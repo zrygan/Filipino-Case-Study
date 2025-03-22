@@ -95,7 +95,7 @@
 		    <!-- <example type="correct">Ang mamatay <marker>nang dahil</marker> sa iyo..</example> -->
         </rule>
         
-        <!-- i reckon we can use POS tags here for upang/para. this could work for the rubric -->
+        <!-- i reckon we can use POS tags here for upang/para. this could work for the rubric. this doesnt work yet btw -->
         <rule id="upang_or_para_to_nang" name="case 4. suggest 'upang' to 'para' to 'nang'">
             <pattern case_sensitive="no">
                 <!-- <token>upang|para</token> -->
@@ -103,6 +103,16 @@
             </pattern>
             <message>You can optionally replace "\1 \2" with "Nang \2".</message>
             <short>Suggestion to use Nang instead of Upang or Para</short>
+        </rule>
+
+        <rule id="verb_nang_verb" name="case 5. used inbetween repeated verbs">
+            <pattern case_sensitive="no">
+                <token postag="V.*" postag_regexp="yes"/>
+                <token>ng</token>
+                <token postag="V.*" postag_regexp="yes"/>
+            </pattern>
+            <message>Use <suggestion>\1 nang \3</suggestion>. "Nang" is used inbetween repeated verbs.</message>
+            <short>Replace "ng" with "nang" inbetween repeated verbs.</short>
         </rule>
 
     </category>
