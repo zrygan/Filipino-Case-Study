@@ -55,7 +55,7 @@
                 <token>ng</token>
                 <token postag="AV.*" postag_regexp="yes"/>
             </pattern>
-            <message>Use <suggestion>"nang" \3</suggestion>; you're not supposed to use "ng" when connecting a verb to adverbs.</message>
+            <message>Use <suggestion>nang \3</suggestion>; you're not supposed to use "ng" when connecting verbs to adverbs.</message>
             <short>Ng to Nang before adverbs</short>
             <example correction="nang mabagal" type="incorrect">Kumain <marker>ng mabagal</marker>.</example>
 		    <example type="correct">Kumain <marker>nang mabagal</marker>.</example>
@@ -68,17 +68,21 @@
                 <token>ng</token>
                 <token postag="AV.*" postag_regexp="yes"/>
             </pattern>
-            <message>Use <suggestion>"nang" \4</suggestion>; you're not supposed to use "ng" when connecting a verb to adverbs.</message>
-            <short>Ng to Nang before adverbs</short>
+            <message>Use <suggestion>nang \4</suggestion>; you're not supposed to use "ng" when connecting verbs to adverbs.</message>
+            <short>Ng to Nang before adverbs (with pronoun)</short>
             <example correction="nang mabagal" type="incorrect">Kumain siya <marker>ng mabagal</marker>.</example>
 		    <example type="correct">Kumain <marker>nang mabagal</marker>.</example>
         </rule>
 
         <rule id="noong_to_nang" name="case 2. suggest 'noong' to 'nang'">
-            <pattern>
-
+            <pattern case_sensitive="no">
+                <token>Noong</token>
+                <token postag="VACF.*|AV.*" postag_regexp="yes"/>
             </pattern>
+            <message>You can optionally replace "Noong \2" with "Nang \2".</message>
+            <short>Suggestion to use Nang instead of Noong</short>
         </rule>
+
     </category>
 
     <category name="Gitling Usage">
