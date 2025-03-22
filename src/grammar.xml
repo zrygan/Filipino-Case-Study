@@ -53,12 +53,12 @@
             <pattern case_sensitive="no" mark_from="1">
                 <token postag="VACF.*" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
                 <token>ng</token>
-                <token postag="AV.*" postag_regexp="yes"/>
+                <token postag="AV.*|AD.*" postag_regexp="yes"/>
             </pattern>
             <message>Use <suggestion>nang \3</suggestion>; you're not supposed to use "ng" when connecting verbs to adverbs.</message>
             <short>Ng to Nang before adverbs</short>
-            <example correction="nang mabagal" type="incorrect">Kumain <marker>ng mabagal</marker>.</example>
-		    <example type="correct">Kumain <marker>nang mabagal</marker>.</example>
+            <!-- <example correction="nang mabagal" type="incorrect">Kumain <marker>ng mabagal</marker>.</example> -->
+		    <!-- <example type="correct">Kumain <marker>nang mabagal</marker>.</example> -->
         </rule>
 
         <rule id="verb_pronoun_ng_adverb" name="case 1. turn 'ng' to 'nang' before adverbs (with pronoun)">
@@ -66,17 +66,17 @@
                 <token postag="VACF.*" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
                 <token postag="(PANP|PNGP|PSAP|PAND|PNGD|PSAD|PFOP|PINP|PCOP|PIDP|POTH).*" postag_regexp="yes"/> <!-- this is the pronoun -->
                 <token>ng</token>
-                <token postag="AV.*" postag_regexp="yes"/>
+                <token postag="AV.*|AD.*" postag_regexp="yes"/>
             </pattern>
             <message>Use <suggestion>nang \4</suggestion>; you're not supposed to use "ng" when connecting verbs to adverbs.</message>
             <short>Ng to Nang before adverbs (with pronoun)</short>
-            <example correction="nang mabagal" type="incorrect">Kumain siya <marker>ng mabagal</marker>.</example>
-		    <example type="correct">Kumain <marker>nang mabagal</marker>.</example>
+            <!-- <example correction="nang mabagal" type="incorrect">Kumain siya <marker>ng mabagal</marker>.</example> -->
+		    <!-- <example type="correct">Kumain <marker>nang mabagal</marker>.</example> -->
         </rule>
 
         <rule id="noong_to_nang" name="case 2. suggest 'noong' to 'nang'">
             <pattern case_sensitive="no">
-                <token>Noong</token>
+                <token>noong</token>
                 <token postag="VACF.*|AV.*" postag_regexp="yes"/>
             </pattern>
             <message>You can optionally replace "Noong \2" with "Nang \2".</message>
@@ -91,8 +91,18 @@
             </pattern>
             <message>Use <suggestion>nang \3</suggestion>. "Nang" is used if it's before a conjunction.</message>
             <short>Replace "na ng" with "nang" before conjunctions.</short>
-            <example correction="na ng dahil" type="incorrect">Ang mamatay <marker>na ng dahil</marker> sa iyo.</example>
-		    <example type="correct">Ang mamatay <marker>nang dahil</marker> sa iyo..</example>
+            <!-- <example correction="na ng dahil" type="incorrect">Ang mamatay <marker>na ng dahil</marker> sa iyo.</example> -->
+		    <!-- <example type="correct">Ang mamatay <marker>nang dahil</marker> sa iyo..</example> -->
+        </rule>
+        
+        <!-- i reckon we can use POS tags here for upang/para. this could work for the rubric -->
+        <rule id="upang_or_para_to_nang" name="case 4. suggest 'upang' to 'para' to 'nang'">
+            <pattern case_sensitive="no">
+                <!-- <token>upang|para</token> -->
+                <token postag="V.*" postag_regexp="yes"/>
+            </pattern>
+            <message>You can optionally replace "\1 \2" with "Nang \2".</message>
+            <short>Suggestion to use Nang instead of Upang or Para</short>
         </rule>
 
     </category>
