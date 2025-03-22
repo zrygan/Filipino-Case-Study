@@ -49,17 +49,35 @@
     </category>
 
     <category name="Ng v. Nang">
-        <rule id="verb_ng_adverb" name="turn 'ng' to 'nang' before adverbs">
-            <pattern>
+        <rule id="verb_ng_adverb" name="case 1. turn 'ng' to 'nang' before adverbs">
+            <pattern case_sensitive="no" mark_from="1">
                 <token postag="VACF.*" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
-                <token min="0" postag="(PANP|PNGP|PSAP|PAND|PNGD|PSAD|PFOP|PINP|PCOP|PIDP|POTH).*" postag_regexp="yes"/> <!-- this is pronoun. min="0" makes it optional -->
                 <token>ng</token>
                 <token postag="AV.*" postag_regexp="yes"/>
             </pattern>
-            <message>Use <suggestion>"nang"</suggestion> instead of "ng" before adverbs.</message>
+            <message>Use <suggestion>"nang" \3</suggestion>; you're not supposed to use "ng" when connecting a verb to adverbs.</message>
             <short>Ng to Nang before adverbs</short>
             <example correction="nang mabagal" type="incorrect">Kumain <marker>ng mabagal</marker>.</example>
 		    <example type="correct">Kumain <marker>nang mabagal</marker>.</example>
+        </rule>
+
+        <rule id="verb_pronoun_ng_adverb" name="case 1. turn 'ng' to 'nang' before adverbs (with pronoun)">
+            <pattern case_sensitive="no" mark_from="2">
+                <token postag="VACF.*" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
+                <token postag="(PANP|PNGP|PSAP|PAND|PNGD|PSAD|PFOP|PINP|PCOP|PIDP|POTH).*" postag_regexp="yes"/> <!-- this is the pronoun -->
+                <token>ng</token>
+                <token postag="AV.*" postag_regexp="yes"/>
+            </pattern>
+            <message>Use <suggestion>"nang" \4</suggestion>; you're not supposed to use "ng" when connecting a verb to adverbs.</message>
+            <short>Ng to Nang before adverbs</short>
+            <example correction="nang mabagal" type="incorrect">Kumain siya <marker>ng mabagal</marker>.</example>
+		    <example type="correct">Kumain <marker>nang mabagal</marker>.</example>
+        </rule>
+
+        <rule id="noong_to_nang" name="case 2. suggest 'noong' to 'nang'">
+            <pattern>
+
+            </pattern>
         </rule>
     </category>
 
