@@ -4,6 +4,8 @@ Tag:
 NPRO	Proper Noun
 NCOM	Common Noun
 NABB	Abbreviation
+NSPA    Spanish Loanword
+NENG    English Loanword
 
 General Categorization:
 1 Living Things
@@ -209,9 +211,3 @@ PSNQ	Question Mark
 PSNC	Comma
 PSNS	Symbols
 PSNN	Numerals
-
-SPANISH LOANWORDS:
-NSPA    Spanish Loanword
-
-ENGLISH LOANWORDS:
-NENG    English Loanword
