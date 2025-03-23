@@ -479,6 +479,18 @@ The usage of a \textit{\textit{gitling}} (hyphen in English) in the Filipino lan
             \[
                   k = p \cdot (s_0 \cdot s_1) \cdot "\text{-}" \cdot (s_0 \cdots s_n)
             \]
+            \begin{example}
+            \end{example}
+            \begin{enumerate}
+                  \item \textbf{araw-araw} (correct) \\
+                        \textit{arawaraw} (incorrect)
+                  \item \textbf{sira-sirain} (correct) \\
+                        \textit{sirain-sirain} (incorrect)
+                  \item \textbf{bali-baligtad} (correct) \\
+                        \textit{baligtad-baligtad} (incorrect)
+                  \item \textbf{pabili-bili} (correct) \\
+                        \textit{pabilibili} (incorrect)            
+            \end{enumerate}
       \item
             Let \( k \in \mathbb{L}* \) be an onomatopoeic word, where \( s_n \in \mathbb{O} \) represents an \textit{onomatopoeic syllable} and \( \mathbb{O} \) is the set of all such syllables.
 
@@ -487,6 +499,16 @@ The usage of a \textit{\textit{gitling}} (hyphen in English) in the Filipino lan
                   k = s_0 \cdot "\text{-}" \cdot s_1 \cdot "\text{-}" \cdot s_n \cdots
             \]
             where \( n \geq 1 \), and each \( s_n \) is a single-syllable onomatopoeic unit. The word consists of at least two such syllables, separated by a \textit{\textit{gitling}} (hyphen).
+            \begin{example}
+            \end{example}
+            \begin{enumerate}
+                  \item \textbf{twit-twit} (correct) \\
+                        \textit{twittwit} (incorrect)
+                  \item \textbf{rat-at-tat} (correct) \\
+                        \textit{ratattat} (incorrect)
+                  \item \textbf{ding-dong} (correct) \\
+                        \textit{dingdong} (incorrect)
+            \end{enumerate}
 
       \item
             Let \(k \in \mathbb{L}*\) be a Filipino word, and $s$ is a syllable, $s_0$, $s_1$ be syllables that respectively accepted by \([\verb|^|aeiou]\$\) and \([\verb|^|aeiou]\).
@@ -504,24 +526,67 @@ The usage of a \textit{\textit{gitling}} (hyphen in English) in the Filipino lan
             k = s \cdot "\text{-}" \cdot w
             \]
             In these cases, the final letter of the syllable is not considered.
+            \begin{example}
+            \end{example}
+            \begin{enumerate}
+                  \item \textbf{tag-ulan} ng tanghali. (correct) \\
+                        \textit{tagulan} ng tanghali. (incorrect)
+                  \item \textbf{taga-Makati} ng Pebrero. (correct) \\
+                        \textit{tagamakati} ng Pebrero. (incorrect)
+                  \item \textbf{nag-Polish} anibersaryo. (correct) \\
+                        \textit{nagpolish} anibersaryo. (incorrect)
+            \end{enumerate}
       \item
-            Let $t$ be the hour of the day.
+            Let \(h\) \in \(\mathbb{Z}^+\) and the hour of the day.
             \[
-            k = (\text{"ika"}\mid\text{"alas"}) \cdot "\text{-}" \cdot t
+            k = (\text{"alas"}) \cdot "\text{-}" \cdot h
             \]
-            A \textit{gitling} is used to separate the syllable ("ika", "alas") with the time. The two syllables vary in formality, ("alas") is for casual conversations while ("ika") is used in formal ones. 
+            While "alas" is limited to the hour of the day "ika" is not.\\
+            Let \(t\) be an integer that denotes time, where \(t\) \in \(\mathbb{Z}^+\) and \(t \in \mathbb{K}\), and K = \(H \ \cup \ D \ \cup \\).
+            \[
+            k = (\text{"ika"}) \cdot "\text{-}" \cdot t
+            \]
+            A \textit{gitling} is used to separate the syllable ("ika" and "alas") with an integer of time.
+            \begin{example}
+            \end{example}
+            \begin{enumerate}
+                  \item \textbf{alas-2} ng tanghali. (correct) \\
+                        \textit{alas2} ng tanghali. (incorrect)
+                  \item \textbf{ika-2} ng Pebrero. (correct) \\
+                        \textit{ika2} ng Pebrero. (incorrect)
+                  \item \textbf{ika-50} anibersaryo. (correct) \\
+                        \textit{ika-50} anibersaryo. (incorrect)
+            \end{enumerate}
       \item
             Let \(d_0, d_1\) be dates, where \(d\) follows the form \(d = (day \ month \ year \mid month \ day \ year \mid month \ year \mid year)\) and \(d_0 < d_1\).
             \[
             k = d_0 \cdot "\text{-}" \cdot d_1
             \]
             The \textit{gitling} acts as the word "$to$", from earlier date \textbf{to} later date.
+                        \begin{example}
+            \end{example}
+            \begin{enumerate}
+                  \item \textbf{December 26 2005 - March 22 2025} (correct) \\
+                        \textit{December 26 2005March 22 2025} (incorrect)
+                  \item \textbf{March 2020 - May 2024} (correct) \\
+                        \textit{March 2020May 2024} (incorrect)
+                  \item \textbf{2000 - 2010} (correct) \\
+                        \textit{20002010} (incorrect)
+            \end{enumerate}
+
     \item 
             Let \(w \in \mathbb{F}*\) be a Filipino root word.
             \[
             k = (\text{"di"}) \cdot "\text{-}" \cdot w
             \]
             The syllable "di" is a shortened format for the word "hindi", and it acts as a negation to the root word.
-            
+            \begin{example}
+            \end{example}
+            \begin{enumerate}
+                  \item \textbf{di-totoo} (correct) \\
+                        \textit{ditotoo} (incorrect)
+                  \item \textbf{di-buhay} (correct) \\
+                        \textit{dibuhay} (incorrect)
+            \end{enumerate}
       
 \end{enumerate}

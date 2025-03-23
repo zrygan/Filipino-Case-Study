@@ -207,8 +207,9 @@
 
 \begin{equation*}
     \begin{aligned}
-        \text{Start}   & \rightarrow \text{"ika" "-" H {\textpipe} "alas" "-" H}   \\
-        \text{H} & \rightarrow \text{hour\_of\_day}   \\                                \\
+        \text{Start}   & \rightarrow \text{"alas" "-" H}   \\
+        \text{H} & \rightarrow \text{any\_hour\_of\_day}   
+        
     \end{aligned}
 \end{equation*}
 
@@ -216,9 +217,9 @@
 
 \begin{equation*}
     \begin{aligned}
-        \text{Start}   & \rightarrow \text{SG H} \\
-        \text{SG}      & \rightarrow \text{S Gitling}\\
-        \text{S}    & \rightarrow \text{"ika" | "alas"}\\        
+        \text{Start}   & \rightarrow \text{AG H} \\
+        \text{AG}      & \rightarrow \text{A Gitling}\\
+        \text{A}    & \rightarrow \text{"alas"}\\
         \text{Gitling} & \rightarrow \text{"-"}\\
         \text{H}   & \rightarrow \text{hour\_of\_day}\\
     \end{aligned}
@@ -228,7 +229,7 @@
 
 \begin{equation*}
     \begin{aligned}
-        \text{Start}   & \rightarrow \text{"ika" Gitling H | "alas" Gitling H}\\
+        \text{Start}   & \rightarrow \text{"alas" Gitling H}\\
         \text{Gitling} & \rightarrow \text{"-"}\\
         \text{H}   & \rightarrow \text{hour\_of\_day}\\
     \end{aligned}
