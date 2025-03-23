@@ -18,16 +18,20 @@
 
 <rules>
     <category name="-es and -is words">
-        <rule id="spanish_loanword" name="turn is- to es-">
-            <pattern case_sensitive="no" mark_from="1">
-                <token postag="NSPA.*" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
-                
-                </token>
+        <rule id="spanish_loanword" name="turn 'is-' to 'es-'">
+            <pattern case_sensitive="no">
+                <token regexp="yes">is(kwelahan|pasyo|tudyante|krima|piritu)</token>
             </pattern>
-            <message>Use <suggestion>nang \3</suggestion>; you're not supposed to use "ng" when connecting verbs to adverbs.</message>
-            <short>Turn is- to es- for Spanish loanwords</short>
-            <!-- <example correction="nang mabagal" type="incorrect">Kumain <marker>ng mabagal</marker>.</example> -->
-		    <!-- <example type="correct">Kumain <marker>nang mabagal</marker>.</example> -->
+            <message>Spanish loanwords should start with "es-", not "is-".</message>
+            <short>Turn "is-" to "es-" for Spanish loanwords</short>
+        </rule>
+
+        <rule id="english_loanword" name="turn 'es-' to 'is-'">
+            <pattern case_sensitive="no">
+                <token regexp="yes">es(piker|ports|kolar)</token>
+            </pattern>
+            <message>English loanwords should start with "is-", not "es-".</message>
+            <short>Turn "es-" to "is-" for English loanwords</short>
         </rule>
     </category>
 
