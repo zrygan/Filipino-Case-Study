@@ -1,5 +1,5 @@
 -	-	PSNS
-–	–	PSNS
+ï¿½	ï¿½	PSNS
 !	!	PSNE
 *	*	PSNS
 ,	,	PSNC
@@ -10,10 +10,10 @@
 ;	;	PSNS
 ?	?	PSNQ
 `	`	PSNS
-‘y	‘y	MALM
-’	’	PSNS
+ï¿½y	ï¿½y	MALM
+ï¿½	ï¿½	PSNS
 +	+	PSNS
-…	…	PSNS
+ï¿½	ï¿½	PSNS
 1	1	PSNN
 10	10	PSNN
 100	100	PSNN
@@ -225,7 +225,7 @@ anyayahang	anyayahan	VOBF NE B
 anyong	anyo	NCOM 2
 apat	apat	ADNU
 apat-na-daang	apat-na-daan	ADNU
-apatnapu’t	apatnapu’t	ADNU
+apatnapuï¿½t	apatnapuï¿½t	ADNU
 apatnapung	apatnapu	ADNU
 apelyido	apelyido	NCOM 2
 apoy	apoy	NCOM 2
@@ -293,10 +293,10 @@ ayungin	ayungin	NCOM 2
 Ayuntamiento	Ayuntamiento	NPRO
 ayusin	ayusin	VOBF NE B
 ba	ba	ENCL
-ba’t	ba’t	ENCL
+baï¿½t	baï¿½t	ENCL
 babae	babae	NCOM 1
-babae’t	babae’t	NCOM 1
-babae’y	babae’y	NCOM 1
+babaeï¿½t	babaeï¿½t	NCOM 1
+babaeï¿½y	babaeï¿½y	NCOM 1
 babaeng	babae	NCOM 1
 babagsak	babagsak	VACF CN B
 babai	babai	NCOM 1
@@ -366,7 +366,7 @@ balingkinitang	balingkinitan	ADUN
 balisa	balisa	ADUN
 balisang	balisa	ADUN
 balita	balita	NCOM 2
-balita’y	balita’y	NCOM 2
+balitaï¿½y	balitaï¿½y	NCOM 2
 balitang	balita	NCOM 2
 balite	balite	NCOM 2
 baliw	baliw	ADUN
@@ -458,7 +458,7 @@ batong	batong	NCOM 2
 batong-buhay	batong-buhay	NCOM 2
 batubalaning	batubalani	NCOM 2
 batuhan	batuhan	NCOM 2
-bawa’t	bawa’t	PIDP NU B
+bawaï¿½t	bawaï¿½t	PIDP NU B
 bawal	bawal	ADUN
 bawas	bawas	ADUN
 bawasan	bawasan	VOBF NE B
@@ -584,7 +584,7 @@ biskwit	biskwit	NCOM 2
 bisperas	bisperas	NCOM 2
 bistado	bistado	ADUN
 bisyo	bisyo	NCOM 2
-bisyo’t	bisyo’t	NCOM 2
+bisyoï¿½t	bisyoï¿½t	NCOM 2
 bitag	bitag	NCOM 2
 bitayan	bitayan	NCOM 2
 biton	biton	NCOM 2
@@ -714,7 +714,7 @@ Calamba	Calamba	NPRO
 Camiling	Camiling	NPRO
 camisa	camisa	NCOM 2
 Camorra	Camorra	NPRO
-Campaña	Campaña	NPRO
+Campaï¿½a	Campaï¿½a	NPRO
 campanillang	campanilla	NCOM 2
 caramba	caramba	INTR
 Carlicos	Carlicos	NPRO
@@ -892,8 +892,8 @@ diyan	diyan	PSAD ND B
 diyang	diyan	PSAD ND B
 Diyos	Diyos	NPRO
 diyus-diyusan	diyus-diyusan	NCOM 1
-do’n	do’n	PSAD RD B
-do’ng	do’n	PSAD RD B
+doï¿½n	doï¿½n	PSAD RD B
+doï¿½ng	doï¿½n	PSAD RD B
 Doctrina	Doctrina	NPRO
 doktor	doktor	NCOM 1
 Doktor	Doktor	NPRO
@@ -986,7 +986,7 @@ eskabetse	eskabetse	NCOM 2
 eskapularyo	eskapularyo	NCOM 2
 espada	espada	NCOM 2
 Espadana	Espadana	NPRO
-Espadaña	Espadaña	NPRO
+Espadaï¿½a	Espadaï¿½a	NPRO
 Espany	Espany	NPRO
 Espanya	Espanya	NPRO
 Espanyol	Espanyol	NPRO
@@ -1073,7 +1073,7 @@ gaya	gaya	AVET AL
 gaya	gaya	NA
 gayahin	gayahin	VOBF NE B
 gayo	gayo	NA
-gayo’y	gayo’y	NA
+gayoï¿½y	gayoï¿½y	NA
 gayon	gayon	NA
 gayon	gayon	PCOP RD B
 gayong	gayon	PCOP RD B
@@ -1199,7 +1199,7 @@ halamanan	halamanan	NCOM 2
 halamang	halaman	NCOM 2
 halata	halata	ADUN
 haligi	haligi	NCOM 2
-halika’t	halika’t	VOTF OT B
+halikaï¿½t	halikaï¿½t	VOTF OT B
 halikan	halikan	VOBF NE B
 halimaw	halimaw	NCOM 2
 halimbawa	halimbawa	NCOM 2
@@ -1939,7 +1939,7 @@ isinusulat	isinusulat	VBEF IN B
 isinusumpa	isinusumpa	VBEF IN B
 isinusuot	isinusuot	VBEF IN B
 isip	isip	NCOM 2
-isipa’t	isipa’t	NCOM 2
+isipaï¿½t	isipaï¿½t	NCOM 2
 isipan	isipan	NCOM 2
 isipang	isipan	NCOM 2
 isipin	isipin	VOBF NE B
@@ -2202,7 +2202,7 @@ kalmot	kalmot	NCOM 2
 kalooban	kalooban	NCOM 2
 kaloobang	kalooban	NCOM 2
 kaluluwa	kaluluwa	NCOM 2
-kaluluwa’y	kaluluwa’y	NCOM 1
+kaluluwaï¿½y	kaluluwaï¿½y	NCOM 1
 kaluluwang	kaluluwa	NCOM 1
 kalungkutan	kalungkutan	NCOM 2
 kalungkutang	kalungkutan	NCOM 2
@@ -2499,7 +2499,7 @@ kaya	kaya	CONM
 kaya	kaya	ENCL
 kaya	kaya	NA
 kaya	kaya	PIDP NU B
-kaya’y	kaya’y	NA
+kayaï¿½y	kayaï¿½y	NA
 kayabangan	kayabangan	NCOM 2
 kayamanan	kayamanan	NCOM 2
 kayang	kaya	ENCL
@@ -2674,7 +2674,7 @@ kung	kung	CONU
 kung	kung	NA
 kunin	kunin	VOBF NE B
 kura	kura	NCOM 1
-kura’y	kura’y	NCOM 1
+kuraï¿½y	kuraï¿½y	NCOM 1
 kurang	kura	NCOM 1
 kurbata	kurbata	NCOM 2
 Kurisma	Kurisma	NPRO
@@ -2688,7 +2688,7 @@ kusinero	kusinero	NCOM 2
 kuta	kuta	NCOM 2
 kutis	kutis	NCOM 2
 kutsara	kutsara	NCOM 2
-kutsara’t	kutsara’t	NCOM 2
+kutsaraï¿½t	kutsaraï¿½t	NCOM 2
 kutsero	kutsero	NCOM 2
 kutserong	kutsero	NCOM 2
 kutsilyo	kutsilyo	NCOM 2
@@ -2705,7 +2705,7 @@ kuwentuhan	kuwentuhan	NCOM 2
 kuwintas	kuwintas	NCOM 2
 kuwitis	kuwitis	NCOM 2
 Kuya	Kuya	NPRO
-kwarenta’y	kwarenta’y	ADNU
+kwarentaï¿½y	kwarentaï¿½y	ADNU
 kwartel	kwartel	NCOM 2
 la	la	NA
 La	La	NPRO
@@ -2753,7 +2753,7 @@ lalawigang	lalawigan	NCOM 2
 lalayo	lalayo	VACF CN B
 lalo	lalo	AVCT AL
 lalo	lalo	NA
-lalo’t	lalo’t	NA
+laloï¿½t	laloï¿½t	NA
 lalong	lalo	NA
 lalung-lalo	lalung-lalo	NA
 laman	laman	NCOM 2
@@ -2814,7 +2814,7 @@ libing	libing	NCOM 2
 libingan	libingan	NCOM 2
 libingang	libingan	NCOM 2
 libo	libo	NCOM 2
-libo’t	libo’t	NCOM 2
+liboï¿½t	liboï¿½t	NCOM 2
 libo-libong	libo-libo	ADNU
 libros	libros	NCOM 2
 libu-libong	libu-libo	ADNU
@@ -3038,7 +3038,7 @@ mabusog	mabusog	ADMO S
 mabuti	mabuti	ADMO S
 mabuti	mabuti	AVMA AL
 mabuti	mabuti	NCOM 2
-mabuti’t	mabuti’t	ADMO S
+mabutiï¿½t	mabutiï¿½t	ADMO S
 mabuting	mabuti	ADMO S
 mabuting	mabuti	AVMA AL
 mabuwal	mabuwal	ADMO S
@@ -3076,7 +3076,7 @@ Maestro	Maestro	NPRO
 mag-aabuloy	mag-aabuloy	VACF CN B
 mag-aalahas	mag-aalahas	NCOM 1
 mag-aalala	mag-aalala	VACF CN B
-mag-aalas-nuwebe’y	mag-aalas-nuwebe’y	NA
+mag-aalas-nuwebeï¿½y	mag-aalas-nuwebeï¿½y	NA
 mag-aaliw	mag-aaliw	VACF CN B
 magaang	magaan	ADMO S
 mag-aaral	mag-aaral	NCOM 1
@@ -3991,7 +3991,7 @@ mapupuyat	mapupuyat	VACF CN B
 mapusok	mapusok	ADMO S
 maputik	maputik	ADMO S
 maputla	maputla	ADMO S
-maputla’t	maputla’t	ADMO S
+maputlaï¿½t	maputlaï¿½t	ADMO S
 maputlang	maputla	ADMO S
 maputlang-maputla	maputlang-maputla	ADMO S
 maputlang-maputlang	maputlang-maputla	ADMO S
@@ -4313,8 +4313,8 @@ na	na	ENCL
 na	na	INTR
 na	na	LINA
 na	na	NA
-na’t	na’t	NA
-na’y	na’y	ENCL
+naï¿½t	naï¿½t	NA
+naï¿½y	naï¿½y	ENCL
 naaalaala	naaalaala	VACF IN B
 naaalala	naaalala	VACF IN B
 naaaninag	naaaninag	VACF IN B
@@ -4784,7 +4784,7 @@ nagtulak	nagtulak	VACF CM B
 nagtuloy	nagtuloy	VACF CM B
 nagtungo	nagtungo	VACF CM B
 nagtutungo	nagtutungo	VACF IN B
-nagtuturo’y	nagtuturo’y	VACF IN B
+nagtuturoï¿½y	nagtuturoï¿½y	VACF IN B
 nag-udyok	nag-udyok	VACF CM B
 nagugulat	nagugulat	VACF IN B
 nagugupit	nagugupit	ADOT
@@ -5164,7 +5164,7 @@ nalungkot	nalungkot	VACF CM B
 naluoy	naluoy	ADOT
 nalupig	nalupig	VACF CM B
 nama	nama	ENCL
-nama’y	nama’y	ENCL
+namaï¿½y	namaï¿½y	ENCL
 namagitan	namagitan	ADOT
 namagitan	namagitan	VOBF CM B
 namalagi	namalagi	VACF CM B
@@ -5533,7 +5533,7 @@ nauunawaang	nauunawaan	VOBF IN B
 nauupos	nauupos	VACF IN B
 nauwi	nauwi	VACF CM B
 nawa	nawa	ENCL
-nawa’y	nawa’y	ENCL
+nawaï¿½y	nawaï¿½y	ENCL
 nawala	nawala	VACF CM B
 nawalan	nawalan	VOBF CM B
 nawari	nawari	VACF CM B
@@ -6123,7 +6123,7 @@ palayain	palayain	VOBF NE B
 palayan	palayan	NCOM 2
 palayong	palayo	ADOT
 palibhasa	palibhasa	NA
-palibhasa’y	palibhasa’y	NA
+palibhasaï¿½y	palibhasaï¿½y	NA
 paligid	paligid	NCOM 2
 paligong	paligo	NCOM 2
 paliguan	paliguan	NCOM 2
@@ -6327,7 +6327,7 @@ panunungkulan	panunungkulan	NCOM 2
 panunuya	panunuya	NCOM 2
 paoopera	paoopera	NA
 Papa	Papa	NPRO
-papaano’y	papaano’y	PINP NU S
+papaanoï¿½y	papaanoï¿½y	PINP NU S
 papaanong	papaano	PINP NU S
 papag	papag	NCOM 2
 papagitnaan	papagitnaan	VOBF CN B
@@ -6874,7 +6874,7 @@ ring	rin	ENCL
 riple	riple	NCOM 2
 ripleng	riple	NCOM 2
 rito	rito	PSAD ST B
-rito’t	rito’t	PSAD ST B
+ritoï¿½t	ritoï¿½t	PSAD ST B
 ritong	rito	PSAD ST B
 ritwal	ritwal	NCOM 2
 riyan	riyan	PSAD ND B
@@ -6907,7 +6907,7 @@ sabayan	sabayan	VOBF NE B
 sabay-sabay	sabay-sabay	ADUN
 sabi	sabi	NCOM 2
 sabi	sabi	VOTF OT B
-sabi’y	sabi’y	NCOM 2
+sabiï¿½y	sabiï¿½y	NCOM 2
 sabihin	sabihin	VOBF NE B
 sabihing	sabihin	VOBF NE B
 sabi-sabi	sabi-sabi	NCOM 2
@@ -6995,15 +6995,15 @@ sampung	sampu	ADNU
 San	San	NPRO
 sana	sana	ENCL
 sana	sana	VOTF OT B
-sana’y	sana’y	VOTF OT B
+sanaï¿½y	sanaï¿½y	VOTF OT B
 sanang	sana	VOTF OT B
 sanay	sanay	ADUN
-sandaa’t	sandaa’t	ADNU
+sandaaï¿½t	sandaaï¿½t	ADNU
 sandaan	sandaan	ADNU
 sandali	sandali	ADUN
 sandali	sandali	NA
 sandali	sandali	NCOM 2
-sandali’y	sandali’y	NCOM 2
+sandaliï¿½y	sandaliï¿½y	NCOM 2
 sandaling	sandali	ADUN
 sandalyas	sandalyas	NCOM 2
 sandata	sandata	NCOM 2
@@ -7085,9 +7085,9 @@ sementeryong	sementeryo	NCOM 2
 seminarista	seminarista	NCOM 1
 sendang	sendang	NCOM 2
 Senor	Senor	NPRO
-Señor	Señor	NPRO
+Seï¿½or	Seï¿½or	NPRO
 Senora	Senora	NPRO
-Señora	Señora	NPRO
+Seï¿½ora	Seï¿½ora	NPRO
 sentensyador	sentensyador	NCOM 1
 sentimos	sentimos	NCOM 2
 Senyor	Senyor	NPRO
@@ -7201,7 +7201,7 @@ sinisipat	sinisipat	VOBF IN B
 sinisisi	sinisisi	VOBF IN B
 sinita	sinita	VOBF CM B
 sino	sino	PINP NU S
-sino’ng	sino	PINP NU S
+sinoï¿½ng	sino	PINP NU S
 sinong	sino	PINP NU S
 sintak	sintak	NCOM 2
 sintas	sintas	NCOM 2
@@ -7481,8 +7481,8 @@ Tatay	Tatay	NPRO
 tatlo	tatlo	ADNU
 tatlong	tatlo	ADNU
 tatlumpu	tatlumpu	ADNU
-tatlumpu’t	tatlumpu’t	ADNU
-tatlumpu’t-walo	tatlumpu’t-walo	ADNU
+tatlumpuï¿½t	tatlumpuï¿½t	ADNU
+tatlumpuï¿½t-walo	tatlumpuï¿½t-walo	ADNU
 tatlumpung	tatlumpu	ADNU
 tatlumput	tatlumput	ADNU
 tauhan	tauhan	NCOM 1
@@ -7613,7 +7613,7 @@ tono	tono	NCOM 2
 totoo	totoo	AVAY AL
 Tower	Tower	NPRO
 trabaho	trabaho	NCOM 2
-trenta’y	trenta’y	ADNU
+trentaï¿½y	trentaï¿½y	ADNU
 tribunal	tribunal	NCOM 2
 Trisagio	Trisagio	NPRO
 trono	trono	NCOM 2
@@ -7774,7 +7774,7 @@ umuusbong	umuusbong	VACF IN B
 umuusig	umuusig	VACF IN B
 umuwi	umuwi	VACF CM B
 una	una	ADNU
-una’y	una’y	ADNU
+unaï¿½y	unaï¿½y	ADNU
 unahang	unahan	ADUN
 unan	unan	NCOM 2
 unang	una	ADNU

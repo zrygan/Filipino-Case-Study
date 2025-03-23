@@ -18,8 +18,16 @@
 
 <rules>
     <category name="-es and -is words">
-        <rule>
-
+        <rule id="spanish_loanword" name="turn is- to es-">
+            <pattern case_sensitive="no" mark_from="1">
+                <token postag="NSPA.*" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
+                
+                </token>
+            </pattern>
+            <message>Use <suggestion>nang \3</suggestion>; you're not supposed to use "ng" when connecting verbs to adverbs.</message>
+            <short>Turn is- to es- for Spanish loanwords</short>
+            <!-- <example correction="nang mabagal" type="incorrect">Kumain <marker>ng mabagal</marker>.</example> -->
+		    <!-- <example type="correct">Kumain <marker>nang mabagal</marker>.</example> -->
         </rule>
     </category>
 
