@@ -128,7 +128,7 @@
         <rule id="upang_or_para_to_nang" name="case 4. suggest 'upang' to 'para' to 'nang'">
             <pattern case_sensitive="no">
                 <token regexp="yes">upang|para</token>
-                <token postag="V.*" postag_regexp="yes" match="2"/>
+                <token postag="V.*" postag_regexp="yes"/>
             </pattern>
             <message>You can optionally replace "\1 \2" with "Nang \2".</message>
             <short>Suggestion to use Nang instead of Upang or Para</short>
