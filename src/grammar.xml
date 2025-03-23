@@ -122,6 +122,26 @@
             <short>Replace 3rd token verb with 1st token verb inbetween repeated verbs.</short>
         </rule>
 
+        <rule id="noun_nang_noun" name="'ng' is used to denote possession (noun)">
+            <pattern case_sensitive="no">
+                <token postag="N.*" postag_regexp="yes"/>
+                <token>nang</token>
+                <token postag="N.*" postag_regexp="yes"/>
+            </pattern>
+            <message>Use <suggestion>\1 ng \3</suggestion>. "Ng" is used to denote noun possession.</message>
+            <short>Replace "nang" with "ng" to denote possession.</short>
+        </rule>
+
+        <rule id="verb_nang_noun" name="'ng' is used to denote possession (verb)">
+            <pattern case_sensitive="no">
+                <token postag="V.*" postag_regexp="yes"/>
+                <token>nang</token>
+                <token postag="N.*" postag_regexp="yes"/>
+            </pattern>
+            <message>Use <suggestion>\1 ng \3</suggestion>. "Ng" is used to denote verb possession.</message>
+            <short>Replace "nang" with "ng" to denote possession.</short>
+        </rule>
+
     </category>
 
     <category name="Gitling Usage">
