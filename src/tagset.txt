@@ -209,3 +209,9 @@ PSNQ	Question Mark
 PSNC	Comma
 PSNS	Symbols
 PSNN	Numerals
+
+SPANISH LOANWORDS:
+NSPA    Spanish Loanword
+
+ENGLISH LOANWORDS:
+NENG    English Loanword
