@@ -107,12 +107,22 @@
 
         <rule id="verb_nang_verb" name="case 5. used inbetween repeated verbs">
             <pattern case_sensitive="no">
-                <token postag="V.*" postag_regexp="yes"/>
+                <token postag="V.*" postag_regexp="yes" match="1"/>
                 <token>ng</token>
-                <token postag="V.*" postag_regexp="yes"/>
+                <token postag="V.*" postag_regexp="yes" match="1"/>
             </pattern>
             <message>Use <suggestion>\1 nang \3</suggestion>. "Nang" is used inbetween repeated verbs.</message>
             <short>Replace "ng" with "nang" inbetween repeated verbs.</short>
+        </rule>
+
+        <rule id="verb_nang_difverb" name="case 5. used inbetween repeated verbs (verbs dont match)">
+            <pattern case_sensitive="no">
+                <token postag="V.*" postag_regexp="yes" match="1"/>
+                <token>nang</token>
+                <token postag="V.*" postag_regexp="yes" match="2" negate_pos="1"/>
+            </pattern>
+            <message>Use <suggestion>\1 nang \1</suggestion>. The verbs must be the same.</message>
+            <short>Replace 3rd token verb with 1st token verb inbetween repeated verbs.</short>
         </rule>
 
     </category>
