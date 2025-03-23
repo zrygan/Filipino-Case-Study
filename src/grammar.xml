@@ -105,7 +105,7 @@
             <short>Suggestion to use Nang instead of Upang or Para</short>
         </rule>
 
-        <rule id="verb_nang_verb" name="case 5. used inbetween repeated verbs">
+        <rule id="verb_ng_verb" name="case 5. used inbetween repeated verbs">
             <pattern case_sensitive="no">
                 <token postag="V.*" postag_regexp="yes" match="1"/>
                 <token>ng</token>
