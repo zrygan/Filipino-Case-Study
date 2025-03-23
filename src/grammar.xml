@@ -2,20 +2,6 @@
 <?xml-stylesheet type="text/xsl" href="../print.xsl" ?>
 <?xml-stylesheet type="text/css" href="../rules.css" title="Easy editing stylesheet" ?>
 
-<!-- 
-    If you disagree with this
-    CONTANT ME JUSTIN ETHAN CHING
-    I AM a PROFESSIONAL researcher of NLP and the Filipino Language
-    NOBODY disagrees with me
-
-    If you disagree with me,
-
-    most likely you are retarded
-
-    ggs go next life i guess
-    maybe
- -->
-
 <rules>
     <category name="-es and -is words">
         <rule id="spanish_loanword" name="turn 'is-' to 'es-'">
@@ -106,12 +92,11 @@
             <!-- <example correction="na ng dahil" type="incorrect">Ang mamatay <marker>na ng dahil</marker> sa iyo.</example> -->
 		    <!-- <example type="correct">Ang mamatay <marker>nang dahil</marker> sa iyo..</example> -->
         </rule>
-        
-        <!-- i reckon we can use POS tags here for upang/para. this could work for the rubric. this doesnt work yet btw -->
+
         <rule id="upang_or_para_to_nang" name="case 4. suggest 'upang' to 'para' to 'nang'">
             <pattern case_sensitive="no">
-                <!-- <token>upang|para</token> -->
-                <token postag="V.*" postag_regexp="yes"/>
+                <token regexp="yes">upang|para</token>
+                <token postag="V.*" postag_regexp="yes" match="2"/>
             </pattern>
             <message>You can optionally replace "\1 \2" with "Nang \2".</message>
             <short>Suggestion to use Nang instead of Upang or Para</short>
