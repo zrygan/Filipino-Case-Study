@@ -1,58 +1,5 @@
 \section{Preliminaries}
-\subsection{The Filipino Alphabet}
 
-Let \(\mathcal{F}\) the Filipino language
-and \(\mathbb{F}\) be the Alphabet of \(\mathcal{F}\), this alphabet is
-composed of 56 scripts and 11 punctuation marks \cite{OOP}. The 56 scripts are divided into
-two, the first half being the capital letters of the modern Latin script with
-the addition of \texttt{Ñ} and \texttt{Ng}; while the other half is the lower case variants
-of each letter.
-
-The 11 punctuation marks in the Filipino language are the: \textit{tuldok} (.),
-\textit{tandang pananong} (?), \textit{tandang padamdam} (!), \textit{kuwit} (,),
-\textit{kudlit} ('), \textit{\textit{gitling}} (-), \textit{tutuldok} (:),
-\textit{tuldok-kuwit} (;), \textit{panipi} ("), \textit{pambukas na panaklong}
-((), \textit{pampasarang panaklong} ()), at ang \textit{tutuldok-tuldok} (...)
-
-In mathematical notation, we can represent \(\mathbb{F}\) as the set:
-
-\[
-      \mathbb{F} = \{\texttt{a},\texttt{b},\dots,\texttt{z},\texttt{ñ},\texttt{ng},   \
-      \texttt{A},\texttt{B},\texttt{C},\dots,\texttt{Z},\texttt{Ñ},\texttt{Ng}\}         \
-      \cup \{\texttt{.},\texttt{?},\texttt{!},\texttt{,},\texttt{'},\texttt{-},\texttt{:}, \
-      \texttt{;},\texttt{"},\texttt{(},\texttt{)}, \texttt{...}\}
-\]
-
-and the size of \(\mathbb{F}\), \(\mid\mathbb{F}\mid = 67\) and the set of all possible Filipino words is $\mathcal{F}$. Furthermore, from this, we can introduce the following sets:
-\begin{enumerate}
-      \item \(\mathbb{M}\) = \{\texttt{.}, \texttt{?}, \texttt{!}, \texttt{,}, \texttt{,}, \texttt{'}, \texttt{-}, \texttt{:}, \texttt{;}, \texttt{"}, \texttt{(}, \texttt{)}, \texttt{...}\}, the set of punctuation marks.
-      \item \(\mathbb{V}\) = \{\texttt{a}, \texttt{e}, \texttt{i}, \texttt{o}, \texttt{u}, \texttt{A}, \texttt{E}, \texttt{I}, \texttt{O}, \texttt{U}\}, the set of upper and lower case vowels.
-      \item \(\mathbb{C}\) = \(\mathbb{F} - (\mathbb{M} \cup \mathbb{V})\),
-            the set of upper and lower case consonants.
-      \item \(\Sigma\) = \(\mathbb{F} - \mathbb{M}\), the set of consonants and vowels.
-      \item The subscript "lower" on \(\mathbb{C}, \mathbb{V}, \Sigma\) denotes the set of lowercase letters.
-      \item The subscript "upper" on \(\mathbb{C}, \mathbb{V}, \Sigma\) denotes the set of uppercase letters.
-\end{enumerate}
-
-
-\paragraph{Remark on the Digraph: \texttt{ng}/\texttt{Ng} or "\textit{en dyi}"}
-
-Although the letter "Ng" or "ng" is a concatenation of two separate graphemes or
-symbols in \(\mathbb{F}\) (since \(\texttt{Ng} = \texttt{N}\cdot\texttt{g}\) and
-\(\texttt{ng} = \texttt{n}\cdot\texttt{g}\)), the letter \texttt{Ng} is officially recognized
-as a grapheme in \(\mathbb{F}\) since it represents a distinct Filipino sound.
-In particular, it represents the \textit{voiced velar nasal sound}, or in the International
-Phonetic Alphabet (IPA), the \textipa{N} sound \cite{Malabonga_2009}.
-
-For instance, the word "hangin" has 5 letters namely: \texttt{h}, \texttt{a}, \texttt{g}, \texttt{i}, \texttt{n},
-since \texttt{ng} is pronounced as a velar nasal sound, not as two separate sounds
-\textipa{n-g}. So, "hangin" is pronounced as \textipa{haNin} ("ha-ngin").
-Take for instance the English  word "manger" where "ng" is a substring
-but is not pronounced as the velar nasal sound. Instead, its pronunciation is
-\textipa{\textprimstress meI ndZ @r} ("meyn-jer"); not
-\textipa{\textprimstress m\ae N Z @r} ("mang-jer"),
-\textipa{\textprimstress m\ae N @r} ("mang-er") or
-\textipa{\textprimstress m\ae N@r} ("manger").
 
 \subsection{Common Errors}
 
