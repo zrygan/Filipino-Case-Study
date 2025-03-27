@@ -113,14 +113,13 @@
             <short>Suggestion to use Nang instead of Noong</short>
         </rule>
 
-        <rule id="na_ng_to_nang" name="case 3. change 'na ng' to 'nang' if used before a conjunction">
+        <rule id="ng_to_nang" name="case 3. change 'ng' to 'nang' if used before a conjunction">
             <pattern case_sensitive="no">
-                <token>na</token>
                 <token>ng</token>
                 <token postag="CO.*" postag_regexp="yes"/>
             </pattern>
-            <message>Use <suggestion>nang \3</suggestion>. "Nang" is used if it's before a conjunction.</message>
-            <short>Replace "na ng" with "nang" before conjunctions.</short>
+            <message>Use <suggestion>nang \3</suggestion>. "Nang" is used to represent the compounded "na" + "-ng" if it's before a conjunction.</message>
+            <short>Replace "ng" with "nang" before conjunctions to represent the compounded "na" + "-ng".</short>
             <!-- <example correction="na ng dahil" type="incorrect">Ang mamatay <marker>na ng dahil</marker> sa iyo.</example> -->
 		    <!-- <example type="correct">Ang mamatay <marker>nang dahil</marker> sa iyo..</example> -->
         </rule>
