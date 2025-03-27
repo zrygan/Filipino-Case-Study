@@ -1,5 +1,4 @@
-
-\documentclass[12pt]{article}
+\documentclass[12pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -24,7 +23,7 @@
 \newcommand{\blankspace}{\(\psi\)}
 \newcommand{\emptystring}{\(\lambda\)}
 
-\title{Formalizing Filipino}
+\title{Formalizing Tagalog and Bikolano}
 \author{Stephen Borja, Justin Ching, Zhean Ganituen}
 \date{\today}
 
@@ -32,12 +31,27 @@
 
 \maketitle
 
-% \tableofcontents % FIXME: remove comment here later on 
+This is a case study created as a requirement for the course Advanced Algorithms and Complexities (STALGCM) at De La Salle University, Manila. The source code of this case study document is available here:
 
-\include{chapters/chapter0}
-\include{chapters/chapter1}
-% \include{chapters/chapter2}
+\begin{center}
+    \url{https://github.com/zrygan/Filipino-Case-Study}
+\end{center}
 
-\printbibliography % FIXME: remove comment here later on  
+This case study also uses LanguageTool version 6.5, the latest as of writing this paper. Information on LanguageTool is available in Chapter \ref{language_tool}. The Extensible Markup Language  (XML) and supplementary files created for LanguageTool for the purposes of this case study are available here:
+
+\begin{center}
+    \url{https://github.com/zrygan/LanguageTool-Case-Study}
+\end{center}
+
+\tableofcontents
+
+\include{chapters/preliminaries}
+\include{chapters/errors}
+\include{chapters/formal_grammars}
+\include{chapters/literature}
+\include{chapters/language_tool}
+\include{chapters/future_work}
+
+\printbibliography
 
 \end{document}
