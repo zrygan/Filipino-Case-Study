@@ -2,4 +2,53 @@
 \label{language_tool}
 \section{Introduction to LanguageTool}
 
+LanguageTool is an open-source (\url{https://github.com/languagetool-org/languagetool}) grammar and spell checker, originally by Daniel Naber \url{https://github.com/danielnaber}, that utilizes a combination of XML-based pattern rules, regular expressions, and Java code to detect and correct linguistic errors across multiple languages \cite{about_languagetool}. The core of its functionality lies in the \texttt{grammar.xml} file, where most rules are defined. These XML rules consist of patterns that match specific sequences of words or part-of-speech tags, allowing LanguageTool to identify common grammatical mistakes. Regular expressions enhance this capability by enabling the creation of flexible and complex matching patterns within the XML rules. For instance, a rule might use a regular expression to match variations of a verb to ensure subject-verb agreement. When certain grammatical issues cannot be effectively captured through XML patterns and regular expressions, LanguageTool allows for the implementation of custom Java rules \cite{LanguageToolGitHub}. 
+
+Developers can extend LanguageTool's \texttt{Rule} class and implement the \texttt{match(AnalyzedSentence)} method to create more sophisticated checks that require programmatic analysis. This multi-faceted approach enables LanguageTool to provide comprehensive grammar checking by leveraging the strengths of XML for pattern matching, regular expressions for flexibility, and Java for complex rule implementation \cite{LanguageToolGitHub}.
+
+The developer documentation of LanguageTool discusses in detail the implementation of rules \cite{LanguageToolDevDocs}. In summary, the grammar checking of LanguageTool works as follows:
+
+\paragraph{Boilerplate Structure of a Simple Rule} Each rule is defined by a \texttt{<rule>} element containing a \texttt{<patter>} to match the text and a \texttt{<message>} to display when the pattern is found.
+
+\begin{lstlisting}[language=XML, caption=Boilerplate Code for a Simple Rule]
+<rule id="RULE_ID" name="Rule Name">
+    <pattern>
+        <!-- Tokens and regular expressions go here -->
+    </pattern>
+    <message>Your message explaining the issue.</message>
+    <example correction="corrected text">
+        Incorrect text to be highlighted.
+    </example>
+</rule>    
+\end{lstlisting}
+
+\paragraph{Defining a Token} Each \texttt{<token>} represents a word or punctuation mark in the text, and we can restrict the matching for the \texttt{token} by using regular expressions or the \texttt{regexp} attribute.
+
+For instance, we want to create a grammar rule in \texttt{grammar.xml} that defines and checks for the "alot" and "a lot" error.
+
+\begin{lstlisting}[language= XML, caption=Example Grammar Rule for "alot" v. "a lot"]
+<rule id="ALOT_RULE" name="Alot Correction">
+    <pattern>
+        <token regexp="yes">[aA]lot</token>
+    </pattern>
+    <message>
+        'Alot' is a common misspelling. 
+        Consider using 'a lot' instead.
+    </message>
+  <example correction="a lot">
+    I have <marker>alot</marker> of work to do.
+    </example>
+</rule>
+\end{lstlisting}
+
+
+As for creating sophisticated grammar and style rules, these are discussed at length in Chapter \ref{future_work}.
+
 \section{LanguageTool Implementation}
+
+The complete source code for the LanguageTool implementation for the errors discussed in the previous chapters is available in the preface of the paper. The sections below will take a closer look at one of the grammars implemented for Tagalog and Bicol language.
+
+
+\subsection{LanguageTool Implementation for [[TODO]]}
+
+\subsection{LanguageTool Implementation for U-O Distribution}

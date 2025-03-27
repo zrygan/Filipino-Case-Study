@@ -7,11 +7,19 @@
 \usepackage{amsthm}
 \usepackage{xcolor}
 \usepackage{hyperref}
-\usepackage[a4paper,margin=1in]{geometry}  
-\usepackage[backend=biber]{biblatex}
-
+\usepackage{listings}
+\usepackage[a4paper,margin=1in]{geometry} % removing assymetric margins  
+\usepackage[style=numeric,backend=biber]{biblatex}
 \usepackage{tipx} % for Chapter 1.1.1
+\usepackage{fancyhdr} % for headers
 
+% HEADER
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhf{} 
+\fancyhead[L]{Formalizing Tagalog and Bikolano} 
+\fancyhead[R]{\nouppercase{\rightmark}} 
+\fancyfoot[R]{\thepage}
 
 % REFERENCES
 \addbibresource{bibliography/references.bib}
@@ -23,6 +31,19 @@
 \newcommand{\regex}[1]{\(\texttt{#1}\)}
 \newcommand{\blankspace}{\(\psi\)}
 \newcommand{\emptystring}{\(\lambda\)}
+
+% LISTINGS
+\definecolor{tagcolor}{rgb}{0.5,0,0.5}
+\definecolor{attrcolor}{rgb}{0,0.5,0}
+\lstdefinelanguage{XML}{
+  basicstyle=\ttfamily\footnotesize,
+  morestring=[s]{"}{"},
+  commentstyle=\color{commentcolor}\upshape,
+  moredelim=[s][\color{tagcolor}]{<}{>},
+  moredelim=[l][\color{attrcolor}]{\ },
+  stringstyle=\color{blue},
+  identifierstyle=\color{black}
+}
 
 \title{Formalizing Tagalog and Bikolano}
 \author{Stephen Borja, Justin Ching, Zhean Ganituen}
@@ -40,6 +61,7 @@ This is a case study created as a requirement for the course Advanced Algorithms
 
 This case study also uses LanguageTool version 6.5, the latest as of writing this paper. Information on LanguageTool is available in Chapter \ref{language_tool}. The Extensible Markup Language  (\texttt{XML}) and supplementary files created for LanguageTool for the purposes of this case study are available here:
 
+\label{languageTool_implementation}
 \begin{center}
     \url{https://github.com/zrygan/LanguageTool-Case-Study}
 \end{center}
