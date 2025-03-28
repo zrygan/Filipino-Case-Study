@@ -180,4 +180,15 @@
 
         </rule>
     </category>
+
+    <!-- Bikolano Section -->
+
+    <category name ="Object-Focused Future Tense">
+
+    </category>
+
+    <category name ="U-O Distribution">
+
+    </category>
+
 </rules>
