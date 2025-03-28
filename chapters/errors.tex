@@ -1,47 +1,80 @@
 \chapter{Selected Grammatical Errors}
 This chapter discusses selected grammatical errors, the regular expression that can check for each error and sample sentences.
 
-% NOTES
-% COMMENT THIS OUT, once the chapter is done
-{\color{blue}
-This section will contain the preliminaries for the case study:
+      % NOTES
+      % COMMENT THIS OUT, once the chapter is done
+      {\color{blue}
+            This section will contain the preliminaries for the case study:
 
-\begin{itemize}
-    \item Errors in Tagalog.
-    \begin{itemize}
-        \item R-D Allophones
-        \item Ng v. Nang
-        \item Gitling Usage
-        \begin{itemize}
-            \item "Alas-"
-            \item "Di-'
-            \item Foreign Words and Proper Nouns
-        \end{itemize}
-    \end{itemize}
-    \item Errors in the Bicol Language.
-    \begin{itemize}
-        \item Object-Focused Future Tense
-        \item U-O Distribution
-        \begin{itemize}
-            \item Simple Case
-            \item Verbs in Object-Focused Future Tense
-            \item Reduplications
-        \end{itemize}
-    \end{itemize}
+            \begin{itemize}
+                  \item Errors in Tagalog.
+                        \begin{itemize}
+                              \item R-D Allophones
+                              \item Ng v. Nang
+                              \item Gitling Usage
+                                    \begin{itemize}
+                                          \item "Alas-"
+                                          \item "Di-'
+                                          \item Foreign Words and Proper Nouns
+                                    \end{itemize}
+                        \end{itemize}
+                  \item Errors in the Bicol Language.
+                        \begin{itemize}
+                              \item Object-Focused Future Tense
+                              \item U-O Distribution
+                                    \begin{itemize}
+                                          \item Simple Case
+                                          \item Verbs in Object-Focused Future Tense
+                                          \item Reduplications
+                                    \end{itemize}
+                        \end{itemize}
 
-    The format will be used for \textbf{each error}.
-    \begin{itemize}
-        \item Discussion of error
-        \item Regular Expression of error
-        \item Sample correct sentences
-        \item Sample incorrect sentences
-    \end{itemize}
-\end{itemize}
-}
+                        The format will be used for \textbf{each error}.
+                        \begin{itemize}
+                              \item Discussion of error
+                              \item Regular Expression of error
+                              \item Sample correct sentences
+                              \item Sample incorrect sentences
+                        \end{itemize}
+            \end{itemize}
+      }
 
 \section{Selected Errors in Tagalog}
 \subsection{R-D Allophones}
 \subsection{Ng v. Nang}
+
+There are five ways to use the word "nang" in Filipino.
+
+\paragraph{First Case} It can be used before an adverb when the sentence structure $S$ is given by:
+
+\[
+      S_1 = \text{v} \cdot p \cdot \text{pron}^* \cdot p \cdot \text{"nang"} \cdot p \cdot \text{adv}
+\]
+
+Where v is a verb, pron is a pronoun, and adv is an adverb.
+
+\begin{example}
+
+\end{example}
+
+\begin{enumerate}
+      \item Kumain \textbf{nang} mabagal. (correct)
+            \\ Kumain \textit{ng} mabagal. (incorrect)
+      \item Tumakbo siya \textbf{nang} mabilis. (correct)
+            \\ Tumakbo siya \textbf{ng} mabilis. (incorrect)
+      \item Sumigaw \textbf{nang} malakas. (correct)
+            \\ Sumigaw \textit{ng} malakas. (incorrect)
+\end{enumerate}
+
+\paragraph{Second Case} Replacement for the conjunction "noong".
+
+\begin{example}
+
+\end{example}
+
+\begin{enumerate}
+      \item (Noong | Nang) !!! MAKE EXAMPLES
+\end{enumerate}
 
 \subsection{Gitling Usage}
 
@@ -88,7 +121,7 @@ The syllable "di" is a shortened format for the word "hindi", and it acts as a n
 \end{enumerate}
 
 \subsubsection{Proper Nouns}
-
+\label{proper_nouns_chapter}
 Let \(j \in \mathcal{F} \wedge \mathbb{PN}\), where \(\mathbb{PN}\) is the set of proper nouns.
 \[
       k = s \cdot "\text{-}" \cdot j
@@ -133,63 +166,102 @@ Let \(w \in \mathbb{FW}\), where \(\mathbb{FW}\) is the set of foreign words.
 Any verb in the Bicol Language can be transformed into its Object-Focused Future Tense by adding the suffix:
 
 \[
-\texttt{h}^?\texttt{on}
+      \texttt{h}^?\texttt{on}
 \]
 
 In particular, the Kleene question mark is 1 if and only if the root word $r$ follows:
 
 \[
-    \backslash\texttt{b.}^*\texttt{[aeiou]}\backslash\texttt{b}
+      \backslash\texttt{b.}^*\texttt{[aeiou]}\backslash\texttt{b}
 \]
 
 \begin{example}
 \end{example}
 
 \begin{enumerate}
-    \item \textbf{gibohon} (correct) \\
-    \textit{bihoon} (incorrect)
-    \item \textbf{babasahon} (correct) \\
-    \textit{babasaon} (incorrect)
-    \item \textbf{masasaboton} (correct) \\
-    \textit{masasabothon} (incorrect)
-    \item \textbf{DO THIS} (correct) \\
-    \textit{DO THIS} (incorrect)
-    \item \textbf{DO THIS} (correct) \\
-    \textit{DO THIS} (incorrect)
+      \item \textbf{gibohon} (correct) \\
+            \textit{bihoon} (incorrect)
+      \item \textbf{babasahon} (correct) \\
+            \textit{babasaon} (incorrect)
+      \item \textbf{masasaboton} (correct) \\
+            \textit{masasabothon} (incorrect)
+      \item \textbf{DO THIS} (correct) \\
+            \textit{DO THIS} (incorrect)
+      \item \textbf{DO THIS} (correct) \\
+            \textit{DO THIS} (incorrect)
 \end{enumerate}
 
-\subsection{U-O Distributiion}
+\subsection{U-O Distribution}
 
-\subsubsection{Simple Case}
-Any word in the Bicolano language that has an \texttt{o} sound that is not the last syllable is pronounced as \texttt{u}. Only if the \texttt{o} sound is the last syllable of the word, that sound is pronounced as \texttt{o}. 
+\subsubsection{U-O Distribution: Simple Case}
+Any word in the Bicolano language that has an \texttt{o} sound that is not the last syllable is pronounced as \texttt{u}. Only if the \texttt{o} sound is the last syllable of the word, that sound is pronounced as \texttt{o}.
 
 Formally, we can say that any Bicolano language word that contains an ‘o’ sound can be represented by the regular expression:
 
 \[
-    \left(\texttt{C}^?\texttt{uC}^?\right)^* \left(\texttt{C}^?\texttt{oC}^?\right)
+      \left(\texttt{C}^?\texttt{uC}^?\right)^* \left(\texttt{C}^?\texttt{oC}^?\right)
 \]
 
 \begin{example}
 \end{example}
 
 \begin{enumerate}
-    \item \textbf{Tukdo} (correct) \\
-    \textit{Tokdo} or \textit{Tukdu} (incorrect) \\
-    \item \textbf{Bulan} (correct) \\
-    \textit{Bolan} (incorrect) \\
-    \item \textbf{Ako} (correct) \\
-    \textit{Aku} (incorrect) \\
-    \item \textbf{Tukdo} (correct) \\
-    \textit{Tokdo} or \textit{Tukdu} (incorrect) \\
-    \item \textbf{Du'ot} (correct) \\
-    \textit{Du'ut} or \textit{Do'ot} (incorrect) \\
+      \item \textbf{Tukdo} (correct) \\
+            \textit{Tokdo} or \textit{Tukdu} (incorrect) \\
+      \item \textbf{Bulan} (correct) \\
+            \textit{Bolan} (incorrect) \\
+      \item \textbf{Ako} (correct) \\
+            \textit{Aku} (incorrect) \\
+      \item \textbf{Tukdo} (correct) \\
+            \textit{Tokdo} or \textit{Tukdu} (incorrect) \\
+      \item \textbf{Du'ot} (correct) \\
+            \textit{Du'ut} or \textit{Do'ot} (incorrect) \\
 \end{enumerate}
 
-\subsubsection{Verbs in Object-Focused Future Tense}
+\subsubsection{U-O Distribution for Verbs in Object-Focused Future Tense}
 
+Verbs with the $\texttt{h}^?on$ suffix or verbs in the object-focused future tense form, or any word of the form:
 
+\[
+      r \texttt{h}^? \texttt{on} \quad \text{where } r \text{ is the root word}
+\]
 
-\subsubsection{Reduplications}
+The spelling of the root word $r$ will stay the same. That is, verbs at their object-focused future form may have an \texttt{o} sound at the second to the last suffix. Take for instance the word "gibohon" which has three syllables, notice that there is an \texttt{o} sound at the second syllable.
 
+\begin{example}
+\end{example}
+
+\begin{enumerate}
+      \item \textbf{Masasaboton} (correct) \\
+            \textit{Masasabuton} (incorrect)
+      \item \textbf{Lutohon} (correct) \\
+            \textit{Lutuhon} (incorrect)
+      \item \textbf{Herohon} (correct) \\
+            \textit{Heruhon} (incorrect)
+\end{enumerate}
+
+\subsubsection{U-O Distribution for Reduplications}
+
+Words that are a reduplication, or a joining of two syllables, can have the \texttt{u} sound at the end if and only if the reduplicated syllable does indeed have the \texttt{u} sound.
+
+Formally, any word given by:
+\[
+      \left( \Sigma_\mathbb{B}^*\texttt{u}\Sigma_\mathbb{B}^* \right)\backslash1
+\]
+
+is a valid word in $\mathcal{B}$.
+
+\begin{example}
+
+\end{example}
+
+\begin{enumerate}
+      \item \textbf{Tugtug} (correct) \\
+            \textit{Tugtog} or \textit{Togtog} (incorrect)
+      \item \textbf{Gu'gu'} (correct)
+            \\ \textit{Gu'go'} or \textit{Go'go'} (incorrect)
+      \item \textbf{Kutkut} (correct)
+            \\ \textit{Kutkot} or \textit{Kotkot} (incorrect)
+\end{enumerate}
 
 

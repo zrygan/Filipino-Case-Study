@@ -1,27 +1,27 @@
 \chapter{Preliminaries}
 This section discusses some preliminaries for the case study. In particular, it gives a brief introduction to the Tagalog and Bicol Language, and the notation the case study will use.
 
-% NOTES
-% COMMENT THIS OUT, once the chapter is done
-{\color{blue}
-This section will contain the preliminaries for the case study:
+    % NOTES
+    % COMMENT THIS OUT, once the chapter is done
+    {\color{blue}
+        This section will contain the preliminaries for the case study:
 
-\begin{itemize}
-    \item Introduction to the Tagalog and Bicolano language.
-    \item Notation used.
-\end{itemize}
+        \begin{itemize}
+            \item Introduction to the Tagalog and Bicolano language.
+            \item Notation used.
+        \end{itemize}
 
-!!! For proofreading and rechecking
-}
+        !!! For proofreading and rechecking
+    }
 
 \section{Notation}
 The following notation and rules for each notation, if any, will be used for the entirety of the paper to remove redundancy and notational ambiguity:
 
 \paragraph{Languages and Alphabets}
-    All \emph{languages} are represented by script capital letters, while all \emph{alphabets} are represented by blackboard bold capital letters. For instance, the Filipino language is given by \(\mathcal{F}\) while the Filipino alphabet is given by \(\mathbb{F}\).
+All \emph{languages} are represented by script capital letters, while all \emph{alphabets} are represented by blackboard bold capital letters. For instance, the Filipino language is given by \(\mathcal{F}\) while the Filipino alphabet is given by \(\mathbb{F}\).
 
 \paragraph{String Operations}
-    The dot operator (\(\cdot\)) denotes a \emph{concatenation} of two strings, the plus operator as a superscript (\(+\)) denotes the \emph{Kleene Plus}, the star operator as a superscript denotes the \emph{Kleene Star}, and the question mark as a superscript denotes the \emph{Kleene Question Mark} or the optional quantifier.
+The dot operator (\(\cdot\)) denotes a \emph{concatenation} of two strings, the plus operator as a superscript (\(+\)) denotes the \emph{Kleene Plus}, the star operator as a superscript denotes the \emph{Kleene Star}, and the question mark as a superscript denotes the \emph{Kleene Question Mark} or the optional quantifier.
 
 \begin{itemize}
     \item $s\cdot k$ is the concatenation of $s$ and $k$.
@@ -31,7 +31,7 @@ The following notation and rules for each notation, if any, will be used for the
 \end{itemize}
 
 \paragraph{Regular Expressions}
-    Regular expressions will use \emph{formal notation} and to say that some string \(s\) matches the regular expression modeled by \(\mathcal{R}\) then we denote this by \(s \in \mathcal{R}\).
+Regular expressions will use \emph{formal notation} and to say that some string \(s\) matches the regular expression modeled by \(\mathcal{R}\) then we denote this by \(s \in \mathcal{R}\).
 
 Although the notation for regular expressions uses formal notation, for simplicity, syntax from the \texttt{IEEE POSIX} is occasionally used.
 
@@ -39,13 +39,15 @@ Although the notation for regular expressions uses formal notation, for simplici
 
 \begin{center}
     \begin{tabular}{l l l}
-         \textbf{Symbol} & \textbf{Representation} & \textbf{Notes}  \\
-         $\psi$          & " "                     & the blank space symbol $|\psi|=1$ \\
-         $\lambda$       & ""                      & the empty string $|\lambda| = 0$
+        \textbf{Symbol} & \textbf{Representation} & \textbf{Notes}                    \\
+        $\psi$          & " "                     & the blank space symbol $|\psi|=1$ \\
+        $\lambda$       & ""                      & the empty string $|\lambda| = 0$
     \end{tabular}
 \end{center}
 
 \paragraph{Remarks on IEEE POSIX notation} For cases where wildcard characters are used, such as \texttt{.} or the $\backslash$\texttt{w} will accept only valid characters in the alphabet $\mathbb{F}$, $\mathbb{B}$, or both. For instance, the regular expression \texttt{.} on the language $\mathcal{B}$ will accept $\forall s\in \mathbb{B}$ and will not accept $\forall j\notin \mathbb{B}$ like \texttt{=, +, $\backslash$, @}. Similarly, the regular expression \texttt{.$^*$} on $\mathcal{B}$ will accept all strings from $\mathbb{B}^*$.
+
+\paragraph{Remarks on Case Sensitivity} The regular expressions for this paper are case insensitive, excluding Chapter \ref{proper_nouns_chapter}. That means, when we have the regular expression $\mathbb{B}^*$ this will accept "kumain", "KUMAIN", and other strings of the same letters but different cases. Furthermore, we say that "KUMAIN" and "kumain" are the same strings.
 
 \section{Tagalog}
 \subsection{The Filipino Alphabet}
@@ -63,21 +65,21 @@ The 11 punctuation marks in the Filipino language are the: \textit{tuldok} (.),
 
 In mathematical notation, we can represent \(\mathbb{F}\) as the set:
 \[
-      \mathbb{F} = \{\texttt{a},\texttt{b},\dots,\texttt{z},\texttt{ñ},\texttt{ng},   \
-      \texttt{A},\texttt{B},\texttt{C},\dots,\texttt{Z},\texttt{Ñ},\texttt{Ng}\}         \
-      \cup \{\texttt{.},\texttt{?},\texttt{!},\texttt{,},\texttt{'},\texttt{-},\texttt{:}, \
-      \texttt{;},\texttt{"},\texttt{(},\texttt{)}, \texttt{...}\}
+    \mathbb{F} = \{\texttt{a},\texttt{b},\dots,\texttt{z},\texttt{ñ},\texttt{ng},   \
+    \texttt{A},\texttt{B},\texttt{C},\dots,\texttt{Z},\texttt{Ñ},\texttt{Ng}\}         \
+    \cup \{\texttt{.},\texttt{?},\texttt{!},\texttt{,},\texttt{'},\texttt{-},\texttt{:}, \
+    \texttt{;},\texttt{"},\texttt{(},\texttt{)}, \texttt{...}\}
 \]
 
 and the size of \(\mathbb{F}\), \(|\mathbb{F}| = 67\) and the set of all possible Filipino words is $\mathcal{F}$. Furthermore, from this, we can introduce the following sets:
 \begin{enumerate}
-      \item \(\mathbb{M}\) = \{\texttt{.}, \texttt{?}, \texttt{!}, \texttt{,}, \texttt{,}, \texttt{'}, \texttt{-}, \texttt{:}, \texttt{;}, \texttt{"}, \texttt{(}, \texttt{)}, \texttt{...}\}, the set of punctuation marks.
-      \item \(\mathbb{V}_\mathbb{F}\) = \{\texttt{a}, \texttt{e}, \texttt{i}, \texttt{o}, \texttt{u}, \texttt{A}, \texttt{E}, \texttt{I}, \texttt{O}, \texttt{U}\}, the set of upper and lower case vowels.
-      \item \(\mathbb{C}_\mathbb{F}\) = \(\mathbb{F} - (\mathbb{M} \cup \mathbb{V}_\mathbb{F})\),
-            the set of upper and lower case consonants.
-      \item \(\Sigma_\mathbb{F}\) = \(\mathbb{F} - \mathbb{M}_\mathbb{F}\), the set of consonants and vowels.
-      \item The subscript "lower" on \(\mathbb{C}_\mathbb{F}, \mathbb{V}_\mathbb{F}, \Sigma_\mathbb{F}\) denotes the set of lowercase letters.
-      \item The subscript "upper" on \(\mathbb{C}_\mathbb{F}, \mathbb{V}_\mathbb{F}, \Sigma_\mathbb{F}\) denotes the set of uppercase letters.
+    \item \(\mathbb{M}\) = \{\texttt{.}, \texttt{?}, \texttt{!}, \texttt{,}, \texttt{,}, \texttt{'}, \texttt{-}, \texttt{:}, \texttt{;}, \texttt{"}, \texttt{(}, \texttt{)}, \texttt{...}\}, the set of punctuation marks.
+    \item \(\mathbb{V}_\mathbb{F}\) = \{\texttt{a}, \texttt{e}, \texttt{i}, \texttt{o}, \texttt{u}, \texttt{A}, \texttt{E}, \texttt{I}, \texttt{O}, \texttt{U}\}, the set of upper and lower case vowels.
+    \item \(\mathbb{C}_\mathbb{F}\) = \(\mathbb{F} - (\mathbb{M} \cup \mathbb{V}_\mathbb{F})\),
+          the set of upper and lower case consonants.
+    \item \(\Sigma_\mathbb{F}\) = \(\mathbb{F} - \mathbb{M}_\mathbb{F}\), the set of consonants and vowels.
+    \item The subscript "lower" on \(\mathbb{C}_\mathbb{F}, \mathbb{V}_\mathbb{F}, \Sigma_\mathbb{F}\) denotes the set of lowercase letters.
+    \item The subscript "upper" on \(\mathbb{C}_\mathbb{F}, \mathbb{V}_\mathbb{F}, \Sigma_\mathbb{F}\) denotes the set of uppercase letters.
 \end{enumerate}
 
 \paragraph{Remark on the Digraph: \texttt{ng}/\texttt{Ng} or "\textit{en dyi}"}
@@ -100,7 +102,7 @@ but is not pronounced as the velar nasal sound. Instead, its pronunciation is
 \textipa{\textprimstress m\ae N @r} ("mang-er") or
 \textipa{\textprimstress m\ae N@r} ("manger").
 
-With this in mind, the digraph \texttt{ng} will be treated as a single letter if the word pronunciation is the voiced velar nasal sound; otherwise it is the two separate characters \texttt{n} and \texttt{g}. 
+With this in mind, the digraph \texttt{ng} will be treated as a single letter if the word pronunciation is the voiced velar nasal sound; otherwise it is the two separate characters \texttt{n} and \texttt{g}.
 
 \section{Bicol Language}
 \subsection{The Bicol Language and Alphabet}
@@ -108,24 +110,24 @@ Let $\mathcal{B}$ be the Bicol language and $\mathbb{B}$ be the alphabet of $\ma
 
 Therefore, $|\mathbb{B}|=75$ and we can introduce the following subsets:
 \begin{enumerate}
-      \item \(\mathbb{V}_\mathbb{B}\) = \{\texttt{a}, \texttt{e}, \texttt{i}, \texttt{o}, \texttt{u}, \texttt{A}, \texttt{E}, \texttt{I}, \texttt{O}, \texttt{U}\}, the set of upper and lower case vowels.
-      \item \(\mathbb{C}_\mathbb{B}\) = \(\mathbb{B} - (\mathbb{M} \cup \mathbb{V}_\mathbb{B})\),
-            the set of upper and lower case consonants.
-      \item \(\Sigma_\mathbb{B}\) = \(\mathbb{B} - \mathbb{M}_\mathbb{B}\), the set of consonants and vowels.
-      \item The subscript "lower" on \(\mathbb{C}_\mathbb{B}, \mathbb{V}_\mathbb{B}, \Sigma_\mathbb{B}\) denotes the set of lowercase letters.
-      \item The subscript "upper" on \(\mathbb{C}_\mathbb{B}, \mathbb{V}_\mathbb{B}, \Sigma_\mathbb{B}\) denotes the set of uppercase letters.
+    \item \(\mathbb{V}_\mathbb{B}\) = \{\texttt{a}, \texttt{e}, \texttt{i}, \texttt{o}, \texttt{u}, \texttt{A}, \texttt{E}, \texttt{I}, \texttt{O}, \texttt{U}\}, the set of upper and lower case vowels.
+    \item \(\mathbb{C}_\mathbb{B}\) = \(\mathbb{B} - (\mathbb{M} \cup \mathbb{V}_\mathbb{B})\),
+          the set of upper and lower case consonants.
+    \item \(\Sigma_\mathbb{B}\) = \(\mathbb{B} - \mathbb{M}_\mathbb{B}\), the set of consonants and vowels.
+    \item The subscript "lower" on \(\mathbb{C}_\mathbb{B}, \mathbb{V}_\mathbb{B}, \Sigma_\mathbb{B}\) denotes the set of lowercase letters.
+    \item The subscript "upper" on \(\mathbb{C}_\mathbb{B}, \mathbb{V}_\mathbb{B}, \Sigma_\mathbb{B}\) denotes the set of uppercase letters.
 \end{enumerate}
 
 For clarity, words that contain a vowel with a glottal stop and words that contain the same vowel sound without a glottal stop are not the same:
 
 \[
-\forall v\in\mathbb{V}_\mathbb{B}, v^\prime\notin v
+    \forall v\in\mathbb{V}_\mathbb{B}, v^\prime\notin v
 \]
 
 And,
 
 \[
-      \Sigma_\mathbb{B}^*v\Sigma_\mathbb{B}^*\notin \Sigma_\mathbb{B}^*v^\prime\Sigma_\mathbb{B}^*
+    \Sigma_\mathbb{B}^*v\Sigma_\mathbb{B}^*\notin \Sigma_\mathbb{B}^*v^\prime\Sigma_\mathbb{B}^*
 \]
 
 Furthermore, since the digraph \texttt{ng} and \texttt{Ng} is in the Bicol language, the same rules discussed \ref{digraph_remark}.
