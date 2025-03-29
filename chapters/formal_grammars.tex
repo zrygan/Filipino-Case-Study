@@ -16,9 +16,153 @@ This section will contain the preliminaries for the case study:
 \subsection{Tagalog Grammar: R-D Allophones}
 \subsection{Tagalog Grammar: Ng v. Nang}
 \subsection{Tagalog Grammar: Gitling Usage for "Alas-"}
-\subsection{Tagalog Grammar: Gitling Usage for "Di-"}
-\subsection{Tagalog Grammar: Gitling Usage for Foreign Words and Proper Nouns}
+\paragraph{CFG:}
 
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{"ala" "-" O {\textpipe} "alas" "-" H}   \\
+        \text{O} & \rightarrow \text{1 {\textpipe} "una"}   \\
+        \text{H} & \rightarrow \text{2 {\textpipe} "dos"} \\
+        \text{H} & \rightarrow \text{3 {\textpipe} "tres"} \\
+        \text{H} & \rightarrow \text{4 {\textpipe} "cuatro"} \\
+        \text{H} & \rightarrow \text{5 {\textpipe} "cinco"} \\
+        \text{H} & \rightarrow \text{6 {\textpipe} "seis"} \\
+        \text{H} & \rightarrow \text{7 {\textpipe} "siete"} \\
+        \text{H} & \rightarrow \text{8 {\textpipe} "ocho"} \\
+        \text{H} & \rightarrow \text{9 {\textpipe} "nueve"} \\
+        \text{H} & \rightarrow \text{10 {\textpipe} "diez"} \\
+        \text{H} & \rightarrow \text{11 {\textpipe} "once"} \\
+        \text{H} & \rightarrow \text{12 {\textpipe} "dose"} \\
+    \end{aligned}
+\end{equation*}
+\text{For ease, the non-terminal of H is "non\_one\_hour\_of\_the\_day"}
+
+\paragraph{CNF (Chomsky Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{AG O {\textpipe} ASG H} \\
+        \text{AG}      & \rightarrow \text{A Gitling}\\
+        \text{ASG}      & \rightarrow \text{AS Gitling}\\
+        \text{A}    & \rightarrow \text{"ala"}\\
+        \text{AS}    & \rightarrow \text{"alas"}\\
+        \text{Gitling} & \rightarrow \text{"-"}\\
+        \text{O}   & \rightarrow \text{1 {\textpipe} "una"}\\
+        \text{H}   & \rightarrow \text{non\_one\_hour\_of\_the\_day}
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF (Greibach Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{"ala" Gitling O {\textpipe} "alas" Gitling H}\\
+        \text{Gitling} & \rightarrow \text{"-"}\\
+        \text{O}   & \rightarrow \text{1 {\textpipe} "una"}\\
+        \text{H}   & \rightarrow \text{non\_one\_hour\_of\_the\_day}
+    \end{aligned}
+\end{equation*}
+
+\subsection{Tagalog Grammar: Gitling Usage for "Di-"}
+
+\paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}  & \rightarrow \text{"di" "-" W}   \\
+        \text{W} & \rightarrow \text{kumain {\textpipe} umawit {\textpipe} ako {\textpipe} tulog}   \\
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF (Chomsky Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{SG W} \\
+        \text{SG}      & \rightarrow \text{S Gitling}\\
+        \text{S}    & \rightarrow \text{"di"}\\        
+        \text{Gitling} & \rightarrow \text{"-"}\\
+        \text{W} & \rightarrow \text{kumain {\textpipe} umawit {\textpipe} ako {\textpipe} tulog}   \\
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF (Greibach Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{"di" Gitling W}\\
+        \text{Gitling} & \rightarrow \text{"-"}\\
+        \text{W} & \rightarrow \text{kumain {\textpipe} umawit {\textpipe} ako {\textpipe} tulog}   \\
+    \end{aligned}
+\end{equation*}
+
+\subsection{Tagalog Grammar: Gitling Usage for Proper Nouns}
+
+\paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}  & \rightarrow \text{Syllable "-" PN {\textpipe}}   \\
+        \text{Syllable}    & \rightarrow \text{"taga" {\textpipe} "pa" {\textpipe} "maka"}\\
+        \text{PN} & \rightarrow \text{"Tondo" {\textpipe} "Davao" {\textpipe} "Rizal" {\textpipe} "DLSU"}   \\
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF (Chomsky Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{SG PN} \\
+        \text{SG}      & \rightarrow \text{Syllable Gitling}\\
+        \text{Syllable}    & \rightarrow \text{"taga" {\textpipe} "pa" {\textpipe} "maka"}\\
+        \text{PN} & \rightarrow \text{"Tondo" {\textpipe} "Davao" {\textpipe} "Rizal" {\textpipe} "DLSU"}   \\
+        \text{Gitling} & \rightarrow \text{"-"}\\
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF (Greibach Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{"taga" Gitling PN {\textpipe} "pa" Gitling PN {\textpipe} "maka" Gitling PN}\\
+        \text{Gitling} & \rightarrow \text{"-"}\\
+        \text{PN} & \rightarrow \text{"Tondo" {\textpipe} "Davao" {\textpipe} "Rizal" {\textpipe} "DLSU"}   \\
+    \end{aligned}
+\end{equation*}
+
+\subsection{Tagalog Grammar: Gitling Usage for Foreign Words}
+
+\paragraph{CFG:}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}  & \rightarrow \text{Syllable "-" W}   \\
+        \text{Syllable}    & \rightarrow \text{"pa" {\textpipe} "ipa" {\textpipe} "maki"}\\        
+        \text{W} & \rightarrow \text{"message" {\textpipe} "call" {\textpipe} "ride"}   \\
+    \end{aligned}
+\end{equation*}
+
+\paragraph{CNF (Chomsky Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{SG W} \\
+        \text{SG}      & \rightarrow \text{Syllable Gitling}\\
+        \text{Syllable}    & \rightarrow \text{"pa" {\textpipe} "ipa" {\textpipe} "maki"}\\        
+        \text{Gitling} & \rightarrow \text{"-"}\\
+        \text{W} & \rightarrow \text{"message" {\textpipe} "call" {\textpipe} "ride"}   \\
+    \end{aligned}
+\end{equation*}
+
+\paragraph{GNF (Greibach Normal Form):}
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Start}   & \rightarrow \text{"pa" Gitling W {\textpipe} "ipa" Gitling W {\textpipe} "maki" Gitling W}\\
+        \text{Gitling} & \rightarrow \text{"-"}\\
+        \text{W} & \rightarrow \text{"message" {\textpipe} "call" {\textpipe} "ride"}   \\
+    \end{aligned}
+\end{equation*}
 
 \section{Grammars for Bicol Language Errors}
 \subsection{Bicol Language Grammar: Object-Focused Future Tense}
