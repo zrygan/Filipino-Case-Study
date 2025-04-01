@@ -20,7 +20,7 @@ This section will contain the preliminaries for the case study:
 
 \begin{equation*}
     \begin{aligned}
-        \text{Start}   & \rightarrow \text{"ala" "-" O {\textpipe} "alas" "-" H}   \\
+        \text{Start}   & \rightarrow \text{Error\_1 {\textpipe} Error\_2 {\textpipe} Error\_3}   \\
         \text{O} & \rightarrow \text{1 {\textpipe} "una"}   \\
         \text{H} & \rightarrow \text{2 {\textpipe} "dos"} \\
         \text{H} & \rightarrow \text{3 {\textpipe} "tres"} \\
@@ -33,22 +33,36 @@ This section will contain the preliminaries for the case study:
         \text{H} & \rightarrow \text{10 {\textpipe} "diez"} \\
         \text{H} & \rightarrow \text{11 {\textpipe} "once"} \\
         \text{H} & \rightarrow \text{12 {\textpipe} "dose"} \\
+        \text{P} & \rightarrow \text{" "} \\
+        \text{G} & \rightarrow \text{"-"} \\
+        \text{Error\_1}   & \rightarrow \text{"alas" O {\textpipe} "alas" H}   \\
+        \text{Error\_1}   & \rightarrow \text{"ala" H {\textpipe} "ala" O}   \\
+        \text{Error\_2}   & \rightarrow \text{"alas" P O {\textpipe} "alas" P H}   \\
+        \text{Error\_2}   & \rightarrow \text{"ala" P H {\textpipe} "ala" P O }   \\
+        \text{Error\_3}   & \rightarrow \text{"alas" G O {\textpipe} "ala"G H}
     \end{aligned}
 \end{equation*}
-\text{For ease, the non-terminal of H is "non\_one\_hour\_of\_the\_day"}
+\text{For ease, the non-terminal derived from H is "h" representing the hours following the first hour.}
 
 \paragraph{CNF (Chomsky Normal Form):}
 
 \begin{equation*}
     \begin{aligned}
-        \text{Start}   & \rightarrow \text{AG O {\textpipe} ASG H} \\
-        \text{AG}      & \rightarrow \text{A Gitling}\\
-        \text{ASG}      & \rightarrow \text{AS Gitling}\\
+        \text{Start}   & \rightarrow \text{S O {\textpipe} S H} \\
+        \text{Start}   & \rightarrow \text{A O {\textpipe} A H} \\
+        \text{Start}   & \rightarrow \text{S PO {\textpipe} S PH} \\
+        \text{Start}   & \rightarrow \text{A PO {\textpipe} A PH} \\
+        \text{Start}   & \rightarrow \text{S GO {\textpipe} A GH} \\
+        \text{S}    & \rightarrow \text{"alas"}\\
         \text{A}    & \rightarrow \text{"ala"}\\
-        \text{AS}    & \rightarrow \text{"alas"}\\
-        \text{Gitling} & \rightarrow \text{"-"}\\
-        \text{O}   & \rightarrow \text{1 {\textpipe} "una"}\\
-        \text{H}   & \rightarrow \text{non\_one\_hour\_of\_the\_day}
+        \text{O}   & \rightarrow \text{"1" {\textpipe} "una"}\\
+        \text{H}   & \rightarrow \text{h}\\
+        \text{P}   & \rightarrow \text{" "}\\
+        \text{G} & \rightarrow \text{"-"}\\
+        \text{PO}      & \rightarrow \text{P O}\\
+        \text{PH}      & \rightarrow \text{P H}\\
+        \text{GO}      & \rightarrow \text{G O}\\
+        \text{GH}      & \rightarrow \text{G H}
     \end{aligned}
 \end{equation*}
 
@@ -56,10 +70,15 @@ This section will contain the preliminaries for the case study:
 
 \begin{equation*}
     \begin{aligned}
-        \text{Start}   & \rightarrow \text{"ala" Gitling O {\textpipe} "alas" Gitling H}\\
-        \text{Gitling} & \rightarrow \text{"-"}\\
-        \text{O}   & \rightarrow \text{1 {\textpipe} "una"}\\
-        \text{H}   & \rightarrow \text{non\_one\_hour\_of\_the\_day}
+        \text{Start}   & \rightarrow \text{"alas" O {\textpipe} "alas" H} \\
+        \text{Start}   & \rightarrow \text{"ala" O {\textpipe} "ala" H} \\
+        \text{Start}   & \rightarrow \text{"alas" P O {\textpipe} "alas" P H} \\
+        \text{Start}   & \rightarrow \text{"ala" P O {\textpipe} "ala" P H} \\
+        \text{Start}   & \rightarrow \text{"alas" G O {\textpipe} "alas" G H} \\
+        \text{O}   & \rightarrow \text{"1" {\textpipe} "una"}\\
+        \text{H}   & \rightarrow \text{h}\\
+        \text{P}   & \rightarrow \text{" "}\\
+        \text{G} & \rightarrow \text{"-"}
     \end{aligned}
 \end{equation*}
 
@@ -69,8 +88,15 @@ This section will contain the preliminaries for the case study:
 
 \begin{equation*}
     \begin{aligned}
-        \text{Start}  & \rightarrow \text{"di" "-" W}   \\
-        \text{W} & \rightarrow \text{kumain {\textpipe} umawit {\textpipe} ako {\textpipe} tulog}   \\
+        \text{Start}  & \rightarrow \text{Error\_1 {\textpipe} Error\_2 {\textpipe} Error\_3}   \\
+        \text{P}   & \rightarrow \text{" "}\\
+        \text{G} & \rightarrow \text{"-"}\\        
+        \text{W} & \rightarrow \text{doktor {\textpipe} lalaki {\textpipe} mabait {\textpipe} tulog}   \\
+        \text{C} & \rightarrow \text{Doktor {\textpipe} Lalaki {\textpipe} Mabait {\textpipe} Tulog}   \\
+        \text{Error\_1}  & \rightarrow \text{"di" W {\textpipe} "di" P W}   \\
+        \text{Error\_1}  & \rightarrow \text{"di" C {\textpipe} "di" P C}   \\
+        \text{Error\_2}  & \rightarrow \text{"hindi" G W {\textpipe} "hindi" G C}   \\
+        \text{Error\_3}  & \rightarrow \text{"di" G C}   
     \end{aligned}
 \end{equation*}
 
@@ -78,11 +104,20 @@ This section will contain the preliminaries for the case study:
 
 \begin{equation*}
     \begin{aligned}
-        \text{Start}   & \rightarrow \text{SG W} \\
-        \text{SG}      & \rightarrow \text{S Gitling}\\
-        \text{S}    & \rightarrow \text{"di"}\\        
-        \text{Gitling} & \rightarrow \text{"-"}\\
-        \text{W} & \rightarrow \text{kumain {\textpipe} umawit {\textpipe} ako {\textpipe} tulog}   \\
+        \text{Start}   & \rightarrow \text{S W {\textpipe} S PW} \\
+        \text{Start}   & \rightarrow \text{S C {\textpipe} S PC} \\
+        \text{Start}   & \rightarrow \text{H GW {\textpipe} H GC} \\
+        \text{Start}   & \rightarrow \text{S GC} \\
+        \text{S}    & \rightarrow \text{"di"}\\
+        \text{H}    & \rightarrow \text{"hindi"}\\
+        \text{W} & \rightarrow \text{doktor {\textpipe} lalaki {\textpipe} mabait {\textpipe} tulog}   \\
+        \text{C} & \rightarrow \text{Doktor {\textpipe} Lalaki {\textpipe} Mabait {\textpipe} Tulog}   \\
+        \text{P}   & \rightarrow \text{" "}\\
+        \text{G} & \rightarrow \text{"-"}\\
+        \text{PW}      & \rightarrow \text{P W}\\
+        \text{PC}      & \rightarrow \text{P C}\\
+        \text{GW}      & \rightarrow \text{G W}\\
+        \text{GC}      & \rightarrow \text{G C}
     \end{aligned}
 \end{equation*}
 
@@ -90,9 +125,14 @@ This section will contain the preliminaries for the case study:
 
 \begin{equation*}
     \begin{aligned}
-        \text{Start}   & \rightarrow \text{"di" Gitling W}\\
-        \text{Gitling} & \rightarrow \text{"-"}\\
-        \text{W} & \rightarrow \text{kumain {\textpipe} umawit {\textpipe} ako {\textpipe} tulog}   \\
+        \text{Start}   & \rightarrow \text{"di" W {\textpipe} "di" P W} \\
+        \text{Start}   & \rightarrow \text{"di" C {\textpipe} "di" PC} \\
+        \text{Start}   & \rightarrow \text{"hindi" GW {\textpipe} "hindi" GC} \\
+        \text{Start}   & \rightarrow \text{"di" GC} \\
+        \text{W} & \rightarrow \text{doktor {\textpipe} lalaki {\textpipe} mabait {\textpipe} tulog}   \\
+        \text{C} & \rightarrow \text{Doktor {\textpipe} Lalaki {\textpipe} Mabait {\textpipe} Tulog}   \\
+        \text{P}   & \rightarrow \text{" "}\\
+        \text{G} & \rightarrow \text{"-"}
     \end{aligned}
 \end{equation*}
 
@@ -102,9 +142,15 @@ This section will contain the preliminaries for the case study:
 
 \begin{equation*}
     \begin{aligned}
-        \text{Start}  & \rightarrow \text{Syllable "-" PN {\textpipe}}   \\
-        \text{Syllable}    & \rightarrow \text{"taga" {\textpipe} "pa" {\textpipe} "maka"}\\
+        \text{Start}  & \rightarrow \text{Error\_1 {\textpipe} Error\_2}   \\
+        \text{P}   & \rightarrow \text{" "}\\
+        \text{G} & \rightarrow \text{"-"}\\        
+        \text{S}    & \rightarrow \text{"taga" {\textpipe} "pa" {\textpipe} "maka"}\\
         \text{PN} & \rightarrow \text{"Tondo" {\textpipe} "Davao" {\textpipe} "Rizal" {\textpipe} "DLSU"}   \\
+        \text{PV} & \rightarrow \text{"tondo" {\textpipe} "davao" {\textpipe} "rizal" {\textpipe} "dlsu"}   \\
+        \text{Error\_1}  & \rightarrow \text{S PN {\textpipe} S P PN}   \\
+        \text{Error\_1}  & \rightarrow \text{S PV {\textpipe} S P PV}   \\
+        \text{Error\_2}  & \rightarrow \text{S G PV}   
     \end{aligned}
 \end{equation*}
 
@@ -112,11 +158,17 @@ This section will contain the preliminaries for the case study:
 
 \begin{equation*}
     \begin{aligned}
-        \text{Start}   & \rightarrow \text{SG PN} \\
-        \text{SG}      & \rightarrow \text{Syllable Gitling}\\
-        \text{Syllable}    & \rightarrow \text{"taga" {\textpipe} "pa" {\textpipe} "maka"}\\
+        \text{Start}  & \rightarrow \text{S PN {\textpipe} S PPN}   \\
+        \text{Start}  & \rightarrow \text{S PV {\textpipe} S PPV}   \\
+        \text{Start}  & \rightarrow \text{S GPV}   \\
+        \text{P}   & \rightarrow \text{" "}\\
+        \text{G} & \rightarrow \text{"-"}\\        
+        \text{S}    & \rightarrow \text{"taga" {\textpipe} "pa" {\textpipe} "maka"}\\
         \text{PN} & \rightarrow \text{"Tondo" {\textpipe} "Davao" {\textpipe} "Rizal" {\textpipe} "DLSU"}   \\
-        \text{Gitling} & \rightarrow \text{"-"}\\
+        \text{PV} & \rightarrow \text{"tondo" {\textpipe} "davao" {\textpipe} "rizal" {\textpipe} "dlsu"}   \\
+        \text{PPN} & \rightarrow \text{P PN}   \\
+        \text{PPV} & \rightarrow \text{P PV}  \\
+        \text{GPV} & \rightarrow \text{G PV}  
     \end{aligned}
 \end{equation*}
 
@@ -124,9 +176,19 @@ This section will contain the preliminaries for the case study:
 
 \begin{equation*}
     \begin{aligned}
-        \text{Start}   & \rightarrow \text{"taga" Gitling PN {\textpipe} "pa" Gitling PN {\textpipe} "maka" Gitling PN}\\
-        \text{Gitling} & \rightarrow \text{"-"}\\
+        \text{Start}  & \rightarrow \text{"taga" PN {\textpipe} "taga" P PN}   \\
+        \text{Start}  & \rightarrow \text{"taga" PV {\textpipe} "taga" P PV}   \\
+        \text{Start}  & \rightarrow \text{"taga" G PV}   \\
+        \text{Start}  & \rightarrow \text{"pa" PN {\textpipe} "pa" P PN}   \\
+        \text{Start}  & \rightarrow \text{"pa" PV {\textpipe} "pa" P PV}   \\
+        \text{Start}  & \rightarrow \text{"pa" GPV}   \\
+        \text{Start}  & \rightarrow \text{"maka" PN {\textpipe} "maka" P PN}   \\
+        \text{Start}  & \rightarrow \text{"maka" PV {\textpipe} "maka" P PV}   \\
+        \text{Start}  & \rightarrow \text{"maka" G PV}   \\
+        \text{P}   & \rightarrow \text{" "}\\
+        \text{G} & \rightarrow \text{"-"}\\        
         \text{PN} & \rightarrow \text{"Tondo" {\textpipe} "Davao" {\textpipe} "Rizal" {\textpipe} "DLSU"}   \\
+        \text{PV} & \rightarrow \text{"tondo" {\textpipe} "davao" {\textpipe} "rizal" {\textpipe} "dlsu"}   
     \end{aligned}
 \end{equation*}
 
@@ -136,9 +198,19 @@ This section will contain the preliminaries for the case study:
 
 \begin{equation*}
     \begin{aligned}
-        \text{Start}  & \rightarrow \text{Syllable "-" W}   \\
-        \text{Syllable}    & \rightarrow \text{"pa" {\textpipe} "ipa" {\textpipe} "maki"}\\        
-        \text{W} & \rightarrow \text{"message" {\textpipe} "Kpop" {\textpipe} "anime" {\textpipe} game}\\
+        \text{Start}  & \rightarrow \text{Error\_1 {\textpipe} Error\_2 {\textpipe} Edge\_case}   \\
+        \text{P}   & \rightarrow \text{" "}\\
+        \text{G} & \rightarrow \text{"-"}\\        
+        \text{S}    & \rightarrow \text{"pa" {\textpipe} "ipa" {\textpipe} "maki"}\\        
+        \text{W} & \rightarrow \text{"message" {\textpipe} "anime" {\textpipe} "game"}\\
+        \text{C} & \rightarrow \text{"Message" {\textpipe} "Anime" {\textpipe} "Game"}\\
+        \text{Z} & \rightarrow \text{"Kpop"}\\        
+        \text{E} & \rightarrow \text{"kpop" {\textpipe} "K-pop" {\textpipe} "k-pop"}\\        
+        \text{Error\_1}  & \rightarrow \text{S W {\textpipe} S P W}   \\
+        \text{Error\_1}  & \rightarrow \text{S C {\textpipe} S P C}   \\
+        \text{Error\_2}  & \rightarrow \text{S G C}   \\
+        \text{Edge\_case}  & \rightarrow \text{S G E {\textpipe} S P E {\textpipe} S E} \\   
+        \text{Edge\_case}  & \rightarrow \text{S P Z {\textpipe} S Z}         
     \end{aligned}
 \end{equation*}
 
@@ -146,11 +218,24 @@ This section will contain the preliminaries for the case study:
 
 \begin{equation*}
     \begin{aligned}
-        \text{Start}   & \rightarrow \text{SG W} \\
-        \text{SG}      & \rightarrow \text{Syllable Gitling}\\
-        \text{Syllable}    & \rightarrow \text{"pa" {\textpipe} "ipa" {\textpipe} "maki"}\\        
-        \text{Gitling} & \rightarrow \text{"-"}\\
-        \text{W} & \rightarrow \text{"message" {\textpipe} "Kpop" {\textpipe} "anime" {\textpipe} game}\\
+        \text{Start}  & \rightarrow \text{S W {\textpipe} S PW}   \\
+        \text{Start}  & \rightarrow \text{S C {\textpipe} S PC}   \\
+        \text{Start}  & \rightarrow \text{S GC}   \\
+        \text{Start}  & \rightarrow \text{S GE {\textpipe} S PE {\textpipe} S E} \\   
+        \text{Start}  & \rightarrow \text{S PZ {\textpipe} S Z}      \\
+        \text{P}   & \rightarrow \text{" "}\\
+        \text{G} & \rightarrow \text{"-"}\\        
+        \text{S}    & \rightarrow \text{"pa" {\textpipe} "ipa" {\textpipe} "maki"}\\        
+        \text{W} & \rightarrow \text{"message" {\textpipe} "anime" {\textpipe} "game"}\\
+        \text{C} & \rightarrow \text{"Message" {\textpipe} "Anime" {\textpipe} "Game"}\\
+        \text{Z} & \rightarrow \text{"Kpop"}\\        
+        \text{E} & \rightarrow \text{"kpop" {\textpipe} "K-pop" {\textpipe} "k-pop"}\\
+        \text{PW} & \rightarrow \text{P W}\\    
+        \text{PC} & \rightarrow \text{P C}\\        
+        \text{GC} & \rightarrow \text{G C}\\        
+        \text{PE} & \rightarrow \text{P E}\\     
+        \text{GE} & \rightarrow \text{G E}\\
+        \text{PZ} & \rightarrow \text{P Z}
     \end{aligned}
 \end{equation*}
 
@@ -158,9 +243,27 @@ This section will contain the preliminaries for the case study:
 
 \begin{equation*}
     \begin{aligned}
-        \text{Start}   & \rightarrow \text{"pa" Gitling W {\textpipe} "ipa" Gitling W {\textpipe} "maki" Gitling W}\\
-        \text{Gitling} & \rightarrow \text{"-"}\\
-        \text{W} & \rightarrow \text{"message" {\textpipe} "Kpop" {\textpipe} "anime" {\textpipe} game}\\
+        \text{Start}  & \rightarrow \text{"pa" W {\textpipe} "pa" P W}   \\
+        \text{Start}  & \rightarrow \text{"pa" C {\textpipe} "pa" P C}   \\
+        \text{Start}  & \rightarrow \text{"pa" G C}   \\
+        \text{Start}  & \rightarrow \text{"pa" G E {\textpipe} "pa" P E {\textpipe} "pa" E} \\   
+        \text{Start}  & \rightarrow \text{"pa" P Z {\textpipe} "pa" Z}      \\
+        \text{Start}  & \rightarrow \text{"ipa" W {\textpipe} "ipa" P W}   \\
+        \text{Start}  & \rightarrow \text{"ipa" C {\textpipe} "ipa" P C}   \\
+        \text{Start}  & \rightarrow \text{"ipa" G C}   \\
+        \text{Start}  & \rightarrow \text{"ipa" G E {\textpipe} "ipa" P E {\textpipe} "ipa" E} \\   
+        \text{Start}  & \rightarrow \text{"ipa" P Z {\textpipe} "ipa" Z}      \\
+        \text{Start}  & \rightarrow \text{"maki" W {\textpipe} "maki" P W}   \\
+        \text{Start}  & \rightarrow \text{"maki" C {\textpipe} "maki" P C}   \\
+        \text{Start}  & \rightarrow \text{"maki" G C}   \\
+        \text{Start}  & \rightarrow \text{"maki" G E {\textpipe} "maki" P E {\textpipe} "maki" E} \\   
+        \text{Start}  & \rightarrow \text{"maki" P Z {\textpipe} "maki" Z}      \\
+        \text{P}   & \rightarrow \text{" "}\\
+        \text{G} & \rightarrow \text{"-"}\\        
+        \text{W} & \rightarrow \text{"message" {\textpipe} "anime" {\textpipe} "game"}\\
+        \text{C} & \rightarrow \text{"Message" {\textpipe} "Anime" {\textpipe} "Game"}\\
+        \text{Z} & \rightarrow \text{"Kpop"}\\        
+        \text{E} & \rightarrow \text{"kpop" {\textpipe} "K-pop" {\textpipe} "k-pop"}
     \end{aligned}
 \end{equation*}
 
