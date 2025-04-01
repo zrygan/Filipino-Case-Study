@@ -60,40 +60,77 @@ This section will discuss how the rule for R-D Alternation discussed in Chapter 
     <rule id="daw_raw" name="change daw -> raw">
         <pattern case_sensitive="no" mark_from="1">
             <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" 
-            regexp="yes">
+                regexp="yes">
                 [A-Z][a-z]*[aeiou]
-                </token>
-            <token>daw</token>
+            </token>
+            <token>
+                daw
+            </token>
         </pattern>
-        <message>Use <suggestion>\1 raw</suggestion>; if the noun, adjective, verb, or adverb ends in a vowel, you have to use "raw".</message>
-        <short>Daw to raw if word ends in a vowel</short>
+        <message>
+            Use <suggestion>\1 raw</suggestion>; if the noun, adjective, 
+            verb, or adverb ends in a vowel, you have to use "raw".
+        </message>
+        <short>
+            Daw to raw if word ends in a vowel
+        </short>
     </rule>
 
     <rule id="raw_daw" name="change raw -> daw">
         <pattern case_sensitive="no" mark_from="1">
-            <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[^aeiou]</token>
-            <token>raw</token>
+            <token postag="N.*|AD.*|V.*|AV.*" 
+                postag_regexp="yes" regexp="yes">
+                [A-Z][a-z]*[^aeiou]
+            </token>
+            <token>
+                raw
+            </token>
         </pattern>
-        <message>Use <suggestion>\1 daw</suggestion>; if the noun, adjective, verb, or adverb ends in a consonant, you have to use "daw".</message>
-        <short>Raw to daw if word ends in a consonant</short>
+        <message>
+            Use <suggestion>\1 daw</suggestion>; if the noun, adjective, 
+            verb, or adverb ends in a consonant, you have to use "daw".
+        </message>
+        <short>
+            Raw to daw if word ends in a consonant
+        </short>
     </rule>
 
     <rule id="din_rin" name="change din -> rin">
         <pattern case_sensitive="no" mark_from="1">
-            <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[aeiou]</token>
-            <token>din</token>
+            <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" 
+                regexp="yes">
+                [A-Z][a-z]*[aeiou]
+            </token>
+            <token>
+                din
+            </token>
         </pattern>
-        <message>Use <suggestion>\1 rin</suggestion>; if the noun, adjective, verb, or adverb ends in a vowel, you have to use "rin".</message>
-        <short>Din to rin if word ends in a vowel</short>
+        <message>
+            Use <suggestion>\1 rin</suggestion>; if the noun, adjective,
+            verb, or adverb ends in a vowel, you have to use "rin".
+        </message>
+        <short>
+            Din to rin if word ends in a vowel
+        </short>
     </rule>
 
     <rule id="rin_din" name="change rin -> din">
         <pattern case_sensitive="no" mark_from="1">
-            <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[^aeiou]</token>
-            <token>rin</token>
+            <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" 
+                regexp="yes">
+                [A-Z][a-z]*[^aeiou]
+            </token>
+            <token>
+                rin
+            </token>
         </pattern>
-        <message>Use <suggestion>\1 din</suggestion>; if the noun, adjective, verb, or adverb ends in a consonant, you have to use "din".</message>
-        <short>Rin to din if word ends in a consonant</short>
+        <message>
+            Use <suggestion>\1 din</suggestion>; if the noun, adjective, 
+            verb, or adverb ends in a consonant, you have to use "din".
+        </message>
+        <short>
+            Rin to din if word ends in a consonant
+        </short>
     </rule>
 </category>
 \end{lstlisting}
