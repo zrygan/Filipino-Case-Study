@@ -1,995 +1,278 @@
 \chapter{Error Checkers}
+
 This chapter will discuss the detection of these errors using context-free grammars (CFGs), Greibach normal forms (CNF), and Chomsky normal forms (CNF).
 
-% NOTES
-% COMMENT THIS OUT, once the chapter is done
-{\color{blue}
-This section will contain the preliminaries for the case study:
-
-\begin{itemize}
-    \item Each error in Tagalog and their CFG, GNF, and CNF.
-    \item Each error in the Bicol Language and their CFG, GNF, and CNF.
-\end{itemize}
-}
-
+\newpage
 \section{Grammars for Tagalog Errors}
+
 \subsection{Tagalog Grammar: R-D Alternation}
+
+\newpage
 \subsection{Tagalog Grammar: Ng v. Nang}
 
-Nang Errors
-
-\paragraph{First Case}
-Example 1
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{K "ng" M}   \\
-        \text{K} & \rightarrow \text{"kumain"}   \\
-        \text{M} & \rightarrow \text{"mabagal"}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{KN M}   \\
-        \text{K} & \rightarrow \text{"kumain"}   \\
-        \text{M} & \rightarrow \text{"mabagal"} \\
-        \text{N} & \rightarrow \text{"ng"} \\
-        \text{KN} & \rightarrow \text{K N}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{"kumain" Z4 Z3}   \\
-        \text{Z3} & \rightarrow \text{"mabagal"}   \\
-        \text{Z4} & \rightarrow \text{"ng"}
-    \end{aligned}
-\end{equation*}
-
-Example 2
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{T S “ng” M}   \\
-        \text{T} & \rightarrow \text{“tumakbo”}   \\
-        \text{S} & \rightarrow \text{“siya”} \\
-        \text{M} & \rightarrow \text{"mabilis"}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{TS NM}   \\
-        \text{T} & \rightarrow \text{“tumakbo”}   \\
-        \text{S} & \rightarrow \text{“siya”} \\
-        \text{M} & \rightarrow \text{"mabilis"} \\
-        \text{N} & \rightarrow \text{"ng"} \\
-        \text{TS} & \rightarrow \text{T S} \\
-        \text{NM} & \rightarrow \text{N M}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“tumakbo” Z3 Z7}   \\
-        \text{Z3} & \rightarrow \text{“siya”}   \\
-        \text{Z4} & \rightarrow \text{“mabilis”} \\
-        \text{Z7} & \rightarrow \text{“ng” Z4}
-    \end{aligned}
-\end{equation*}
-
-Example 3
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{S “ng” M}   \\
-        \text{s} & \rightarrow \text{“sumigaw”} \\
-        \text{m} & \rightarrow \text{“malakas”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{SN M}   \\
-        \text{S} & \rightarrow \text{“sumigaw”} \\
-        \text{M} & \rightarrow \text{“malakas”} \\
-        \text{N} & \rightarrow \text{“ng”} \\
-        \text{SN} & \rightarrow \text{S N}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“sumigaw” Z4 Z3}   \\
-        \text{Z3} & \rightarrow \text{“malakas”} \\
-        \text{Z4} & \rightarrow \text{“ng”}
-    \end{aligned}
-\end{equation*}
-
-
-\paragraph{Second Case}
-Example 1
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{“ng” P S SA M}   \\
-        \text{P} & \rightarrow \text{“pumunta”} \\
-        \text{S} & \rightarrow \text{“siya”} \\
-        \text{SA} & \rightarrow \text{“sa”} \\
-        \text{M} & \rightarrow \text{“mall”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{NPS SAM} \\
-        \text{P} & \rightarrow \text{“pumunta”} \\
-        \text{S} & \rightarrow \text{“siya”} \\
-        \text{SA} & \rightarrow \text{“sa”} \\
-        \text{M} & \rightarrow \text{“mall”} \\
-        \text{N} & \rightarrow \text{“ng”} \\
-        \text{NP} & \rightarrow \text{N P} \\
-        \text{SAM} & \rightarrow \text{SA M} \\
-        \text{NPS} & \rightarrow \text{NP S}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“ng” Z2 Z3 Z8} \\
-        \text{Z22} & \rightarrow \text{“pumunta”} \\
-        \text{Z3} & \rightarrow \text{“siya”} \\
-        \text{Z5} & \rightarrow \text{“mall”} \\
-        \text{Z8} & \rightarrow \text{“sa” Z5}
-    \end{aligned}
-\end{equation*}
-
-Example 2
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{“ng” M NA A}   \\
-        \text{M} & \rightarrow \text{“maaraw”} \\
-        \text{NA} & \rightarrow \text{“na”} \\
-        \text{A} & \rightarrow \text{“araw”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{NM NAA}   \\
-        \text{M} & \rightarrow \text{“maaraw”} \\
-        \text{NA} & \rightarrow \text{“na”} \\
-        \text{A} & \rightarrow \text{“araw”}
-        \text{N} & \rightarrow \text{“ng”} \\
-        \text{NM} & \rightarrow \text{N M} \\
-        \text{NAA} & \rightarrow \text{NA A} \\
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“ng” Z2 Z7}   \\
-        \text{Z2} & \rightarrow \text{“maaraw”} \\
-        \text{Z4} & \rightarrow \text{“araw”} \\
-        \text{Z7} & \rightarrow \text{“na” Z4}
-    \end{aligned}
-\end{equation*}
-
-Example 3
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{“ng” U S “ng” T}   \\
-        \text{U} & \rightarrow \text{“uminom”} \\
-        \text{S} & \rightarrow \text{“siya”} \\
-        \text{T} & \rightarrow \text{“tubig”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{NU SNT}   \\
-        \text{U} & \rightarrow \text{“uminom”} \\
-        \text{S} & \rightarrow \text{“siya”} \\
-        \text{T} & \rightarrow \text{“tubig”}
-        \text{N} & \rightarrow \text{“ng”} \\
-        \text{NU} & \rightarrow \text{N U} \\
-        \text{NT} & \rightarrow \text{N T} \\
-        \text{SNT} & \rightarrow \text{S NT}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“ng” Z2 Z8}   \\
-        \text{Z2} & \rightarrow \text{“uminom”} \\
-        \text{Z4} & \rightarrow \text{“siya”} \\
-        \text{Z7} & \rightarrow \text{“ng” Z4}
-        \text{Z8} & \rightarrow \text{“siya” Z7}
-    \end{aligned}
-\end{equation*}
-
-
-\paragraph{Third Case}
-Example 1
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{A M “ng” D}   \\
-        \text{A} & \rightarrow \text{“ang”} \\
-        \text{M} & \rightarrow \text{“mamatay”} \\
-        \text{D} & \rightarrow \text{“dahil”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{AM ND}   \\
-        \text{A} & \rightarrow \text{“ang”} \\
-        \text{M} & \rightarrow \text{“mamatay”} \\
-        \text{D} & \rightarrow \text{“dahil”}
-        \text{N} & \rightarrow \text{“ng”} \\
-        \text{AM} & \rightarrow \text{A M} \\
-        \text{ND} & \rightarrow \text{N D}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“ang” Z3 Z7}   \\
-        \text{Z3} & \rightarrow \text{“mamatay”} \\
-        \text{Z4} & \rightarrow \text{“dahil”} \\
-        \text{Z7} & \rightarrow \text{“ng” Z4}
-    \end{aligned}
-\end{equation*}
-
-Example 2
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{A M “ng” B A}   \\
-        \text{A} & \rightarrow \text{“ang”} \\
-        \text{M} & \rightarrow \text{“magtulungan”} \\
-        \text{B} & \rightarrow \text{“buo”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{AM NBA}   \\
-        \text{A} & \rightarrow \text{“ang”} \\
-        \text{M} & \rightarrow \text{“magtulungan”} \\
-        \text{B} & \rightarrow \text{“buo”}
-        \text{} & \rightarrow \text{“ng”} \\
-        \text{} & \rightarrow \text{A M} \\
-        \text{} & \rightarrow \text{B A} \\
-        \text{} & \rightarrow \text{N BA}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“ang” Z3 Z8}   \\
-        \text{Z2} & \rightarrow \text{“ang”} \\
-        \text{Z3} & \rightarrow \text{“magtulungan”} \\
-        \text{Z7} & \rightarrow \text{“buo” Z2}
-        \text{Z8} & \rightarrow \text{“ng” Z7}
-    \end{aligned}
-\end{equation*}
-
-Example 3
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{A M “ng” MT AY}   \\
-        \text{A} & \rightarrow \text{“ang”} \\
-        \text{M} & \rightarrow \text{“magkasama”} \\
-        \text{MT} & \rightarrow \text{“matagal”} \\
-        \text{AY} & \rightarrow \text{“ay”} \\
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{AMN MTAY}   \\
-        \text{A} & \rightarrow \text{“ang”} \\
-        \text{M} & \rightarrow \text{“magkasama”} \\
-        \text{MT} & \rightarrow \text{“matagal”} \\
-        \text{AY} & \rightarrow \text{“ay”} \\
-        \text{N} & \rightarrow \text{“ng”} \\
-        \text{AM} & \rightarrow \text{A M} \\
-        \text{MTAY} & \rightarrow \text{MT AY} \\
-        \text{AMN} & \rightarrow \text{AM N}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“ang” Z3 Z6 Z8}   \\
-        \text{Z3} & \rightarrow \text{“magkasama”} \\
-        \text{Z5} & \rightarrow \text{“ay”} \\
-        \text{Z6} & \rightarrow \text{“ng”} \\
-        \text{Z8} & \rightarrow \text{“matagal” Z5}
-    \end{aligned}
-\end{equation*}
-
-
-\paragraph{Fourth Case}
-Example 1
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{K B S R “ng” M}   \\
-        \text{K} & \rightarrow \text{“kailangang”} \\
-        \text{B} & \rightarrow \text{“bitayin”} \\
-        \text{S} & \rightarrow \text{“si”} \\
-        \text{R} & \rightarrow \text{“Rizal”} \\
-        \text{M} & \rightarrow \text{“matakot”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{KBS RNM}   \\
-        \text{K} & \rightarrow \text{“kailangang”} \\
-        \text{B} & \rightarrow \text{“bitayin”} \\
-        \text{S} & \rightarrow \text{“si”} \\
-        \text{R} & \rightarrow \text{“Rizal”} \\
-        \text{M} & \rightarrow \text{“matakot”} \\
-        \text{N} & \rightarrow \text{“ng”} \\
-        \text{KB} & \rightarrow \text{K B} \\
-        \text{NM} & \rightarrow \text{N M} \\
-        \text{KBS} & \rightarrow \text{KB S} \\
-        \text{RNM} & \rightarrow \text{R NM}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“kailangang” Z3 Z4 Z11}   \\
-        \text{Z3} & \rightarrow \text{“bitayin”} \\
-        \text{Z4} & \rightarrow \text{“si”} \\
-        \text{Z6} & \rightarrow \text{“matakot”} \\
-        \text{Z9} & \rightarrow \text{“ng” Z6} \\
-        \text{Z1} & \rightarrow \text{“Rizal” Z9}
-    \end{aligned}
-\end{equation*}
-
-Example 2
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{D S P SA O “ng” M}   \\
-        \text{D} & \rightarrow \text{“dinala”} \\
-        \text{S} & \rightarrow \text{“si”} \\
-        \text{P} & \rightarrow \text{“Pedro”} \\
-        \text{SA} & \rightarrow \text{“sa”} \\
-        \text{O} & \rightarrow \text{“ospital”} \\
-        \text{M} & \rightarrow \text{“magamot”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{DSPSA ONM}   \\
-        \text{D} & \rightarrow \text{“dinala”} \\
-        \text{S} & \rightarrow \text{“si”} \\
-        \text{P} & \rightarrow \text{“Pedro”} \\
-        \text{SA} & \rightarrow \text{“sa”} \\
-        \text{O} & \rightarrow \text{“ospital”} \\
-        \text{M} & \rightarrow \text{“magamot”} \\
-        \text{N} & \rightarrow \text{“ng”} \\
-        \text{DS} & \rightarrow \text{D S} \\
-        \text{NM} & \rightarrow \text{N M} \\
-        \text{DSP} & \rightarrow \text{DS P} \\
-        \text{ONM} & \rightarrow \text{O NM} \\
-        \text{DSPSA} & \rightarrow \text{DSP SA}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“dinala” Z3 Z4 Z5 Z12}   \\
-        \text{Z3} & \rightarrow \text{“si”} \\
-        \text{Z4} & \rightarrow \text{“Pedro”} \\
-        \text{Z5} & \rightarrow \text{“sa”} \\
-        \text{Z7} & \rightarrow \text{“magamot”} \\
-        \text{Z10} & \rightarrow \text{“ng” Z7} \\
-        \text{Z12} & \rightarrow \text{“ospital” Z10}
-    \end{aligned}
-\end{equation*}
-
-Example 3
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{I S “ng” M}   \\
-        \text{I} & \rightarrow \text{“nag-ipon”} \\
-        \text{S} & \rightarrow \text{“siya”} \\
-        \text{M} & \rightarrow \text{“makabili”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{IS NM}   \\
-        \text{I} & \rightarrow \text{“nag-ipon”} \\
-        \text{S} & \rightarrow \text{“siya”} \\
-        \text{M} & \rightarrow \text{“makabili”} \\
-        \text{N} & \rightarrow \text{“ng”} \\
-        \text{IS} & \rightarrow \text{I S} \\
-        \text{NM} & \rightarrow \text{N M}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“nag-ipon” Z3 Z7}   \\
-        \text{Z3} & \rightarrow \text{“siya”} \\
-        \text{Z4} & \rightarrow \text{“makabili”} \\
-        \text{Z7} & \rightarrow \text{“ng” Z4}
-    \end{aligned}
-\end{equation*}
-
-
-\paragraph{Fifth Case}
-Example 1
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{K “ng” K}   \\
-        \text{K} & \rightarrow \text{“kain”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{KN K}   \\
-        \text{K} & \rightarrow \text{“kain”} \\
-        \text{N} & \rightarrow \text{“ng”} \\
-        \text{KN} & \rightarrow \text{K N}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“kain” Z3 Z2}   \\
-        \text{Z2} & \rightarrow \text{“kain”} \\
-        \text{Z3} & \rightarrow \text{“ng”}
-    \end{aligned}
-\end{equation*}
-
-Example 2
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{T “ng” T}   \\
-        \text{T} & \rightarrow \text{“takbo”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{TN T}   \\
-        \text{T} & \rightarrow \text{“takbo”} \\
-        \text{N} & \rightarrow \text{“ng”} \\
-        \text{TN} & \rightarrow \text{T N}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“takbo” Z3 Z2}   \\
-        \text{Z2} & \rightarrow \text{“takbo”} \\
-        \text{Z3} & \rightarrow \text{“ng”}
-    \end{aligned}
-\end{equation*}
-
-Example 3
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{S “ng” S}   \\
-        \text{S} & \rightarrow \text{“salita”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{SN S}   \\
-        \text{S} & \rightarrow \text{“salita”} \\
-        \text{N} & \rightarrow \text{“ng”} \\
-        \text{SN} & \rightarrow \text{S N}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“salita” Z3 Z2}   \\
-        \text{Z2} & \rightarrow \text{“salita”} \\
-        \text{Z3} & \rightarrow \text{“ng”}
-    \end{aligned}
-\end{equation*}
-
-Ng Errors
-
-\paragraph{Noun}
-Example 1
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{BG “nang” B}   \\
-        \text{BG} & \rightarrow \text{“bag”} \\
-        \text{B} & \rightarrow \text{“bata”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{BG NB}   \\
-        \text{BG} & \rightarrow \text{“bag”} \\
-        \text{B} & \rightarrow \text{“bata”} \\
-        \text{N} & \rightarrow \text{“nang”} \\
-        \text{NB} & \rightarrow \text{N B}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“bag” Z5}   \\
-        \text{Z3} & \rightarrow \text{“bata”} \\
-        \text{Z5} & \rightarrow \text{“nang” Z3}
-    \end{aligned}
-\end{equation*}
-
-Example 2
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{P “nang” B}   \\
-        \text{P} & \rightarrow \text{“pinto”} \\
-        \text{B} & \rightarrow \text{“bahay”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{PN B}   \\
-        \text{P} & \rightarrow \text{“pinto”} \\
-        \text{B} & \rightarrow \text{“bahay”} \\
-        \text{N} & \rightarrow \text{“nang”} \\
-        \text{PN} & \rightarrow \text{P N}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“pinto” Z4 Z3}   \\
-        \text{Z3} & \rightarrow \text{“bahay”} \\
-        \text{Z4} & \rightarrow \text{“nang”}
-    \end{aligned}
-\end{equation*}
-
-Example 3
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{H “nang” P}   \\
-        \text{H} & \rightarrow \text{“hawakan”} \\
-        \text{P} & \rightarrow \text{“pinto”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{HN P}   \\
-        \text{H} & \rightarrow \text{“hawakan”} \\
-        \text{P} & \rightarrow \text{“pinto”} \\
-        \text{N} & \rightarrow \text{“nang”} \\
-        \text{HN} & \rightarrow \text{H N} \\
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“hawakan” Z4 Z3}   \\
-        \text{Z3} & \rightarrow \text{“pinto”} \\
-        \text{Z4} & \rightarrow \text{“nang”}
-    \end{aligned}
-\end{equation*}
-
-
-\paragraph{Verb}
-Example 1
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{BIN “nang” B A S}   \\
-        \text{BIN} & \rightarrow \text{“binalat”} \\
-        \text{B} & \rightarrow \text{“bata”} \\
-        \text{A} & \rightarrow \text{“ang”} \\
-        \text{S} & \rightarrow \text{“saging”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{BIN NBAS}   \\
-        \text{BIN} & \rightarrow \text{“binalat”} \\
-        \text{B} & \rightarrow \text{“bata”} \\
-        \text{A} & \rightarrow \text{“ang”} \\
-        \text{S} & \rightarrow \text{“saging”} \\
-        \text{N} & \rightarrow \text{“nang”} \\
-        \text{NB} & \rightarrow \text{N B} \\
-        \text{AS} & \rightarrow \text{A S} \\
-        \text{NBAS} & \rightarrow \text{NB AS}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“binalat” Z9}   \\
-        \text{Z3} & \rightarrow \text{“bata”} \\
-        \text{Z5} & \rightarrow \text{“saging”} \\
-        \text{Z8} & \rightarrow \text{“ang” Z5} \\
-        \text{Z9} & \rightarrow \text{“nang” Z3 Z8}
-    \end{aligned}
-\end{equation*}
-
-Example 2
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{T “nang” B}   \\
-        \text{T} & \rightarrow \text{“tinapon”} \\
-        \text{B} & \rightarrow \text{“basurero”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{TN B}   \\
-        \text{T} & \rightarrow \text{“tinapon”} \\
-        \text{B} & \rightarrow \text{“basurero”} \\
-        \text{N} & \rightarrow \text{“nang”} \\
-        \text{TN} & \rightarrow \text{T N}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“tinapon” Z4 Z3}   \\
-        \text{Z3} & \rightarrow \text{“basurero”} \\
-        \text{Z4} & \rightarrow \text{“nang”}
-    \end{aligned}
-\end{equation*}
-
-Example 3
-\paragraph{CFG:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{I “nang” L}   \\
-        \text{I} & \rightarrow \text{“inalis”} \\
-        \text{L} & \rightarrow \text{“lola”}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{CNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{IN L}   \\
-        \text{I} & \rightarrow \text{“inalis”} \\
-        \text{L} & \rightarrow \text{“lola”} \\
-        \text{N} & \rightarrow \text{“nang”} \\
-        \text{IN} & \rightarrow \text{I N}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF:}
-\begin{equation*}
-    \begin{aligned}
-        \text{Z1}   & \rightarrow \text{“inalis” Z4 Z3}   \\
-        \text{Z3} & \rightarrow \text{“lola”} \\
-        \text{Z4} & \rightarrow \text{“nang”}
-    \end{aligned}
-\end{equation*}
-
 \subsection{Tagalog Grammar: Gitling Usage for "Alas-"}
-\paragraph{CFG:}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{Error\_1  \textbar  Error\_2  \textbar  Error\_3} \\
+        \text{O} & $ \rightarrow $ & 1  \textbar  \text{"una"} \\
+        \text{H} & $ \rightarrow $ & 2  \textbar  \text{"dos"} \\
+        \text{H} & $ \rightarrow $ & 3  \textbar  \text{"tres"} \\
+        \text{H} & $ \rightarrow $ & 4  \textbar  \text{"kwatro"} \\
+        \text{H} & $ \rightarrow $ & 5  \textbar  \text{"singko"} \\
+        \text{H} & $ \rightarrow $ & 6  \textbar  \text{"sais"} \\
+        \text{H} & $ \rightarrow $ & 7  \textbar  \text{"syete"} \\
+        \text{H} & $ \rightarrow $ & 8  \textbar  \text{"otso"} \\
+        \text{H} & $ \rightarrow $ & 9  \textbar  \text{"nwebe"} \\
+        \text{H} & $ \rightarrow $ & 10  \textbar  \text{"dyes"} \\
+        \text{H} & $ \rightarrow $ & 11  \textbar  \text{"onse"} \\
+        \text{H} & $ \rightarrow $ & 12  \textbar  \text{"dose"} \\
+        \text{P} & $ \rightarrow $ & \text{" "} \\
+        \text{G} & $ \rightarrow $ & \text{"-"} \\
+        \text{Error\_1} & $ \rightarrow $ & \text{"alas" O  \textbar  "alas" H} \\
+        \text{Error\_1} & $ \rightarrow $ & \text{"ala" H  \textbar  "ala" O} \\
+        \text{Error\_2} & $ \rightarrow $ & \text{"alas" P O  \textbar  "alas" P H} \\
+        \text{Error\_2} & $ \rightarrow $ & \text{"ala" P H  \textbar  "ala" P O} \\
+        \text{Error\_3} & $ \rightarrow $ & \text{"alas" G O  \textbar  "ala" G H} \\
+    \end{tabular}
+\end{center}
+For ease, the non-terminal derived from H is "h" representing the hours following the first hour.
 
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{Error\_1 {\textpipe} Error\_2 {\textpipe} Error\_3}   \\
-        \text{O} & \rightarrow \text{1 {\textpipe} "una"}   \\
-        \text{H} & \rightarrow \text{2 {\textpipe} "dos"} \\
-        \text{H} & \rightarrow \text{3 {\textpipe} "tres"} \\
-        \text{H} & \rightarrow \text{4 {\textpipe} "kwatro"} \\
-        \text{H} & \rightarrow \text{5 {\textpipe} "singko"} \\
-        \text{H} & \rightarrow \text{6 {\textpipe} "sais"} \\
-        \text{H} & \rightarrow \text{7 {\textpipe} "syete"} \\
-        \text{H} & \rightarrow \text{8 {\textpipe} "otso"} \\
-        \text{H} & \rightarrow \text{9 {\textpipe} "nwebe"} \\
-        \text{H} & \rightarrow \text{10 {\textpipe} "dyes"} \\
-        \text{H} & \rightarrow \text{11 {\textpipe} "onse"} \\
-        \text{H} & \rightarrow \text{12 {\textpipe} "dose"} \\
-        \text{P} & \rightarrow \text{" "} \\
-        \text{G} & \rightarrow \text{"-"} \\
-        \text{Error\_1}   & \rightarrow \text{"alas" O {\textpipe} "alas" H}   \\
-        \text{Error\_1}   & \rightarrow \text{"ala" H {\textpipe} "ala" O}   \\
-        \text{Error\_2}   & \rightarrow \text{"alas" P O {\textpipe} "alas" P H}   \\
-        \text{Error\_2}   & \rightarrow \text{"ala" P H {\textpipe} "ala" P O }   \\
-        \text{Error\_3}   & \rightarrow \text{"alas" G O {\textpipe} "ala"G H}
-    \end{aligned}
-\end{equation*}
-\text{For ease, the non-terminal derived from H is "h" representing the hours following the first hour.}
+\newpage
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{S O \textbar\ S H} \\
+        \text{Start} & $ \rightarrow $ & \text{A O \textbar\ A H} \\
+        \text{Start} & $ \rightarrow $ & \text{S PO \textbar\ S PH} \\
+        \text{Start} & $ \rightarrow $ & \text{A PO \textbar\ A PH} \\
+        \text{Start} & $ \rightarrow $ & \text{S GO \textbar\ A GH} \\
+        \text{S} & $ \rightarrow $ & \text{"alas"} \\
+        \text{A} & $ \rightarrow $ & \text{"ala"} \\
+        \text{O} & $ \rightarrow $ & \text{"1" \textbar\ "una"} \\
+        \text{H} & $ \rightarrow $ & \text{h} \\
+        \text{P} & $ \rightarrow $ & \text{" "} \\
+        \text{G} & $ \rightarrow $ & \text{"-"} \\
+        \text{PO} & $ \rightarrow $ & \text{P O} \\
+        \text{PH} & $ \rightarrow $ & \text{P H} \\
+        \text{GO} & $ \rightarrow $ & \text{G O} \\
+        \text{GH} & $ \rightarrow $ & \text{G H} \\
+    \end{tabular}
+\end{center}
 
-\paragraph{CNF (Chomsky Normal Form):}
+\newpage
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{"alas" O \textbar\ "alas" H} \\
+        \text{Start} & $ \rightarrow $ & \text{"ala" O \textbar\ "ala" H} \\
+        \text{Start} & $ \rightarrow $ & \text{"alas" P O \textbar\ "alas" P H} \\
+        \text{Start} & $ \rightarrow $ & \text{"ala" P O \textbar\ "ala" P H} \\
+        \text{Start} & $ \rightarrow $ & \text{"alas" G O \textbar\ "alas" G H} \\
+        \text{O} & $ \rightarrow $ & \text{"1" \textbar\ "una"} \\
+        \text{H} & $ \rightarrow $ & \text{h} \\
+        \text{P} & $ \rightarrow $ & \text{" "} \\
+        \text{G} & $ \rightarrow $ & \text{"-"} \\
+    \end{tabular}
+\end{center}
 
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{S O {\textpipe} S H} \\
-        \text{Start}   & \rightarrow \text{A O {\textpipe} A H} \\
-        \text{Start}   & \rightarrow \text{S PO {\textpipe} S PH} \\
-        \text{Start}   & \rightarrow \text{A PO {\textpipe} A PH} \\
-        \text{Start}   & \rightarrow \text{S GO {\textpipe} A GH} \\
-        \text{S}    & \rightarrow \text{"alas"}\\
-        \text{A}    & \rightarrow \text{"ala"}\\
-        \text{O}   & \rightarrow \text{"1" {\textpipe} "una"}\\
-        \text{H}   & \rightarrow \text{h}\\
-        \text{P}   & \rightarrow \text{" "}\\
-        \text{G} & \rightarrow \text{"-"}\\
-        \text{PO}      & \rightarrow \text{P O}\\
-        \text{PH}      & \rightarrow \text{P H}\\
-        \text{GO}      & \rightarrow \text{G O}\\
-        \text{GH}      & \rightarrow \text{G H}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF (Greibach Normal Form):}
-
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{"alas" O {\textpipe} "alas" H} \\
-        \text{Start}   & \rightarrow \text{"ala" O {\textpipe} "ala" H} \\
-        \text{Start}   & \rightarrow \text{"alas" P O {\textpipe} "alas" P H} \\
-        \text{Start}   & \rightarrow \text{"ala" P O {\textpipe} "ala" P H} \\
-        \text{Start}   & \rightarrow \text{"alas" G O {\textpipe} "alas" G H} \\
-        \text{O}   & \rightarrow \text{"1" {\textpipe} "una"}\\
-        \text{H}   & \rightarrow \text{h}\\
-        \text{P}   & \rightarrow \text{" "}\\
-        \text{G} & \rightarrow \text{"-"}
-    \end{aligned}
-\end{equation*}
-
+\newpage
 \subsection{Tagalog Grammar: Gitling Usage for "Di-"}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{Error\_1 \textbar\ Error\_2 \textbar\ Error\_3} \\
+        \text{P} & $ \rightarrow $ & \text{" "} \\
+        \text{G} & $ \rightarrow $ & \text{"-"} \\
+        \text{W} & $ \rightarrow $ & \text{doktor \textbar\ lalaki \textbar\ mabait \textbar\ tulog} \\
+        \text{C} & $ \rightarrow $ & \text{Doktor \textbar\ Lalaki \textbar\ Mabait \textbar\ Tulog} \\
+        \text{Error\_1} & $ \rightarrow $ & \text{"di" W \textbar\ "di" P W} \\
+        \text{Error\_1} & $ \rightarrow $ & \text{"di" C \textbar\ "di" P C} \\
+        \text{Error\_2} & $ \rightarrow $ & \text{"hindi" G W \textbar\ "hindi" G C} \\
+        \text{Error\_3} & $ \rightarrow $ & \text{"di" G C} \\
+    \end{tabular}
+\end{center}
 
-\paragraph{CFG:}
+\newpage
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{S W \textbar\ S PW} \\
+        \text{Start} & $ \rightarrow $ & \text{S C \textbar\ S PC} \\
+        \text{Start} & $ \rightarrow $ & \text{H GW \textbar\ H GC} \\
+        \text{Start} & $ \rightarrow $ & \text{S GC} \\
+        \text{S} & $ \rightarrow $ & \text{"di"} \\
+        \text{H} & $ \rightarrow $ & \text{"hindi"} \\
+        \text{W} & $ \rightarrow $ & \text{doktor \textbar\ lalaki \textbar\ mabait \textbar\ tulog} \\
+        \text{C} & $ \rightarrow $ & \text{Doktor \textbar\ Lalaki \textbar\ Mabait \textbar\ Tulog} \\
+        \text{P} & $ \rightarrow $ & \text{" "} \\
+        \text{G} & $ \rightarrow $ & \text{"-"} \\
+        \text{PW} & $ \rightarrow $ & \text{P W} \\
+        \text{PC} & $ \rightarrow $ & \text{P C} \\
+        \text{GW} & $ \rightarrow $ & \text{G W} \\
+        \text{GC} & $ \rightarrow $ & \text{G C} \\
+    \end{tabular}
+\end{center}
 
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}  & \rightarrow \text{Error\_1 {\textpipe} Error\_2 {\textpipe} Error\_3}   \\
-        \text{P}   & \rightarrow \text{" "}\\
-        \text{G} & \rightarrow \text{"-"}\\        
-        \text{W} & \rightarrow \text{doktor {\textpipe} lalaki {\textpipe} mabait {\textpipe} tulog}   \\
-        \text{C} & \rightarrow \text{Doktor {\textpipe} Lalaki {\textpipe} Mabait {\textpipe} Tulog}   \\
-        \text{Error\_1}  & \rightarrow \text{"di" W {\textpipe} "di" P W}   \\
-        \text{Error\_1}  & \rightarrow \text{"di" C {\textpipe} "di" P C}   \\
-        \text{Error\_2}  & \rightarrow \text{"hindi" G W {\textpipe} "hindi" G C}   \\
-        \text{Error\_3}  & \rightarrow \text{"di" G C}   
-    \end{aligned}
-\end{equation*}
+\newpage
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{"di" W \textbar\ "di" P W} \\
+        \text{Start} & $ \rightarrow $ & \text{"di" C \textbar\ "di" PC} \\
+        \text{Start} & $ \rightarrow $ & \text{"hindi" GW \textbar\ "hindi" GC} \\
+        \text{Start} & $ \rightarrow $ & \text{"di" GC} \\
+        \text{W} & $ \rightarrow $ & \text{doktor \textbar\ lalaki \textbar\ mabait \textbar\ tulog} \\
+        \text{C} & $ \rightarrow $ & \text{Doktor \textbar\ Lalaki \textbar\ Mabait \textbar\ Tulog} \\
+        \text{P} & $ \rightarrow $ & \text{" "} \\
+        \text{G} & $ \rightarrow $ & \text{"-"} \\
+    \end{tabular}
+\end{center}
 
-\paragraph{CNF (Chomsky Normal Form):}
-
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{S W {\textpipe} S PW} \\
-        \text{Start}   & \rightarrow \text{S C {\textpipe} S PC} \\
-        \text{Start}   & \rightarrow \text{H GW {\textpipe} H GC} \\
-        \text{Start}   & \rightarrow \text{S GC} \\
-        \text{S}    & \rightarrow \text{"di"}\\
-        \text{H}    & \rightarrow \text{"hindi"}\\
-        \text{W} & \rightarrow \text{doktor {\textpipe} lalaki {\textpipe} mabait {\textpipe} tulog}   \\
-        \text{C} & \rightarrow \text{Doktor {\textpipe} Lalaki {\textpipe} Mabait {\textpipe} Tulog}   \\
-        \text{P}   & \rightarrow \text{" "}\\
-        \text{G} & \rightarrow \text{"-"}\\
-        \text{PW}      & \rightarrow \text{P W}\\
-        \text{PC}      & \rightarrow \text{P C}\\
-        \text{GW}      & \rightarrow \text{G W}\\
-        \text{GC}      & \rightarrow \text{G C}
-    \end{aligned}
-\end{equation*}
-
-\paragraph{GNF (Greibach Normal Form):}
-
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}   & \rightarrow \text{"di" W {\textpipe} "di" P W} \\
-        \text{Start}   & \rightarrow \text{"di" C {\textpipe} "di" PC} \\
-        \text{Start}   & \rightarrow \text{"hindi" GW {\textpipe} "hindi" GC} \\
-        \text{Start}   & \rightarrow \text{"di" GC} \\
-        \text{W} & \rightarrow \text{doktor {\textpipe} lalaki {\textpipe} mabait {\textpipe} tulog}   \\
-        \text{C} & \rightarrow \text{Doktor {\textpipe} Lalaki {\textpipe} Mabait {\textpipe} Tulog}   \\
-        \text{P}   & \rightarrow \text{" "}\\
-        \text{G} & \rightarrow \text{"-"}
-    \end{aligned}
-\end{equation*}
-
+\newpage
 \subsection{Tagalog Grammar: Gitling Usage for Proper Nouns}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{Error\_1 \textbar\ Error\_2} \\
+        \text{P} & $ \rightarrow $ & \text{" "} \\
+        \text{G} & $ \rightarrow $ & \text{"-"} \\
+        \text{S} & $ \rightarrow $ & \text{"taga" \textbar\ "pa" \textbar\ "maka"} \\
+        \text{PN} & $ \rightarrow $ & \text{"Tondo" \textbar\ "Davao" \textbar\ "Rizal" \textbar\ "DLSU"} \\
+        \text{PV} & $ \rightarrow $ & \text{"tondo" \textbar\ "davao" \textbar\ "rizal" \textbar\ "dlsu"} \\
+        \text{Error\_1} & $ \rightarrow $ & \text{S PN \textbar\ S P PN} \\
+        \text{Error\_1} & $ \rightarrow $ & \text{S PV \textbar\ S P PV} \\
+        \text{Error\_2} & $ \rightarrow $ & \text{S G PV} \\
+    \end{tabular}
+\end{center}
 
-\paragraph{CFG:}
 
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}  & \rightarrow \text{Error\_1 {\textpipe} Error\_2}   \\
-        \text{P}   & \rightarrow \text{" "}\\
-        \text{G} & \rightarrow \text{"-"}\\        
-        \text{S}    & \rightarrow \text{"taga" {\textpipe} "pa" {\textpipe} "maka"}\\
-        \text{PN} & \rightarrow \text{"Tondo" {\textpipe} "Davao" {\textpipe} "Rizal" {\textpipe} "DLSU"}   \\
-        \text{PV} & \rightarrow \text{"tondo" {\textpipe} "davao" {\textpipe} "rizal" {\textpipe} "dlsu"}   \\
-        \text{Error\_1}  & \rightarrow \text{S PN {\textpipe} S P PN}   \\
-        \text{Error\_1}  & \rightarrow \text{S PV {\textpipe} S P PV}   \\
-        \text{Error\_2}  & \rightarrow \text{S G PV}   
-    \end{aligned}
-\end{equation*}
+\newpage
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{S PN \textbar\ S PPN} \\
+        \text{Start} & $ \rightarrow $ & \text{S PV \textbar\ S PPV} \\
+        \text{Start} & $ \rightarrow $ & \text{S GPV} \\
+        \text{P} & $ \rightarrow $ & \text{" "} \\
+        \text{G} & $ \rightarrow $ & \text{"-"} \\
+        \text{S} & $ \rightarrow $ & \text{"taga" \textbar\ "pa" \textbar\ "maka"} \\
+        \text{PN} & $ \rightarrow $ & \text{"Tondo" \textbar\ "Davao" \textbar\ "Rizal" \textbar\ "DLSU"} \\
+        \text{PV} & $ \rightarrow $ & \text{"tondo" \textbar\ "davao" \textbar\ "rizal" \textbar\ "dlsu"} \\
+        \text{PPN} & $ \rightarrow $ & \text{P PN} \\
+        \text{PPV} & $ \rightarrow $ & \text{P PV} \\
+        \text{GPV} & $ \rightarrow $ & \text{G PV} \\
+    \end{tabular}
+\end{center}
 
-\paragraph{CNF (Chomsky Normal Form):}
 
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}  & \rightarrow \text{S PN {\textpipe} S PPN}   \\
-        \text{Start}  & \rightarrow \text{S PV {\textpipe} S PPV}   \\
-        \text{Start}  & \rightarrow \text{S GPV}   \\
-        \text{P}   & \rightarrow \text{" "}\\
-        \text{G} & \rightarrow \text{"-"}\\        
-        \text{S}    & \rightarrow \text{"taga" {\textpipe} "pa" {\textpipe} "maka"}\\
-        \text{PN} & \rightarrow \text{"Tondo" {\textpipe} "Davao" {\textpipe} "Rizal" {\textpipe} "DLSU"}   \\
-        \text{PV} & \rightarrow \text{"tondo" {\textpipe} "davao" {\textpipe} "rizal" {\textpipe} "dlsu"}   \\
-        \text{PPN} & \rightarrow \text{P PN}   \\
-        \text{PPV} & \rightarrow \text{P PV}  \\
-        \text{GPV} & \rightarrow \text{G PV}  
-    \end{aligned}
-\end{equation*}
+\newpage
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{"taga" PN \textbar\ "taga" P PN} \\
+        \text{Start} & $ \rightarrow $ & \text{"taga" PV \textbar\ "taga" P PV} \\
+        \text{Start} & $ \rightarrow $ & \text{"taga" G PV} \\
+        \text{Start} & $ \rightarrow $ & \text{"pa" PN \textbar\ "pa" P PN} \\
+        \text{Start} & $ \rightarrow $ & \text{"pa" PV \textbar\ "pa" P PV} \\
+        \text{Start} & $ \rightarrow $ & \text{"pa" GPV} \\
+        \text{Start} & $ \rightarrow $ & \text{"maka" PN \textbar\ "maka" P PN} \\
+        \text{Start} & $ \rightarrow $ & \text{"maka" PV \textbar\ "maka" P PV} \\
+        \text{Start} & $ \rightarrow $ & \text{"maka" G PV} \\
+        \text{P} & $ \rightarrow $ & \text{" "} \\
+        \text{G} & $ \rightarrow $ & \text{"-"} \\
+        \text{PN} & $ \rightarrow $ & \text{"Tondo" \textbar\ "Davao" \textbar\ "Rizal" \textbar\ "DLSU"} \\
+        \text{PV} & $ \rightarrow $ & \text{"tondo" \textbar\ "davao" \textbar\ "rizal" \textbar\ "dlsu"} \\
+    \end{tabular}
+\end{center}
 
-\paragraph{GNF (Greibach Normal Form):}
 
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}  & \rightarrow \text{"taga" PN {\textpipe} "taga" P PN}   \\
-        \text{Start}  & \rightarrow \text{"taga" PV {\textpipe} "taga" P PV}   \\
-        \text{Start}  & \rightarrow \text{"taga" G PV}   \\
-        \text{Start}  & \rightarrow \text{"pa" PN {\textpipe} "pa" P PN}   \\
-        \text{Start}  & \rightarrow \text{"pa" PV {\textpipe} "pa" P PV}   \\
-        \text{Start}  & \rightarrow \text{"pa" GPV}   \\
-        \text{Start}  & \rightarrow \text{"maka" PN {\textpipe} "maka" P PN}   \\
-        \text{Start}  & \rightarrow \text{"maka" PV {\textpipe} "maka" P PV}   \\
-        \text{Start}  & \rightarrow \text{"maka" G PV}   \\
-        \text{P}   & \rightarrow \text{" "}\\
-        \text{G} & \rightarrow \text{"-"}\\        
-        \text{PN} & \rightarrow \text{"Tondo" {\textpipe} "Davao" {\textpipe} "Rizal" {\textpipe} "DLSU"}   \\
-        \text{PV} & \rightarrow \text{"tondo" {\textpipe} "davao" {\textpipe} "rizal" {\textpipe} "dlsu"}   
-    \end{aligned}
-\end{equation*}
-
+\newpage
 \subsection{Tagalog Grammar: Gitling Usage for Foreign Words}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{Error\_1 \textbar\ Error\_2 \textbar\ Edge\_case} \\
+        \text{P} & $ \rightarrow $ & \text{" "} \\
+        \text{G} & $ \rightarrow $ & \text{"-"} \\
+        \text{S} & $ \rightarrow $ & \text{"pa" \textbar\ "ipa" \textbar\ "maki"} \\
+        \text{W} & $ \rightarrow $ & \text{"message" \textbar\ "anime" \textbar\ "game"} \\
+        \text{C} & $ \rightarrow $ & \text{"Message" \textbar\ "Anime" \textbar\ "Game"} \\
+        \text{Z} & $ \rightarrow $ & \text{"Kpop"} \\
+        \text{E} & $ \rightarrow $ & \text{"kpop" \textbar\ "K-pop" \textbar\ "k-pop"} \\
+        \text{Error\_1} & $ \rightarrow $ & \text{S W \textbar\ S P W} \\
+        \text{Error\_1} & $ \rightarrow $ & \text{S C \textbar\ S P C} \\
+        \text{Error\_2} & $ \rightarrow $ & \text{S G C} \\
+        \text{Edge\_case} & $ \rightarrow $ & \text{S G E \textbar\ S P E \textbar\ S E} \\
+    \end{tabular}
+\end{center}
 
-\paragraph{CFG:}
 
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}  & \rightarrow \text{Error\_1 {\textpipe} Error\_2 {\textpipe} Edge\_case}   \\
-        \text{P}   & \rightarrow \text{" "}\\
-        \text{G} & \rightarrow \text{"-"}\\        
-        \text{S}    & \rightarrow \text{"pa" {\textpipe} "ipa" {\textpipe} "maki"}\\        
-        \text{W} & \rightarrow \text{"message" {\textpipe} "anime" {\textpipe} "game"}\\
-        \text{C} & \rightarrow \text{"Message" {\textpipe} "Anime" {\textpipe} "Game"}\\
-        \text{Z} & \rightarrow \text{"Kpop"}\\        
-        \text{E} & \rightarrow \text{"kpop" {\textpipe} "K-pop" {\textpipe} "k-pop"}\\        
-        \text{Error\_1}  & \rightarrow \text{S W {\textpipe} S P W}   \\
-        \text{Error\_1}  & \rightarrow \text{S C {\textpipe} S P C}   \\
-        \text{Error\_2}  & \rightarrow \text{S G C}   \\
-        \text{Edge\_case}  & \rightarrow \text{S G E {\textpipe} S P E {\textpipe} S E} \\   
-        \text{Edge\_case}  & \rightarrow \text{S P Z {\textpipe} S Z}         
-    \end{aligned}
-\end{equation*}
+\newpage
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{S W \textbar\ S PW} \\
+        \text{Start} & $ \rightarrow $ & \text{S C \textbar\ S PC} \\
+        \text{Start} & $ \rightarrow $ & \text{S GC} \\
+        \text{Start} & $ \rightarrow $ & \text{S GE \textbar\ S PE \textbar\ S E} \\
+        \text{Start} & $ \rightarrow $ & \text{S PZ \textbar\ S Z} \\
+        \text{P} & $ \rightarrow $ & \text{" "} \\
+        \text{G} & $ \rightarrow $ & \text{"-"} \\
+        \text{S} & $ \rightarrow $ & \text{"pa" \textbar\ "ipa" \textbar\ "maki"} \\
+        \text{W} & $ \rightarrow $ & \text{"message" \textbar\ "anime" \textbar\ "game"} \\
+        \text{C} & $ \rightarrow $ & \text{"Message" \textbar\ "Anime" \textbar\ "Game"} \\
+        \text{Z} & $ \rightarrow $ & \text{"Kpop"} \\
+        \text{E} & $ \rightarrow $ & \text{"kpop" \textbar\ "K-pop" \textbar\ "k-pop"} \\
+        \text{PW} & $ \rightarrow $ & \text{P W} \\
+        \text{PC} & $ \rightarrow $ & \text{P C} \\
+        \text{GC} & $ \rightarrow $ & \text{G C} \\
+        \text{PE} & $ \rightarrow $ & \text{P E} \\
+        \text{GE} & $ \rightarrow $ & \text{G E} \\
+        \text{PZ} & $ \rightarrow $ & \text{P Z} \\
+    \end{tabular}
+\end{center}
 
-\paragraph{CNF (Chomsky Normal Form):}
 
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}  & \rightarrow \text{S W {\textpipe} S PW}   \\
-        \text{Start}  & \rightarrow \text{S C {\textpipe} S PC}   \\
-        \text{Start}  & \rightarrow \text{S GC}   \\
-        \text{Start}  & \rightarrow \text{S GE {\textpipe} S PE {\textpipe} S E} \\   
-        \text{Start}  & \rightarrow \text{S PZ {\textpipe} S Z}      \\
-        \text{P}   & \rightarrow \text{" "}\\
-        \text{G} & \rightarrow \text{"-"}\\        
-        \text{S}    & \rightarrow \text{"pa" {\textpipe} "ipa" {\textpipe} "maki"}\\        
-        \text{W} & \rightarrow \text{"message" {\textpipe} "anime" {\textpipe} "game"}\\
-        \text{C} & \rightarrow \text{"Message" {\textpipe} "Anime" {\textpipe} "Game"}\\
-        \text{Z} & \rightarrow \text{"Kpop"}\\        
-        \text{E} & \rightarrow \text{"kpop" {\textpipe} "K-pop" {\textpipe} "k-pop"}\\
-        \text{PW} & \rightarrow \text{P W}\\    
-        \text{PC} & \rightarrow \text{P C}\\        
-        \text{GC} & \rightarrow \text{G C}\\        
-        \text{PE} & \rightarrow \text{P E}\\     
-        \text{GE} & \rightarrow \text{G E}\\
-        \text{PZ} & \rightarrow \text{P Z}
-    \end{aligned}
-\end{equation*}
+\newpage
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{"pa" W \textbar\ "pa" P W} \\
+        \text{Start} & $ \rightarrow $ & \text{"pa" C \textbar\ "pa" P C} \\
+        \text{Start} & $ \rightarrow $ & \text{"pa" G C} \\
+        \text{Start} & $ \rightarrow $ & \text{"pa" G E \textbar\ "pa" P E \textbar\ "pa" E} \\
+        \text{Start} & $ \rightarrow $ & \text{"pa" P Z \textbar\ "pa" Z} \\
+        \text{Start} & $ \rightarrow $ & \text{"ipa" W \textbar\ "ipa" P W} \\
+        \text{Start} & $ \rightarrow $ & \text{"ipa" C \textbar\ "ipa" P C} \\
+        \text{Start} & $ \rightarrow $ & \text{"ipa" G C} \\
+        \text{Start} & $ \rightarrow $ & \text{"ipa" G E \textbar\ "ipa" P E \textbar\ "ipa" E} \\
+        \text{Start} & $ \rightarrow $ & \text{"ipa" P Z \textbar\ "ipa" Z} \\
+        \text{Start} & $ \rightarrow $ & \text{"maki" W \textbar\ "maki" P W} \\
+        \text{Start} & $ \rightarrow $ & \text{"maki" C \textbar\ "maki" P C} \\
+        \text{Start} & $ \rightarrow $ & \text{"maki" G C} \\
+        \text{Start} & $ \rightarrow $ & \text{"maki" G E \textbar\ "maki" P E \textbar\ "maki" E} \\
+        \text{Start} & $ \rightarrow $ & \text{"maki" P Z \textbar\ "maki" Z} \\
+        \text{P} & $ \rightarrow $ & \text{" "} \\
+        \text{G} & $ \rightarrow $ & \text{"-"} \\
+        \text{W} & $ \rightarrow $ & \text{"message" \textbar\ "anime" \textbar\ "game"} \\
+        \text{C} & $ \rightarrow $ & \text{"Message" \textbar\ "Anime" \textbar\ "Game"} \\
+        \text{Z} & $ \rightarrow $ & \text{"Kpop"} \\
+        \text{E} & $ \rightarrow $ & \text{"kpop" \textbar\ "K-pop" \textbar\ "k-pop"} \\
+    \end{tabular}
+\end{center}
 
-\paragraph{GNF (Greibach Normal Form):}
+\newpage
+\section{Grammars for Bikol Language Errors}
 
-\begin{equation*}
-    \begin{aligned}
-        \text{Start}  & \rightarrow \text{"pa" W {\textpipe} "pa" P W}   \\
-        \text{Start}  & \rightarrow \text{"pa" C {\textpipe} "pa" P C}   \\
-        \text{Start}  & \rightarrow \text{"pa" G C}   \\
-        \text{Start}  & \rightarrow \text{"pa" G E {\textpipe} "pa" P E {\textpipe} "pa" E} \\   
-        \text{Start}  & \rightarrow \text{"pa" P Z {\textpipe} "pa" Z}      \\
-        \text{Start}  & \rightarrow \text{"ipa" W {\textpipe} "ipa" P W}   \\
-        \text{Start}  & \rightarrow \text{"ipa" C {\textpipe} "ipa" P C}   \\
-        \text{Start}  & \rightarrow \text{"ipa" G C}   \\
-        \text{Start}  & \rightarrow \text{"ipa" G E {\textpipe} "ipa" P E {\textpipe} "ipa" E} \\   
-        \text{Start}  & \rightarrow \text{"ipa" P Z {\textpipe} "ipa" Z}      \\
-        \text{Start}  & \rightarrow \text{"maki" W {\textpipe} "maki" P W}   \\
-        \text{Start}  & \rightarrow \text{"maki" C {\textpipe} "maki" P C}   \\
-        \text{Start}  & \rightarrow \text{"maki" G C}   \\
-        \text{Start}  & \rightarrow \text{"maki" G E {\textpipe} "maki" P E {\textpipe} "maki" E} \\   
-        \text{Start}  & \rightarrow \text{"maki" P Z {\textpipe} "maki" Z}      \\
-        \text{P}   & \rightarrow \text{" "}\\
-        \text{G} & \rightarrow \text{"-"}\\        
-        \text{W} & \rightarrow \text{"message" {\textpipe} "anime" {\textpipe} "game"}\\
-        \text{C} & \rightarrow \text{"Message" {\textpipe} "Anime" {\textpipe} "Game"}\\
-        \text{Z} & \rightarrow \text{"Kpop"}\\        
-        \text{E} & \rightarrow \text{"kpop" {\textpipe} "K-pop" {\textpipe} "k-pop"}
-    \end{aligned}
-\end{equation*}
+\newpage
+\subsection{Bikol Language Grammar: Object-Focused Future Tense}
 
-\section{Grammars for Bicol Language Errors}
-\subsection{Bicol Language Grammar: Object-Focused Future Tense}
-\subsection{Bicol Language Grammar: U-O Distribution for the Simple Case}
-\subsection{Bicol Language Grammar: U-O Distribution for Verbs in Object-Focused Future Tense}
-\subsection{Bicol Language Grammar: U-O Distribution for Reduplications}
+\newpage
+\subsection{Bikol Language Grammar: U-O Distribution for the Simple Case}
+
+\newpage
+\subsection{Bikol Language Grammar: U-O Distribution for Verbs in Object-Focused Future Tense}
+
+\newpage
+\subsection{Bikol Language Grammar: U-O Distribution for Reduplications}

@@ -2,7 +2,7 @@
 \label{language_tool}
 \section{Introduction to LanguageTool}
 
-LanguageTool is an open-source (\url{https://github.com/languagetool-org/languagetool}) grammar and spell checker, originally by Daniel Naber \url{https://github.com/danielnaber}, that utilizes a combination of XML-based pattern rules, regular expressions, and Java code to detect and correct linguistic errors across multiple languages \cite{about_languagetool}. The core of its functionality lies in the \texttt{grammar.xml} file, where most rules are defined. These XML rules consist of patterns that match specific sequences of words or part-of-speech tags, allowing LanguageTool to identify common grammatical mistakes. Regular expressions enhance this capability by enabling the creation of flexible and complex matching patterns within the XML rules. For instance, a rule might use a regular expression to match variations of a verb to ensure subject-verb agreement. When certain grammatical issues cannot be effectively captured through XML patterns and regular expressions, LanguageTool allows for the implementation of custom Java rules \cite{LanguageToolGitHub}. 
+LanguageTool is an open-source grammar and spell checker, originally by Daniel Naber \url{https://github.com/danielnaber}, that utilizes a combination of XML-based pattern rules, regular expressions, and Java code to detect and correct linguistic errors across multiple languages \cite{about_languagetool}. The core of its functionality lies in the \texttt{grammar.xml} file, where most rules are defined. These XML rules consist of patterns that match specific sequences of words or part-of-speech tags, allowing LanguageTool to identify common grammatical mistakes. Regular expressions enhance this capability by enabling the creation of flexible and complex matching patterns within the XML rules. For instance, a rule might use a regular expression to match variations of a verb to ensure subject-verb agreement. When certain grammatical issues cannot be effectively captured through XML patterns and regular expressions, LanguageTool allows for the implementation of custom Java rules \cite{LanguageToolGitHub}. 
 
 Developers can extend LanguageTool's \texttt{Rule} class and implement matching function of that class, the \texttt{match(AnalyzedSentence)} method. Doing so allows the user to create more sophisticated checks that are not possible using regular expressions alone. This multi-faceted approach enables LanguageTool to provide comprehensive grammar checking by leveraging the strengths of regular expressions for flexibility, and Java for complex rule implementation \cite{LanguageToolGitHub}.
 
@@ -35,20 +35,160 @@ For instance, we want to create a grammar rule in \texttt{grammar.xml} that defi
         'Alot' is a common misspelling. 
         Consider using 'a lot' instead.
     </message>
-  <example correction="a lot">
-    I have <marker>alot</marker> of work to do.
+    <example correction="a lot">
+        I have <marker>alot</marker> of work to do.
     </example>
 </rule>
 \end{lstlisting}
 
+A grammar rule has the following parts. First, we have the \texttt{<rule>} tag which initializes the rule; it also allows you to indicate an \texttt{id} and \texttt{name} for that rule. Then, we specify the \texttt{<patter>} tag which uses pattern matching to check if the defined pattern is found in the input text. Furthermore, we can use regular expressions for the pattern matching by using the \texttt{<token regexp="yes">} tag. Then, we have the \texttt{<message>} tag that displays a specific message when the error pattern is found. Finally, we can also include the \texttt{<example>} tag to include examples in the error message.
 
 As for creating sophisticated grammar and style rules, these are discussed at length in Chapter \ref{future_work}.
 
 \section{LanguageTool Implementation}
 
-The complete source code for the LanguageTool implementation for the errors discussed in the previous chapters is available in the preface of the paper. The sections below will take a closer look at one of the grammars implemented for Tagalog and Bicol language.
+The complete source code for the LanguageTool implementation for the errors discussed in the previous chapters is available in the preface of the paper. The sections below will take a closer look at one of the grammars implemented for Tagalog and Bikol language.
 
 
-\subsection{LanguageTool Implementation for [[TODO]]}
+\subsection{LanguageTool Implementation for R-D Alternation}
+
+This section will discuss how the rule for R-D Alternation discussed in Chapter \ref{rd_alternation} is implemented as a grammar in LanguageTool.
+
+% Maximum source code width                                             |
+\begin{lstlisting}[language= XML, caption=Grammar for R-D Alternation]
+<category id="d-r_r-d" name="D-R R-D Change">
+    <rule id="daw_raw" name="change daw -> raw">
+        <pattern case_sensitive="no" mark_from="1">
+            <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" 
+            regexp="yes">
+                [A-Z][a-z]*[aeiou]
+                </token>
+            <token>daw</token>
+        </pattern>
+        <message>Use <suggestion>\1 raw</suggestion>; if the noun, adjective, verb, or adverb ends in a vowel, you have to use "raw".</message>
+        <short>Daw to raw if word ends in a vowel</short>
+    </rule>
+
+    <rule id="raw_daw" name="change raw -> daw">
+        <pattern case_sensitive="no" mark_from="1">
+            <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[^aeiou]</token>
+            <token>raw</token>
+        </pattern>
+        <message>Use <suggestion>\1 daw</suggestion>; if the noun, adjective, verb, or adverb ends in a consonant, you have to use "daw".</message>
+        <short>Raw to daw if word ends in a consonant</short>
+    </rule>
+
+    <rule id="din_rin" name="change din -> rin">
+        <pattern case_sensitive="no" mark_from="1">
+            <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[aeiou]</token>
+            <token>din</token>
+        </pattern>
+        <message>Use <suggestion>\1 rin</suggestion>; if the noun, adjective, verb, or adverb ends in a vowel, you have to use "rin".</message>
+        <short>Din to rin if word ends in a vowel</short>
+    </rule>
+
+    <rule id="rin_din" name="change rin -> din">
+        <pattern case_sensitive="no" mark_from="1">
+            <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[^aeiou]</token>
+            <token>rin</token>
+        </pattern>
+        <message>Use <suggestion>\1 din</suggestion>; if the noun, adjective, verb, or adverb ends in a consonant, you have to use "din".</message>
+        <short>Rin to din if word ends in a consonant</short>
+    </rule>
+</category>
+\end{lstlisting}
+
+Here we see that we have one \textit{rule category} that groups similar rules. In this case, the category is \texttt{d-r\textunderscore r-d} which has four rules as a part of it. Namely, each rule is for the \textbf{Raw to Daw}, \textbf{Daw to Raw}, \textbf{Rin to Din}, and \textbf{Din to Rin}.
 
 \subsection{LanguageTool Implementation for U-O Distribution}
+
+This section will discuss how the rule for U-O Distribution discussed in Chapter \ref{uo_distribution} is implemented as a grammar in LanguageTool.
+
+% Maximum source code width                                             |
+\begin{lstlisting}[language= XML, caption=Grammar for U-O Distribution]
+<category id="u-o_distribution" name ="U-O Distribution">
+    <rule id="simple_case1" name="Detect incorrect 'u' and 'o' usage">
+        <pattern case_sensitive="no"> 
+            <token regex="yes">
+                \b([^aeiou]?[aeio][^aeiou])+
+                ([^aeiou]?[aeiu][^aeiou]?)\b
+            </token>
+        </pattern>
+        <message>
+            'o' must be 'u' if it is not the last syllable; 'u' 
+            must be 'o' if it is the last syllable.
+        </message>
+        <short>
+            'o' must be 'u' if it is not the last syllable; 'u' 
+            must be 'o' if it is the last syllable.
+        </short>
+    </rule>
+
+    <rule id="simple_case2" name="Change every 'o' except the last 
+        'o' syllable to 'u'.">
+        <pattern case_sensitive="no"> 
+            <token regex="yes">
+                \b[^aeiou]*o([^aeiou]*o)+[^aeiou]*\b
+            </token>
+        </pattern>
+        <message>
+            Change every 'o' except the last 'o' syllable to 'u'.
+        </message>
+        <short>
+            Change every 'o' except the last 'o' syllable to 'u'.
+        </short>
+    </rule>
+
+    <rule id="simple_case3" name="Change last 'u' syllable to 'o'.">
+        <pattern case_sensitive="no"> 
+            <token regex="yes">\
+                b[^aeiou]*u([^aeiou]*u)+[^aeiou]*\b
+            </token>
+        </pattern>
+        <message>
+            Change last 'u' syllable to 'o'.
+        </message>
+        <short>
+            Change last 'u' syllable to 'o'.
+        </short>
+    </rule>
+
+    <rule id="verbs_object_focus" name="Change 'u' to 'o'.">
+        <pattern case_sensitive="no"> 
+            <token regex="yes">
+                \b[a-zA-Z']*u[a-zA-Z']*h?on\b(?<!\b[a-zA-Z']*
+                o[a-zA-Z']*h?on\b)
+            </token>
+        </pattern>
+        <message>
+            Replace second-to-last suffix 'u' with 'o' because 
+            verbs at their object-focused future form may have 
+            an 'o' sound. 
+        </message>
+        <short>
+            Change second-to-last suffix 'u' with 'o'.
+        </short>
+    </rule>
+
+    <rule id="u-o_reduplication1" name="Change 'o' to 'u'.">
+        <pattern case_sensitive="no"> 
+            <token regex="yes">
+                (?:^|(?<=\s))
+                ([b-df-hj-np-tv-z']*u[b-df-hj-np-tv-z']*)
+                (?!\1)[b-df-hj-np-tv-z']*o[b-df-hj-np-tv-z']*
+                (?:$|(?=\s))
+            </token>
+        </pattern>
+        <message>
+            Replace the 'o' with 'u' because the reduplicated 
+            syllable uses 'u'. 
+        </message>
+        <short>
+            Change 'o' in the 2nd part to 'u'.
+        </short>
+    </rule>
+</category>
+\end{lstlisting}
+
+Here we see that we have one \textit{rule category} that groups similar rules. In this case, the category is \texttt{u-o\textunderscore distribution} which has five rules as a part of it. Namely, three sub-cases of the \textbf{Simple Case}, \textbf{Object-Focused Future Verbs}, and \textbf{Reduplications} for the U-O Distribution in the Bikol language.
+
