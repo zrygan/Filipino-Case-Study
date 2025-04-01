@@ -41,6 +41,49 @@ This chapter discusses selected grammatical errors, the regular expression that 
 
 \section{Selected Errors in Tagalog}
 \subsection{R-D Allophones}
+
+Let \(p = "\,"\) the blank symbol or the symbol containing space. And, we have the
+sentence structure \(S = \alpha + p + EP\). The \textit{enclitic particles}
+(\(\mathbb{EP}\)) is the set \(\mathbb{EP} = \{\texttt{raw}, \texttt{daw}\}\) and
+\(\alpha\) is any noun, adjective, verb, or adverb. The proper usage of the enclitic
+particles are given by:
+
+% REGEX HERE
+
+% If
+% \[
+%       \left( S = \alpha + p + EP \land \alpha \matches (\mathbb{L}_\text{upper}\mathbb{L}_\text{lower}^*\mathbb{V}) \right)
+%       \Longrightarrow
+%       \left( EP = \texttt{raw} \right)
+% \]
+% Otherwise,
+% \[
+%       EP = \texttt{daw}
+% \]
+
+In other words, if the preceding word to the enclitic particle ends in a vowel,
+then the enclitic particle is \texttt{raw}. If it is a consonant, then it is \texttt{daw}.
+
+This is the same idea with the adverbs \texttt{rin} and \texttt{din}. If the sentence structure
+\(S = \omega + p + (\texttt{rin}\mid\texttt{din})\) and \(\omega\) ends in a vowel
+then the adverb used is \texttt{rin}. Otherwise, the adverb is \texttt{din}.
+
+\begin{example}
+      Example sentences:
+\end{example}
+
+\begin{enumerate}
+      \item Sabi \textbf{raw}... (correct)
+            \\ Sabi \textit{daw}... (incorrect)
+      \item Hahabol \textbf{daw} sila... (correct)
+            \\ Hahabol \textit{raw} sila... (incorrect)
+      \item Ako \textbf{rin}... (correct)
+            \\ Ako \textit{din}... (incorrect)
+      \item Subukan \textbf{din} natin... (correct)
+            \\ Subukan \textit{rin} natin... (incorrect)
+
+\end{enumerate}
+
 \subsection{Ng v. Nang}
 
 There are five ways to use the word "nang" in Filipino.
@@ -193,22 +236,6 @@ Where n is a noun.
       \item Kain \textbf{nang} kain... (correct) \\
             Kain \textit{ng} kain... (incorrect) \\
             "Ng" is not used inbetween repeating verbs.
-\end{enumerate}
-
-\begin{example}
-      Here are some examples of literature and webpages where "nang" or "ng" is
-      misused:
-\end{example}
-
-\begin{enumerate}
-      \item https://brainly.ph/question/21370957 \\
-      \textbf{(Error: "takbo ng takbo")}
-      \item https://www.facebook.com/teamagustintvvlogs/videos/kain-ng-kain-pero-bakit-hindi-tumataba-ano-daw-ang-aking-ginagawa/502889525820314/ \\
-      \textbf{(Error: "kain ng kain")}
-      \item https://www.facebook.com/groups/280224753328936/posts/1212892863395449/ \\
-      \textbf{(Errors: "pa customized nang bed", "bed nang mga anak")}
-      \item https://harrypotter.fandom.com/f/p/3008625405222454882 \\
-      \textbf{(Error: "ng pumunta siya")}
 \end{enumerate}
 
 \subsection{Gitling Usage}
