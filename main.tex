@@ -21,6 +21,9 @@
 \fancyhead[C]{\headerfont{\textbf{\textit{S. Borja, C. Ching, and Z. Ganituen.}}}}
 \fancyfoot[R]{\thepage}
 
+% BOOk SETTINGS
+\let\cleardoublepage\clearpage
+
 % REFERENCES
 \addbibresource{bibliography/references.bib}
 
@@ -38,7 +41,6 @@
 \lstdefinelanguage{XML}{
   basicstyle=\ttfamily\footnotesize,
   morestring=[s]{"}{"},
-  commentstyle=\color{commentcolor}\upshape,
   moredelim=[s][\color{tagcolor}]{<}{>},
   moredelim=[l][\color{attrcolor}]{\ },
   stringstyle=\color{blue},
@@ -50,7 +52,7 @@
     backgroundcolor=\color{white},   
     basicstyle=\footnotesize\ttfamily, 
     keywordstyle=\color{blue}\bfseries, 
-    commentstyle=\color{commentcolor}\upshape,       
+    commentstyle=\color{gray}\upshape,       
     stringstyle=\color{red},          
     breaklines=true,                  
     showspaces=false,                 
