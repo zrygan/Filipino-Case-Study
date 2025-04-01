@@ -1,102 +1,44 @@
 \chapter{Selected Grammatical Errors}
-This chapter discusses selected grammatical errors, the regular expression that can check for each error and sample sentences.
-
-      % NOTES
-      % COMMENT THIS OUT, once the chapter is done
-      {\color{blue}
-            This section will contain the preliminaries for the case study:
-
-            \begin{itemize}
-                  \item Errors in Tagalog.
-                        \begin{itemize}
-                              \item R-D Allophones
-                              \item Ng v. Nang
-                              \item Gitling Usage
-                                    \begin{itemize}
-                                          \item "Alas-"
-                                          \item "Di-'
-                                          \item Foreign Words and Proper Nouns
-                                    \end{itemize}
-                        \end{itemize}
-                  \item Errors in the Bicol Language.
-                        \begin{itemize}
-                              \item Object-Focused Future Tense
-                              \item U-O Distribution
-                                    \begin{itemize}
-                                          \item Simple Case
-                                          \item Verbs in Object-Focused Future Tense
-                                          \item Reduplications
-                                    \end{itemize}
-                        \end{itemize}
-
-                        The format will be used for \textbf{each error}.
-                        \begin{itemize}
-                              \item Discussion of error
-                              \item Regular Expression of error
-                              \item Sample correct sentences
-                              \item Sample incorrect sentences
-                        \end{itemize}
-            \end{itemize}
-      }
+This chapter discusses selected grammatical errors, the regular expression that can check for each error, and sample sentences.
 
 \section{Selected Errors in Tagalog}
-\subsection{R-D Allophones}
+\subsection{R-D Alternation}
 
-Let \(p = "\,"\) the blank symbol or the symbol containing space. And, we have the
-sentence structure \(S = \alpha + p + EP\). The \textit{enclitic particles}
-(\(\mathbb{EP}\)) is the set \(\mathbb{EP} = \{\texttt{raw}, \texttt{daw}\}\) and
-\(\alpha\) is any noun, adjective, verb, or adverb. The proper usage of the enclitic
-particles are given by:
+R-D Alternation refers to a word starting with \texttt{r} if the preceding word ends in a vowel or \textit{patinig}, and \texttt{d} if the preceding word ends in a consonant \textit{katinig} \cite{KWF, OOP}. 
 
-% REGEX HERE
+Here we look at three cases where R-D Alternation occurs:
 
-% If
-% \[
-%       \left( S = \alpha + p + EP \land \alpha \matches (\mathbb{L}_\text{upper}\mathbb{L}_\text{lower}^*\mathbb{V}) \right)
-%       \Longrightarrow
-%       \left( EP = \texttt{raw} \right)
-% \]
-% Otherwise,
-% \[
-%       EP = \texttt{daw}
-% \]
+\paragraph{Enclitic Particles} When we have the sentence structure \(S = \alpha \cdot p \cdot x\) where $x$ is the enclitic particle \texttt{raw} or \texttt{daw}, and \(\alpha\) is any noun, adjective, verb, or adverb. 
 
-In other words, if the preceding word to the enclitic particle ends in a vowel,
-then the enclitic particle is \texttt{raw}. If it is a consonant, then it is \texttt{daw}.
+\paragraph{Discourse particles} When we have the sentence structure $S = \omega \cdot p \cdot x$ where $x$ is the discourse particle \texttt{rin} or \texttt{din}, and $\omega$ is a noun, verb, adjective, or pronoun.
 
-This is the same idea with the adverbs \texttt{rin} and \texttt{din}. If the sentence structure
-\(S = \omega + p + (\texttt{rin}\mid\texttt{din})\) and \(\omega\) ends in a vowel
-then the adverb used is \texttt{rin}. Otherwise, the adverb is \texttt{din}.
+We can formally say that if the word before $x$ is matched by the regular expression:
 
 \begin{example}
-      Example sentences:
 \end{example}
 
 \begin{enumerate}
-      \item Sabi \textbf{raw}... (correct)
-            \\ Sabi \textit{daw}... (incorrect)
-      \item Hahabol \textbf{daw} sila... (correct)
-            \\ Hahabol \textit{raw} sila... (incorrect)
-      \item Ako \textbf{rin}... (correct)
-            \\ Ako \textit{din}... (incorrect)
-      \item Subukan \textbf{din} natin... (correct)
-            \\ Subukan \textit{rin} natin... (incorrect)
+    \item Sabi \textbf{raw}... (correct)
+        \\ Sabi \textit{daw}... (incorrect)
+    \item Hahabol \textbf{daw} sila... (correct)
+        \\ Hahabol \textit{raw} sila... (incorrect)
+    \item Ako \textbf{rin}... (correct)
+        \\ Ako \textit{din}... (incorrect)
+    \item Subukan \textbf{din} natin... (correct)
+        \\ Subukan \textit{rin} natin... (incorrect)
 \end{enumerate}
 
 \subsection{Ng v. Nang}
 
-There are five ways to use the word "nang" in Filipino.
-
-\paragraph{First Case} It can be used before an adverb when the sentence structure $S$ is given by:
+\paragraph{First Case of \texttt{Nang}} It can be used before an adverb when the sentence structure $S$ is given by:
 
 \[
-      S_1 = \text{v} \cdot p \cdot \text{pron}^* \cdot p \cdot \text{"nang"} \cdot p \cdot \text{adv}
+      S_1 = \text{v} \cdot p \cdot \text{pron}^? \cdot p \cdot \texttt{nang} \cdot p \cdot \text{adv}
 \]
 
 Where v is a verb, pron is a pronoun, and adv is an adverb.
 
 \begin{example}
-
 \end{example}
 
 \begin{enumerate}
@@ -108,10 +50,10 @@ Where v is a verb, pron is a pronoun, and adv is an adverb.
             \\ Sumigaw \textit{ng} malakas. (incorrect)
 \end{enumerate}
 
-\paragraph{Second Case} Replacement for the conjunction "noong".
+\paragraph{Second Case of \texttt{Nang}} Replacement for the conjunction "noong".
 
 \[
-      S_2 = \text{"noong"} \cdot p \cdot \text{v\textpipe adv}
+      S_2 = \texttt{noong} \cdot p \cdot (\text{v} \vert \text{adv})
 \]
 
 \begin{example}
@@ -120,14 +62,14 @@ Where v is a verb, pron is a pronoun, and adv is an adverb.
 
 \begin{enumerate}
       \item \textbf{Nang} pumunta siya sa mall… (correct)
-            \\ \textit{Ng} pumunta siya sa mall… (incorrect)
+        \\ \textit{Ng} pumunta siya sa mall… (incorrect)
       \item \textbf{Nang} maaraw na araw… (correct)
             \\ \textit{Ng} maaraw na araw… (incorrect)
             \item \textbf{Nang} uminom siya ng tubig… (correct)
             \\ \textit{Ng} uminom siya ng tubig… (incorrect)
 \end{enumerate}
 
-\paragraph{Third Case} Replacement for the combined Enclictic Particle "na" + "-ng".
+\paragraph{Third Case of \texttt{Nang}} Replacement for the combined enclitic particle \texttt{na} $\cdot$ \texttt{-ng}.
 
 \[
       S_3 = \text{v} \cdot p \cdot \text{"na"} \cdot \text{"-ng"}
@@ -146,10 +88,14 @@ Where v is a verb, pron is a pronoun, and adv is an adverb.
             \\ Ang magkasama \textit{ng} matagal ay... (incorrect)
 \end{enumerate}
 
-\paragraph{Fourth Case} Replacement for "upang" or "para".
+\paragraph{Fourth Case of \texttt{Nang}} Replacement for "upang" or "para". If we have a sentence that matches $S_4$, we can transform it to $S_4^\prime$.
 
 \[
-      S_4 = \text{"upang"\textpipe "para"} \cdot p \cdot \text{v}
+      S_4 = (\texttt{upang}| \texttt{para}) \cdot p \cdot \text{v}
+\]
+
+\[
+    S_4^\prime = \texttt{nang} \cdot p \cdot \text{v}
 \]
 
 \begin{example}
@@ -157,15 +103,18 @@ Where v is a verb, pron is a pronoun, and adv is an adverb.
 \end{example}
 
 \begin{enumerate}
-      \item  ...kailangang bitayin si Rizal \textbf{nang} matakot... (correct)
-            \\ ...kailangang bitayin si Rizal \textit{ng} matakot... (correct)
-      \item Dinala si Pedro sa ospital \textbf{nang} magamot. (correct)
-            \\ Dinala si Pedro sa ospital \textit{ng} magamot. (incorrect)
-      \item Nag-ipon siya \textbf{nang} makabili... (correct)
-            \\ Nag-ipon siya \textit{ng} makabili... (correct)
+    \item \textbf{Para} kumain (original) 
+        \\ \textbf{Nang} kumain (alternative) 
+        \\ \textit{Ng} kumain (incorrect)
+    \item \textbf{Upang} matutunan (original)
+        \\ \textbf{Nang} matutunan (alternative)
+        \\ \textit{Ng} matutunan (incorrect)
+    \item \textbf{Upang} magtanong (original)
+        \\ \textbf{Nang} magtanong (incorrect)
+        \\ \textit{Ng} magtanong (incorrect)
 \end{enumerate}
 
-\paragraph{Fifth Case} Used inbetween repeated verbs.
+\paragraph{Fifth Case of \texttt{Nang}} Used inbetween repeated verbs.
 
 \[
       S_5 = v_1 \cdot p \cdot \text{"nang"} \cdot p \cdot v_1
@@ -184,17 +133,18 @@ Where v is a verb, pron is a pronoun, and adv is an adverb.
             \\ Salita \textit{ng} salita... (incorrect)
 \end{enumerate}
 
-The string "ng" is used to denote possession similar to
+There are five ways to use the word "nang" in Filipino.
+
+\paragraph{First Case of \texttt{Ng}} The string "ng" is used to denote possession similar to
 the word "of" in English when the structure of any sentence S is given by:
 
 \[
-      S_1 = \text{n} \cdot p \cdot \text{"ng"} \cdot p \cdot \text{n}
+      S_1 = \text{n}_1 \cdot p \cdot \texttt{ng} \cdot p \cdot \text{n}_1
 \]
 
-Where n is a noun.
+Where n$_1$ and n$_1$ are nouns,  n$_1$ is the possessor, and n$_2$ is the possessed.
 
 \begin{example}
-
 \end{example}
 
 \begin{enumerate}
@@ -206,14 +156,15 @@ Where n is a noun.
             \\ Hawakan \textit{nang} pinto (incorrect)
 \end{enumerate}
 
-"Ng" can be used to mark the direct object of an action in a sentence.
+\paragraph{Second Case of \texttt{Ng}} Marking the direct object of an action in a sentence.
 
 \[
-      S_2 = \text{v} \cdot p \cdot \text{"ng"} \cdot p \cdot \text{n}
+      S_2 = \text{v} \cdot p \cdot \texttt{ng} \cdot p \cdot \text{n}
 \]
 
-\begin{example}
+Where v is a verb and n is a noun.
 
+\begin{example}
 \end{example}
 
 \begin{enumerate}
@@ -225,44 +176,23 @@ Where n is a noun.
             \\ Inalis \textit{nang} lola... (incorrect)
 \end{enumerate}
 
-\begin{example}
-      Here are examples of misused "nang"s and "ng"s in Filipino:
-\end{example}
-
-\begin{enumerate}
-      \item Inalis \textbf{ng} lola... (correct) \\
-            Inalis \textit{nang} lola... (incorrect) \\
-            "Nang" is not used to denote possession.
-      \item Bag \textbf{ng} bata. (correct) \\
-            Bag \textit{nang} bata. (incorrect) \\
-            "Nang" is not used to denote possession.
-      \item Ang mamatay \textbf{nang} dahil sa iyo. (correct) \\
-            Ang mamatay \textit{ng} dahil sa iyo. (incorrect) \\
-            "Ng" is not used for combining Enclictic Particles "na" + "-ng".
-      \item Sinapak \textbf{nang} masakit... (correct) \\
-            Sinapak \textit{ng} masakit... (incorrect) \\
-            "Ng" is not used before an adverb.
-      \item Kain \textbf{nang} kain... (correct) \\
-            Kain \textit{ng} kain... (incorrect) \\
-            "Ng" is not used inbetween repeating verbs.
-\end{enumerate}
-
 \subsection{Gitling Usage}
-For this section, Let \(k\in\mathcal{F}\) and \(s\in\mathbb{S}\).
+For this section, let $k$ be any Filipino word (\(k\in\mathcal{F}\)) and $s$ be any Spanish word (\(s\in\mathcal{S}\)).
+
 \subsubsection{"Alas-"}
+
 Let \(h\) be an hour in the 12-hour clock (numeric or non-numeric) excluding the first hour.
 \[
-      k = (\text{"ala"}) \cdot "\text{-}" \cdot (\text{"una"} \ {\textpipe} \ 1)
+      k = (\texttt{ala})\texttt{-}(\texttt{una} | 1)
 \]
-\begin{center}
-"ala" for the following hours.
-\end{center}
+
+If $h$ is an hour that refers to one o' clock, then we use \texttt{ala-}.
+
 \[
-      k = (\text{"alas"}) \cdot "\text{-}" \cdot h
+      k = (\texttt{alas})\texttt{-}h
 \]
-\begin{center}
-"alas" for the following hours.
-\end{center}
+
+We use \texttt{alas}, otherwise.
 
 \begin{example}
 \end{example}
@@ -270,8 +200,7 @@ Let \(h\) be an hour in the 12-hour clock (numeric or non-numeric) excluding the
       \item \textbf{ala-1} ng tanghali. (correct) \\
             \textit{ala1} ng tanghali. (incorrect)
       \item \textbf{ala-una} ng umaga. (correct) \\
-            \textit{ala una} ng umaga. (incorrect)
-      \item \textbf{ala-una} ng tanghali. (correct) \\
+            \textit{ala una} ng umaga. (incorrect) \\
             \textit{alas-una} ng tanghali. (incorrect)
       \item \textbf{alas-tres} ng tanghali. (correct) \\
             \textit{alas tres} ng tanghali. (incorrect)
@@ -281,11 +210,14 @@ Let \(h\) be an hour in the 12-hour clock (numeric or non-numeric) excluding the
 
 \subsubsection{"Di-"}
 
-Let \(w \in \mathbb{A} \ \cup \ \mathbb{N}\) be an element of the set of adjectives or nouns.
+Let $w\in\mathcal{F}$ be any adjective or noun.
+
 \[
-      k = (\text{"di"}) \cdot "\text{-}" \cdot w
+      k = (\texttt{di-})w
 \]
-The syllable "di" is a shortened format for the word "hindi", and it acts as a negation to the root word.
+
+The prefix \texttt{di-} is a shortened format for the word \texttt{hindi} and it acts as a negation to the root word $w$.
+
 \begin{example}
 \end{example}
 \begin{enumerate}
@@ -303,10 +235,12 @@ The syllable "di" is a shortened format for the word "hindi", and it acts as a n
 
 \subsubsection{Proper Nouns}
 \label{proper_nouns_chapter}
-Let \(j \in \mathbb{PN}\), where \(\mathbb{PN}\) is the set of proper nouns.
+Let $j \in \mathcal{F}$ be any proper noun and $s$ is a derivational prefix that modifies the root word to create a root word \cite{rafael2018}.
+
 \[
-      k = s \cdot "\text{-}" \cdot j
+      k = s\texttt{-}j
 \]
+
 \begin{example}
 \end{example}
 \begin{enumerate}
@@ -322,11 +256,21 @@ Let \(j \in \mathbb{PN}\), where \(\mathbb{PN}\) is the set of proper nouns.
             \textit{kadavao} (incorrect)
 \end{enumerate}
 
+In this case, we have four derivational prefixes:
+\begin{itemize}
+    \item \texttt{taga-} which denotes the place of origin.
+    \item \texttt{maka-} which denotes an inclination to something.
+    \item \texttt{pa-} which denotes continuation, intensification, or timing of a verb.
+    \item \texttt{ka-} which denotes kinship .
+\end{itemize}
+
 \subsubsection{Foreign Words}
-Let \(w \in \mathbb{FW}\), where \(\mathbb{FW}\) is the set of foreign words.
+Let \(w \notin \mathcal{F}\) or it is any foreign word and $s$ is a derivational prefix.
+
 \[
-      k = s \cdot "\text{-}" \cdot w
+      k = s\texttt{-}w
 \]
+
 \begin{example}
 \end{example}
 \begin{enumerate}
@@ -341,6 +285,13 @@ Let \(w \in \mathbb{FW}\), where \(\mathbb{FW}\) is the set of foreign words.
       \item \textbf{ipa-kanji} (correct) \\
             \textit{ipa kanji} (incorrect)
 \end{enumerate}
+
+In this case, we have three derivational prefixes:
+\begin{itemize}
+    \item \texttt{pa-} which denotes causation.
+    \item \texttt{maki-} which denotes shared action or involvement.
+    \item \texttt{ipa-} which denotes directing an action towards something.
+\end{itemize}
 
 \section{Selected Errors in the Bicol Language}
 \subsection{Object-Focused Future Tense}
@@ -366,10 +317,6 @@ In particular, the Kleene question mark is 1 if and only if the root word $r$ fo
             \textit{babasaon} (incorrect)
       \item \textbf{masasaboton} (correct) \\
             \textit{masasabothon} (incorrect)
-      \item \textbf{DO THIS} (correct) \\
-            \textit{DO THIS} (incorrect)
-      \item \textbf{DO THIS} (correct) \\
-            \textit{DO THIS} (incorrect)
 \end{enumerate}
 
 \subsection{U-O Distribution}
@@ -377,37 +324,25 @@ In particular, the Kleene question mark is 1 if and only if the root word $r$ fo
 \subsubsection{U-O Distribution: Simple Case}
 Any word in the Bicolano language that has an \texttt{o} sound that is not the last syllable is pronounced as \texttt{u}. Only if the \texttt{o} sound is the last syllable of the word, that sound is pronounced as \texttt{o}.
 
-Formally, we can say that any Bicolano language word that contains an ‘o’ sound can be represented by the regular expression:
-
-\[
-      \left(\texttt{C}^?\texttt{uC}^?\right)^* \left(\texttt{C}^?\texttt{oC}^?\right)
-\]
-
 \begin{example}
 \end{example}
 
 \begin{enumerate}
       \item \textbf{Tukdo} (correct) \\
-            \textit{Tokdo} or \textit{Tukdu} (incorrect) \\
+            \textit{Tokdo} or \textit{Tukdu} (incorrect) 
       \item \textbf{Bulan} (correct) \\
-            \textit{Bolan} (incorrect) \\
+            \textit{Bolan} (incorrect) 
       \item \textbf{Ako} (correct) \\
-            \textit{Aku} (incorrect) \\
+            \textit{Aku} (incorrect) 
       \item \textbf{Tukdo} (correct) \\
-            \textit{Tokdo} or \textit{Tukdu} (incorrect) \\
+            \textit{Tokdo} or \textit{Tukdu} (incorrect) 
       \item \textbf{Du'ot} (correct) \\
-            \textit{Du'ut} or \textit{Do'ot} (incorrect) \\
+            \textit{Du'ut} or \textit{Do'ot} (incorrect) 
 \end{enumerate}
 
 \subsubsection{U-O Distribution for Verbs in Object-Focused Future Tense}
 
-Verbs with the $\texttt{h}^?on$ suffix or verbs in the object-focused future tense form, or any word of the form:
-
-\[
-      r \texttt{h}^? \texttt{on} \quad \text{where } r \text{ is the root word}
-\]
-
-The spelling of the root word $r$ will stay the same. That is, verbs at their object-focused future form may have an \texttt{o} sound at the second to the last suffix. Take for instance the word "gibohon" which has three syllables, notice that there is an \texttt{o} sound at the second syllable.
+Verbs with the $\texttt{-h}^?\texttt{on}$ suffix or verbs in the object-focused future tense form maintain the same root word $r$ spelling. Specifically, when we add the $\texttt{-h}^?\texttt{on}$ suffix to a root word that already has an \texttt{o} sound at its last syllable. We do not change the \texttt{o} sound of the root word. In other words, it maintains its spelling even after adding the suffix \cite{bikol_dictionary}.
 
 \begin{example}
 \end{example}
@@ -423,7 +358,7 @@ The spelling of the root word $r$ will stay the same. That is, verbs at their ob
 
 \subsubsection{U-O Distribution for Reduplications}
 
-Words that are a reduplication, or a joining of two syllables, can have the \texttt{u} sound at the end if and only if the reduplicated syllable does indeed have the \texttt{u} sound.
+Words that are a reduplication, or a joining of two syllables, can have the \texttt{u} sound at the end if and only if the reduplicated syllable does indeed have the \texttt{u} sound \cite{bikol_dictionary}.
 
 Formally, any word given by:
 \[
