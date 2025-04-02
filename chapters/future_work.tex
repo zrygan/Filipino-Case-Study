@@ -5,7 +5,7 @@ This chapter discusses possible recommendations for future work on using formal 
 
 \section{Context Sensitivity of Philippine Languages}
 
-As evident in the common errors selected in Chapter \ref{errors}, these errors are relatively simple in nature. In other words, these are either specific cases of errors, or the errors selected are simple itself. For instance, we can add the gitling misuse for onomatopoeia in Chapter \ref{gitling_usage}, but this error is not included due to the complexity of the error.
+As evident in the common errors selected in Chapter \ref{errors}, these errors are relatively simple in nature. In other words, these are either specific cases of errors, or the errors selected are simple themselves. For instance, we can add the \textit{gitling} misuse for onomatopoeia in Chapter \ref{gitling_usage}, but this error is not included due to the complexity of the error.
 
  For that specific case, we need to take into account if the word is \textit{indeed} an onomatopoeia in $\mathcal{F}$, the syllables of that word, the vowel alterations, and other specifications.
 
@@ -42,7 +42,7 @@ A bandage solution to this issue, and to allow us to create a CFG for this speci
     \end{tabular}
 \end{center}
 
-Doing so will allow us to create a CFG that will accept the sentence structure $\omega \text{ nang } \omega$ where $\omega \in \mathcal{F}_\text{verbs}$. However, this is not very efficient as we will have $|\mathcal{F}_\text{verbs}| + 1$ number of non-terminals and $2\times|\mathcal{F}_\text{verbs}|$ terminals.
+Doing so will allow us to create a CFG that will accept the sentence structure $\omega \text{ nang } \omega$ where $\omega \in \mathcal{F}_\text{verbs}$. However, this is not very efficient as we will have $|\mathcal{F}_\text{verbs}| + 1$ the number of non-terminals and $2\times|\mathcal{F}_\text{verbs}|$ terminals.
 
 Therefore, we need to add a constraint to a CFG, essentially creating an \textit{Attribute Grammar} \cite{kalita_kumar_roy_2022}. Doing so, we get
 
@@ -57,13 +57,13 @@ Furthermore, introducing \textit{Context-Sensitive Grammars} will allow for the 
 
 \section{Turing Machines, Turing Completeness, and Java}
 
-It is the case that we need to extend the capability of CFGs or use automata that are strictly more powerful than CFGs. LanguageTool accomplished to check for errors that are at least as complex as the rule defined above through Java code \cite{LanguageToolDevDocs}.
+It is the case that we need to extend the capability of CFGs or use automata that are strictly more powerful than CFGs. LanguageTool accomplished checking for errors that are at least as complex as the rule defined above through Java code \cite{LanguageToolDevDocs}.
 
-It follows that, if a grammar rule cannot be expressed as a CFG, then expressing it as Java code since Java is \textit{turing complete}. Thus, it is strictly more powerful than a CFG \cite{church_turing}.
+It follows that, if a grammar rule cannot be expressed as a CFG, then expressing it as Java code is necessary since Java is \textit{Turing complete}. Thus, it is strictly more powerful than a CFG \cite{church_turing}.
 
 Below are examples of grammar rules that are impossible or inefficient to implement as a CFG.
 
-\paragraph{Kump and Kumb Words} If \(s\in \mathcal{S}\), and the the prefix of \(s\) is given by the regular expression \((\texttt{C}\mid\texttt{c})\texttt{on}(\texttt{f}\mid\texttt{v})\). Then, the translation of $s$ to $\mathcal{F}$ or \(\mathcal{F}(s)\) is prefixed with \((\texttt{C}\mid\texttt{c})\texttt{um}(\texttt{p}\mid\texttt{b})\).
+\paragraph{Kump and Kumb Words} If \(s\in \mathcal{S}\), and the prefix of \(s\) is given by the regular expression \((\texttt{C}\mid\texttt{c})\texttt{on}(\texttt{f}\mid\texttt{v})\). Then, the translation of $s$ to $\mathcal{F}$ or \(\mathcal{F}(s)\) is prefixed with \((\texttt{C}\mid\texttt{c})\texttt{um}(\texttt{p}\mid\texttt{b})\).
 
 In particular:
 \begin{itemize}
@@ -71,7 +71,7 @@ In particular:
       \item \(\left(s \in (\texttt{conv})\mathbb{S}^*\right) \Longrightarrow \left(\mathcal{F}(s) \in (\texttt{kumb})\Sigma^*\right)\)
 \end{itemize}
 
-\paragraph{Es- and Is- Words} Given the Spanish and English roots of Filipino, some \textit{loan} words have rules for Filipino spelling. Let \(s\) be any string, the English language \(\mathcal{E}\), the Spanish language \(\mathcal{S}\), and \(\mathcal{F}(s)\) is the translation of \(s\) in \(\mathcal{F}\).
+\paragraph{Es- and Is- Words} Given the Spanish and English roots of Filipino, some \textit{loan} words have rules for Filipino spelling. Let \(s\) be any string, the English language \(\mathcal{E}\), the Spanish language \(\mathcal{S}\), and \(\mathcal{F}(s)\) be the translation of \(s\) in \(\mathcal{F}\).
 
 \begin{enumerate}
       \item \(\left(\forall s\in \mathcal{S},s \in \texttt{es}\mathbb{S}^*\right) \Longrightarrow \left(\mathcal{F}(s) \in \texttt{es}\Sigma_\mathcal{F}^*\right) \)
@@ -192,4 +192,4 @@ public class VerbNangVerbRule extends Rule {
 
 In conclusion, this paper has explored the challenges and opportunities in using formal language theory, specifically Context-Free Grammars (CFGs) and regular expressions, for error checking in the grammar of Filipino and the Bikol language. We have discussed several common errors and provided various solutions, ranging from simple CFG representations, their CNF and GNF equivalents, to more advanced constructs like Attribute Grammars and Context-Sensitive Grammars, addressing the intricacies of the Philippine languages. Furthermore, we have highlighted the limitations of CFGs when confronted with complex grammatical rules and demonstrated how the power of Turing-complete programming languages, such as Java, can be leveraged to handle errors beyond the capabilities of CFGs.
 
-As we move forward, integrating more sophisticated models for computation will be essential for the further refinement of grammar checkers for Philippine languages. By combining formal language theory with machine learning techniques and natural language processing, future work can significantly enhance the accuracy and efficiency of Filipino grammar checkers, enabling a more nuanced understanding of language use and error detection.
+As we move forward, integrating more sophisticated models for computation will be essential for further refining grammar checkers for Philippine languages. By combining formal language theory with machine learning techniques and natural language processing, future work can significantly enhance the accuracy and efficiency of Filipino grammar checkers, enabling a more nuanced understanding of language use and error detection.
