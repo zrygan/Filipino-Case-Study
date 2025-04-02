@@ -1071,13 +1071,347 @@ For ease, the non-terminal derived from H is "h" representing the hours followin
 \section{Grammars for Bikol Language Errors}
 
 \newpage
-\subsection{Bikol Language Grammar: Object-Focused Future Tense}
+\subsection{Bikol Language Grammar: Object-Focused Future Tense, Example 1}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{B "on"} \\
+        \text{B} & $ \rightarrow $ & \text{"biho"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{B O} \\
+        \text{B} & $ \rightarrow $ & \text{"biho"} \\
+        \text{O} & $ \rightarrow $ & \text{"on"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Z1} & $ \rightarrow $ & \text{"biho" Z3} \\
+        \text{Z3} & $ \rightarrow $ & \text{"on"} \\
+    \end{tabular}
+\end{center}
 
 \newpage
-\subsection{Bikol Language Grammar: U-O Distribution for the Simple Case}
+\subsection{Bikol Language Grammar: Object-Focused Future Tense, Example 2}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{B "on"} \\
+        \text{B} & $ \rightarrow $ & \text{"babasa"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{B O} \\
+        \text{B} & $ \rightarrow $ & \text{"babasa"} \\
+        \text{O} & $ \rightarrow $ & \text{"on"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Z1} & $ \rightarrow $ & \text{"babasa" Z3} \\
+        \text{Z3} & $ \rightarrow $ & \text{"on"} \\
+    \end{tabular}
+\end{center}
 
 \newpage
-\subsection{Bikol Language Grammar: U-O Distribution for Verbs in Object-Focused Future Tense}
+\subsection{Bikol Language Grammar: Object-Focused Future Tense, Example 3}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{M "hon"} \\
+        \text{M} & $ \rightarrow $ & \text{"masasabot"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{M H} \\
+        \text{M} & $ \rightarrow $ & \text{"masasabot"} \\
+        \text{H} & $ \rightarrow $ & \text{"hon"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Z1} & $ \rightarrow $ & \text{"masasabot" Z3} \\
+        \text{Z3} & $ \rightarrow $ & \text{"hon"} \\
+    \end{tabular}
+\end{center}
 
 \newpage
-\subsection{Bikol Language Grammar: U-O Distribution for Reduplications}
+\subsection{Bikol Language Grammar: U-O Distribution for the Simple Case, Example 1}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{T "o" K "o"} \\
+        \text{T} & $ \rightarrow $ & \text{"T"} \\
+        \text{K} & $ \rightarrow $ & \text{"kd"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{TO KO} \\
+        \text{T} & $ \rightarrow $ & \text{"T"} \\
+        \text{K} & $ \rightarrow $ & \text{"kd"} \\
+        \text{O} & $ \rightarrow $ & \text{"o"} \\
+        \text{TO} & $ \rightarrow $ & \text{T O} \\
+        \text{KO} & $ \rightarrow $ & \text{K O} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Z1} & $ \rightarrow $ & \text{"T" Z4 Z6} \\
+        \text{Z4} & $ \rightarrow $ & \text{"o"} \\
+        \text{Z6} & $ \rightarrow $ & \text{"kd" Z4} \\
+    \end{tabular}
+\end{center}
+
+\newpage
+\subsection{Bikol Language Grammar: U-O Distribution for the Simple Case, Example 2}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{B "o" L} \\
+        \text{B} & $ \rightarrow $ & \text{"B"} \\
+        \text{L} & $ \rightarrow $ & \text{"lan"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{BO L} \\
+        \text{B} & $ \rightarrow $ & \text{"B"} \\
+        \text{L} & $ \rightarrow $ & \text{"lan"} \\
+        \text{O} & $ \rightarrow $ & \text{"o"} \\
+        \text{BO} & $ \rightarrow $ & \text{B O} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Z1} & $ \rightarrow $ & \text{"B" Z4 Z3} \\
+        \text{Z3} & $ \rightarrow $ & \text{"lan"} \\
+        \text{Z4} & $ \rightarrow $ & \text{"o"} \\
+    \end{tabular}
+\end{center}
+
+\newpage
+\subsection{Bikol Language Grammar: U-O Distribution for the Simple Case, Example 3}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{A "u"} \\
+        \text{A} & $ \rightarrow $ & \text{"ak"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{A U} \\
+        \text{A} & $ \rightarrow $ & \text{"ak"} \\
+        \text{U} & $ \rightarrow $ & \text{"u"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Z1} & $ \rightarrow $ & \text{"ak" Z3} \\
+        \text{Z3} & $ \rightarrow $ & \text{"u"} \\
+    \end{tabular}
+\end{center}
+
+
+\newpage
+\subsection{Bikol Language Grammar: U-O Distribution for Verbs in Object-Focused Future Tense, Example 1}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{M "u" T} \\
+        \text{M} & $ \rightarrow $ & \text{"masasab"} \\
+        \text{T} & $ \rightarrow $ & \text{"ton"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{M U T} \\
+        \text{M} & $ \rightarrow $ & \text{"masasab"} \\
+        \text{T} & $ \rightarrow $ & \text{"ton"} \\
+        \text{U} & $ \rightarrow $ & \text{"u"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Z1} & $ \rightarrow $ & \text{"masasab" Z4 Z3} \\
+        \text{Z3} & $ \rightarrow $ & \text{"ton"} \\
+        \text{Z4} & $ \rightarrow $ & \text{"u"} \\
+    \end{tabular}
+\end{center}
+
+\newpage
+\subsection{Bikol Language Grammar: U-O Distribution for Verbs in Object-Focused Future Tense, Example 2}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{L "u" H} \\
+        \text{L} & $ \rightarrow $ & \text{"lut"} \\
+        \text{H} & $ \rightarrow $ & \text{"hon"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{L U H} \\
+        \text{L} & $ \rightarrow $ & \text{"lut"} \\
+        \text{H} & $ \rightarrow $ & \text{"hon"} \\
+        \text{U} & $ \rightarrow $ & \text{"u"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Z1} & $ \rightarrow $ & \text{"lut" Z4 Z3} \\
+        \text{Z3} & $ \rightarrow $ & \text{"hon"} \\
+        \text{Z4} & $ \rightarrow $ & \text{"u"} \\
+    \end{tabular}
+\end{center}
+
+\newpage
+\subsection{Bikol Language Grammar: U-O Distribution for Verbs in Object-Focused Future Tense, Example 3}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{HR "u" H} \\
+        \text{HR} & $ \rightarrow $ & \text{"her"} \\
+        \text{H} & $ \rightarrow $ & \text{"hon"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{HR UH} \\
+        \text{HR} & $ \rightarrow $ & \text{"her"} \\
+        \text{H} & $ \rightarrow $ & \text{"hon"} \\
+        \text{U} & $ \rightarrow $ & \text{"u"} \\
+        \text{UH} & $ \rightarrow $ & \text{U H} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Z1} & $ \rightarrow $ & \text{"her" "u" Z3} \\
+        \text{Z3} & $ \rightarrow $ & \text{"hon"} \\
+    \end{tabular}
+\end{center}
+
+\newpage
+\subsection{Bikol Language Grammar: U-O Distribution for Reduplications, Example 1}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{A B} \\
+        \text{A} & $ \rightarrow $ & \text{"tug"} \\
+        \text{B} & $ \rightarrow $ & \text{"tog"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{A B} \\
+        \text{A} & $ \rightarrow $ & \text{"tug"} \\
+        \text{B} & $ \rightarrow $ & \text{"tog"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Z1} & $ \rightarrow $ & \text{"tug" B} \\
+        \text{Z3} & $ \rightarrow $ & \text{"tog"} \\
+    \end{tabular}
+\end{center}
+
+\newpage
+\subsection{Bikol Language Grammar: U-O Distribution for Reduplications, Example 2}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{A B} \\
+        \text{A} & $ \rightarrow $ & \text{"gu'"} \\
+        \text{B} & $ \rightarrow $ & \text{"go'"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{A B} \\
+        \text{A} & $ \rightarrow $ & \text{"gu'"} \\
+        \text{B} & $ \rightarrow $ & \text{"go'"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Z1} & $ \rightarrow $ & \text{"gu'" B} \\
+        \text{Z3} & $ \rightarrow $ & \text{"go'"} \\
+    \end{tabular}
+\end{center}
+
+\newpage
+\subsection{Bikol Language Grammar: U-O Distribution for Reduplications, Example 3}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{A B} \\
+        \text{A} & $ \rightarrow $ & \text{"kut"} \\
+        \text{B} & $ \rightarrow $ & \text{"kot"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{A B} \\
+        \text{A} & $ \rightarrow $ & \text{"kut"} \\
+        \text{B} & $ \rightarrow $ & \text{"kot"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Z1} & $ \rightarrow $ & \text{"kut" B} \\
+        \text{Z3} & $ \rightarrow $ & \text{"kot"} \\
+    \end{tabular}
+\end{center}
