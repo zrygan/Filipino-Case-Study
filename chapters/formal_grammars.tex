@@ -5,7 +5,88 @@ This chapter will discuss the detection of these errors using context-free gramm
 \newpage
 \section{Grammars for Tagalog Errors}
 
-\subsection{Tagalog Grammar: R-D Alternation}
+\subsection{Tagalog Grammar: R-D Alternation, Example 1}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{S "daw"} \\
+        \text{S} & $ \rightarrow $ & \text{"sabi"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{S D} \\
+        \text{S} & $ \rightarrow $ & \text{"sabi"} \\
+        \text{D} & $ \rightarrow $ & \text{"daw"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{"sabi" D} \\
+        \text{D} & $ \rightarrow $ & \text{"daw"} \\
+    \end{tabular}
+\end{center}
+
+\newpage
+\subsection{Tagalog Grammar: R-D Alternation, Example 2}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{H "raw" S} \\
+        \text{H} & $ \rightarrow $ & \text{"hahabol"} \\
+        \text{S} & $ \rightarrow $ & \text{"sila"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{HR S} \\
+        \text{H} & $ \rightarrow $ & \text{"hahabol"} \\
+        \text{S} & $ \rightarrow $ & \text{"sila"} \\
+        \text{R} & $ \rightarrow $ & \text{"raw"} \\
+        \text{HR} & $ \rightarrow $ & \text{H R} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{GNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{"hahabol" R S} \\
+        \text{S} & $ \rightarrow $ & \text{"sila"} \\
+        \text{R} & $ \rightarrow $ & \text{"raw"} \\
+    \end{tabular}
+\end{center}
+
+\newpage
+\subsection{Tagalog Grammar: R-D Alternation, Example 3}
+\subsubsection{CFG}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{A "din"} \\
+        \text{A} & $ \rightarrow $ & \text{"ako"} \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{CNF}
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{A D} \\
+        \text{A} & $ \rightarrow $ & \text{"ako"} \\
+        \text{D} & $ \rightarrow $ & \text{"daw"} \\
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{rcl}
+        \text{Start} & $ \rightarrow $ & \text{"ako" D} \\
+        \text{D} & $ \rightarrow $ & \text{"daw"} \\
+    \end{tabular}
+\end{center}
 
 \newpage
 \subsection{Tagalog Grammar: Ng Case 1, Example 1}
@@ -40,7 +121,6 @@ This chapter will discuss the detection of these errors using context-free gramm
 
 \newpage
 \subsection{Tagalog Grammar: Ng Case 1, Example 2}
-
 \subsubsection{CFG}
 \begin{center}
     \begin{tabular}{rcl}
