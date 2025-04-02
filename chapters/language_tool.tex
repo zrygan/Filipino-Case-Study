@@ -47,7 +47,7 @@ As for creating sophisticated grammar and style rules, these are discussed at le
 
 \section{LanguageTool Implementation}
 
-The complete source code for the LanguageTool implementation for the errors discussed in the previous chapters is available in the preface of the paper. The sections below will take a closer look at one of the grammars implemented for Tagalog and Bikol language.
+The complete source code for the LanguageTool implementation for the errors discussed in the previous chapters is available in the preface of the paper. The sections below will take a closer look at one of the grammars implemented for Filipino and Bikol language.
 
 
 \subsection{LanguageTool Implementation for R-D Alternation}
@@ -206,26 +206,8 @@ This section will discuss how the rule for U-O Distribution discussed in Chapter
             Change second-to-last suffix 'u' with 'o'.
         </short>
     </rule>
-
-    <rule id="u-o_reduplication1" name="Change 'o' to 'u'.">
-        <pattern case_sensitive="no"> 
-            <token regex="yes">
-                (?:^|(?<=\s))
-                ([b-df-hj-np-tv-z']*u[b-df-hj-np-tv-z']*)
-                (?!\1)[b-df-hj-np-tv-z']*o[b-df-hj-np-tv-z']*
-                (?:$|(?=\s))
-            </token>
-        </pattern>
-        <message>
-            Replace the 'o' with 'u' because the reduplicated 
-            syllable uses 'u'. 
-        </message>
-        <short>
-            Change 'o' in the 2nd part to 'u'.
-        </short>
-    </rule>
 </category>
 \end{lstlisting}
 
-Here we see that we have one \textit{rule category} that groups similar rules. In this case, the category is \texttt{u-o\textunderscore distribution} which has five rules as a part of it. Namely, three sub-cases of the \textbf{Simple Case}, \textbf{Object-Focused Future Verbs}, and \textbf{Reduplications} for the U-O Distribution in the Bikol language.
+Here we see that we have one \textit{rule category} that groups similar rules. In this case, the category is \texttt{u-o\textunderscore distribution} which has four rules as a part of it. Namely, three sub-cases of the \textbf{Simple Case}, and \textbf{Object-Focused Future Verbs} for the U-O Distribution in the Bikol language.
 
