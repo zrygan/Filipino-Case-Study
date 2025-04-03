@@ -86,7 +86,7 @@ Rule (1) denotes that if \(s\) is a Spanish word, translating \(s\) to a Filipin
 \]
 where \(\forall n, s_n \in \mathbb{O} \) represents an \textit{onomatopoeic syllable}, \( \mathbb{O} \) is the set of all such syllables \( n \geq 1 \), and each \( s_n \) is a single-syllable onomatopoeic unit. The word consists of at least two such syllables, separated by a \textit{gitling}.
 
-\paragraph{Fifth Case of \texttt{Nang}} Used in between repeated verbs.
+\paragraph{Fifth Case of \texttt{Nang}} Used in between a repeated pandiwa.
 
 \[
       S_5 = v_1 \cdot p \cdot \text{"nang"} \cdot p \cdot v_1
@@ -100,10 +100,10 @@ Formally, any word given by the IEEE Posix regular expression:
       \left( \Sigma_\mathbb{B}^*\texttt{u}\Sigma_\mathbb{B}^* \right)\backslash1 \in \mathcal{B}
 \]
 
-Below is an example implementation of the Verb-Nang-verb grammar rule in LanguageTool using Java.
+Below is an example implementation of the Pandiwa-Nang-Pandiwa grammar rule in LanguageTool using Java.
 
 % Maximum source code width                                             |
-\begin{lstlisting}[language=C, caption=Implementation of Verb-Nang-Verb Grammar Rule in Java]
+\begin{lstlisting}[language=C, caption=Implementation of Pandiwa-Nang-Pandiwa Grammar Rule in Java]
 import org.languagetool.AnalyzedSentence;
 import org.languagetool.AnalyzedTokenReadings;
 import org.languagetool.rules.Rule;
@@ -118,7 +118,7 @@ public class VerbNangVerbRule extends Rule {
     private static final String[] VERBS = {
         "mangyari", "gumawa", "sumulat", "tumakbo", 
         "kumain", "maglaro", "magbasa"  
-        // Verbs in Filipino
+        // a Pandiwa in Filipino
     };
 
     public VerbNangVerbRule(Language language) {
@@ -184,7 +184,7 @@ public class VerbNangVerbRule extends Rule {
     }
 
     private String getMessage(){
-        return "Verb-Nang-Verb misuse; the verbs 
+        return "Pandiwa-Nang-Pandiwa misuse; the verbs 
                 surrounding 'nang' must be the same.";
     }
 }
