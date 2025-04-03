@@ -798,34 +798,28 @@ For ease, the non-terminal derived from H is "h" representing the hours followin
 \subsubsection{CFG}
 \begin{center}
     \begin{tabular}{rcl}
-        \text{Start} & $ \rightarrow $ & \text{Error\_1 \textbar\ Error\_2 \textbar\ Error\_3} \\
+        \text{Start} & $ \rightarrow $ & \text{Error\_1 \textbar\ Error\_2} \\
         \text{P} & $ \rightarrow $ & \text{" "} \\
         \text{G} & $ \rightarrow $ & \text{"-"} \\
         \text{W} & $ \rightarrow $ & \text{doktor \textbar\ lalaki \textbar\ mabait \textbar\ tulog} \\
         \text{C} & $ \rightarrow $ & \text{Doktor \textbar\ Lalaki \textbar\ Mabait \textbar\ Tulog} \\
-        \text{Error\_1} & $ \rightarrow $ & \text{"di" W \textbar\ "di" P W} \\
-        \text{Error\_1} & $ \rightarrow $ & \text{"di" C \textbar\ "di" P C} \\
-        \text{Error\_2} & $ \rightarrow $ & \text{"hindi" G W \textbar\ "hindi" G C} \\
-        \text{Error\_3} & $ \rightarrow $ & \text{"di" G C} \\
+        \text{Error\_1} & $ \rightarrow $ & \text{"di" P C \textbar\ "di" P W} \\
+        \text{Error\_2} & $ \rightarrow $ & \text{"di" G C} \\
     \end{tabular}
 \end{center}
 
 \subsubsection{CNF}
 \begin{center}
     \begin{tabular}{rcl}
-        \text{Start} & $ \rightarrow $ & \text{S W \textbar\ S PW} \\
-        \text{Start} & $ \rightarrow $ & \text{S C \textbar\ S PC} \\
-        \text{Start} & $ \rightarrow $ & \text{H GW \textbar\ H GC} \\
+        \text{Start} & $ \rightarrow $ & \text{S PC \textbar\ S PW} \\
         \text{Start} & $ \rightarrow $ & \text{S GC} \\
         \text{S} & $ \rightarrow $ & \text{"di"} \\
-        \text{H} & $ \rightarrow $ & \text{"hindi"} \\
         \text{W} & $ \rightarrow $ & \text{doktor \textbar\ lalaki \textbar\ mabait \textbar\ tulog} \\
         \text{C} & $ \rightarrow $ & \text{Doktor \textbar\ Lalaki \textbar\ Mabait \textbar\ Tulog} \\
         \text{P} & $ \rightarrow $ & \text{" "} \\
         \text{G} & $ \rightarrow $ & \text{"-"} \\
         \text{PW} & $ \rightarrow $ & \text{P W} \\
         \text{PC} & $ \rightarrow $ & \text{P C} \\
-        \text{GW} & $ \rightarrow $ & \text{G W} \\
         \text{GC} & $ \rightarrow $ & \text{G C} \\
     \end{tabular}
 \end{center}
@@ -833,10 +827,8 @@ For ease, the non-terminal derived from H is "h" representing the hours followin
 \subsubsection{GNF}
 \begin{center}
     \begin{tabular}{rcl}
-        \text{Start} & $ \rightarrow $ & \text{"di" W \textbar\ "di" P W} \\
-        \text{Start} & $ \rightarrow $ & \text{"di" C \textbar\ "di" PC} \\
-        \text{Start} & $ \rightarrow $ & \text{"hindi" GW \textbar\ "hindi" GC} \\
-        \text{Start} & $ \rightarrow $ & \text{"di" GC} \\
+        \text{Start} & $ \rightarrow $ & \text{"di" P C \textbar\ "di" P W} \\
+        \text{Start} & $ \rightarrow $ & \text{"di" G C} \\
         \text{W} & $ \rightarrow $ & \text{doktor \textbar\ lalaki \textbar\ mabait \textbar\ tulog} \\
         \text{C} & $ \rightarrow $ & \text{Doktor \textbar\ Lalaki \textbar\ Mabait \textbar\ Tulog} \\
         \text{P} & $ \rightarrow $ & \text{" "} \\
@@ -852,11 +844,10 @@ For ease, the non-terminal derived from H is "h" representing the hours followin
         \text{Start} & $ \rightarrow $ & \text{Error\_1 \textbar\ Error\_2} \\
         \text{P} & $ \rightarrow $ & \text{" "} \\
         \text{G} & $ \rightarrow $ & \text{"-"} \\
-        \text{S} & $ \rightarrow $ & \text{"taga" \textbar\ "pa" \textbar\ "maka"} \\
-        \text{PN} & $ \rightarrow $ & \text{"Tondo" \textbar\ "Davao" \textbar\ "Rizal" \textbar\ "DLSU"} \\
-        \text{PV} & $ \rightarrow $ & \text{"tondo" \textbar\ "davao" \textbar\ "rizal" \textbar\ "dlsu"} \\
-        \text{Error\_1} & $ \rightarrow $ & \text{S PN \textbar\ S P PN} \\
-        \text{Error\_1} & $ \rightarrow $ & \text{S PV \textbar\ S P PV} \\
+        \text{S} & $ \rightarrow $ & \text{"taga" \textbar\ "ka" \textbar\ "maka"} \\
+        \text{PN} & $ \rightarrow $ & \text{"Tondo" \textbar\ "Davao" \textbar\ "Rizal" \textbar\ "Pasig"} \\
+        \text{PV} & $ \rightarrow $ & \text{"tondo" \textbar\ "davao" \textbar\ "rizal" \textbar\ "pasig"} \\
+        \text{Error\_1} & $ \rightarrow $ & \text{S P PV \textbar\ S P PN} \\
         \text{Error\_2} & $ \rightarrow $ & \text{S G PV} \\
     \end{tabular}
 \end{center}
@@ -864,14 +855,13 @@ For ease, the non-terminal derived from H is "h" representing the hours followin
 \subsubsection{CNF}
 \begin{center}
     \begin{tabular}{rcl}
-        \text{Start} & $ \rightarrow $ & \text{S PN \textbar\ S PPN} \\
-        \text{Start} & $ \rightarrow $ & \text{S PV \textbar\ S PPV} \\
+        \text{Start} & $ \rightarrow $ & \text{S PPV \textbar\ S PPN} \\
         \text{Start} & $ \rightarrow $ & \text{S GPV} \\
         \text{P} & $ \rightarrow $ & \text{" "} \\
         \text{G} & $ \rightarrow $ & \text{"-"} \\
-        \text{S} & $ \rightarrow $ & \text{"taga" \textbar\ "pa" \textbar\ "maka"} \\
-        \text{PN} & $ \rightarrow $ & \text{"Tondo" \textbar\ "Davao" \textbar\ "Rizal" \textbar\ "DLSU"} \\
-        \text{PV} & $ \rightarrow $ & \text{"tondo" \textbar\ "davao" \textbar\ "rizal" \textbar\ "dlsu"} \\
+        \text{S} & $ \rightarrow $ & \text{"taga" \textbar\ "ka" \textbar\ "maka"} \\
+        \text{PN} & $ \rightarrow $ & \text{"Tondo" \textbar\ "Davao" \textbar\ "Rizal" \textbar\ "Pasig"} \\
+        \text{PV} & $ \rightarrow $ & \text{"tondo" \textbar\ "davao" \textbar\ "rizal" \textbar\ "pasig"} \\
         \text{PPN} & $ \rightarrow $ & \text{P PN} \\
         \text{PPV} & $ \rightarrow $ & \text{P PV} \\
         \text{GPV} & $ \rightarrow $ & \text{G PV} \\
@@ -881,19 +871,17 @@ For ease, the non-terminal derived from H is "h" representing the hours followin
 \subsubsection{GNF}
 \begin{center}
     \begin{tabular}{rcl}
-        \text{Start} & $ \rightarrow $ & \text{"taga" PN \textbar\ "taga" P PN} \\
-        \text{Start} & $ \rightarrow $ & \text{"taga" PV \textbar\ "taga" P PV} \\
+        \text{Start} & $ \rightarrow $ & \text{"taga" P PV \textbar\ "taga" P PN} \\
         \text{Start} & $ \rightarrow $ & \text{"taga" G PV} \\
-        \text{Start} & $ \rightarrow $ & \text{"pa" PN \textbar\ "pa" P PN} \\
-        \text{Start} & $ \rightarrow $ & \text{"pa" PV \textbar\ "pa" P PV} \\
+        \text{Start} & $ \rightarrow $ & \text{"ka" P PV \textbar\ "ka" P PN} \\
+        \text{Start} & $ \rightarrow $ & \text{"pa" PV \textbar\ "ka" P PV} \\
         \text{Start} & $ \rightarrow $ & \text{"pa" GPV} \\
-        \text{Start} & $ \rightarrow $ & \text{"maka" PN \textbar\ "maka" P PN} \\
-        \text{Start} & $ \rightarrow $ & \text{"maka" PV \textbar\ "maka" P PV} \\
+        \text{Start} & $ \rightarrow $ & \text{"maka" P PV \textbar\ "maka" P PN} \\
         \text{Start} & $ \rightarrow $ & \text{"maka" G PV} \\
         \text{P} & $ \rightarrow $ & \text{" "} \\
         \text{G} & $ \rightarrow $ & \text{"-"} \\
-        \text{PN} & $ \rightarrow $ & \text{"Tondo" \textbar\ "Davao" \textbar\ "Rizal" \textbar\ "DLSU"} \\
-        \text{PV} & $ \rightarrow $ & \text{"tondo" \textbar\ "davao" \textbar\ "rizal" \textbar\ "dlsu"} \\
+        \text{PN} & $ \rightarrow $ & \text{"Tondo" \textbar\ "Davao" \textbar\ "Rizal" \textbar\ "Pasig"} \\
+        \text{PV} & $ \rightarrow $ & \text{"tondo" \textbar\ "davao" \textbar\ "rizal" \textbar\ "pasig"} \\
     \end{tabular}
 \end{center}
 
@@ -911,21 +899,18 @@ For ease, the non-terminal derived from H is "h" representing the hours followin
         \text{C} & $ \rightarrow $ & \text{"Message" \textbar\ "Anime" \textbar\ "Game"} \\
         \text{Z} & $ \rightarrow $ & \text{"Kpop"} \\
         \text{E} & $ \rightarrow $ & \text{"kpop" \textbar\ "K-pop" \textbar\ "k-pop"} \\
-        \text{Error\_1} & $ \rightarrow $ & \text{S W \textbar\ S P W} \\
-        \text{Error\_1} & $ \rightarrow $ & \text{S C \textbar\ S P C} \\
+        \text{Error\_1} & $ \rightarrow $ & \text{S P C \textbar\ S P W} \\
         \text{Error\_2} & $ \rightarrow $ & \text{S G C} \\
-        \text{Edge\_case} & $ \rightarrow $ & \text{S G E \textbar\ S P E \textbar\ S E} \\
+        \text{Edge\_case} & $ \rightarrow $ & \text{S G E \textbar\ S P E \textbar\ S P Z} \\
     \end{tabular}
 \end{center}
 
 \subsubsection{CNF}
 \begin{center}
     \begin{tabular}{rcl}
-        \text{Start} & $ \rightarrow $ & \text{S W \textbar\ S PW} \\
-        \text{Start} & $ \rightarrow $ & \text{S C \textbar\ S PC} \\
+        \text{Start} & $ \rightarrow $ & \text{S PC \textbar\ S PW} \\
         \text{Start} & $ \rightarrow $ & \text{S GC} \\
-        \text{Start} & $ \rightarrow $ & \text{S GE \textbar\ S PE \textbar\ S E} \\
-        \text{Start} & $ \rightarrow $ & \text{S PZ \textbar\ S Z} \\
+        \text{Start} & $ \rightarrow $ & \text{S GE \textbar\ S PE \textbar\ S PZ} \\
         \text{P} & $ \rightarrow $ & \text{" "} \\
         \text{G} & $ \rightarrow $ & \text{"-"} \\
         \text{S} & $ \rightarrow $ & \text{"pa" \textbar\ "ipa" \textbar\ "maki"} \\
@@ -946,21 +931,15 @@ For ease, the non-terminal derived from H is "h" representing the hours followin
 \subsubsection{GNF}
 \begin{center}
     \begin{tabular}{rcl}
-        \text{Start} & $ \rightarrow $ & \text{"pa" W \textbar\ "pa" P W} \\
-        \text{Start} & $ \rightarrow $ & \text{"pa" C \textbar\ "pa" P C} \\
+        \text{Start} & $ \rightarrow $ & \text{"pa" P C \textbar\ "pa" P W} \\
         \text{Start} & $ \rightarrow $ & \text{"pa" G C} \\
-        \text{Start} & $ \rightarrow $ & \text{"pa" G E \textbar\ "pa" P E \textbar\ "pa" E} \\
-        \text{Start} & $ \rightarrow $ & \text{"pa" P Z \textbar\ "pa" Z} \\
-        \text{Start} & $ \rightarrow $ & \text{"ipa" W \textbar\ "ipa" P W} \\
-        \text{Start} & $ \rightarrow $ & \text{"ipa" C \textbar\ "ipa" P C} \\
+        \text{Start} & $ \rightarrow $ & \text{"pa" G E \textbar\ "pa" P E \textbar\ "pa" P Z} \\
+        \text{Start} & $ \rightarrow $ & \text{"ipa" P C \textbar\ "ipa" P W} \\
         \text{Start} & $ \rightarrow $ & \text{"ipa" G C} \\
-        \text{Start} & $ \rightarrow $ & \text{"ipa" G E \textbar\ "ipa" P E \textbar\ "ipa" E} \\
-        \text{Start} & $ \rightarrow $ & \text{"ipa" P Z \textbar\ "ipa" Z} \\
-        \text{Start} & $ \rightarrow $ & \text{"maki" W \textbar\ "maki" P W} \\
-        \text{Start} & $ \rightarrow $ & \text{"maki" C \textbar\ "maki" P C} \\
+        \text{Start} & $ \rightarrow $ & \text{"ipa" G E \textbar\ "ipa" P E \textbar\ "ipa" P Z} \\
+        \text{Start} & $ \rightarrow $ & \text{"maki" P C \textbar\ "maki" P W} \\
         \text{Start} & $ \rightarrow $ & \text{"maki" G C} \\
-        \text{Start} & $ \rightarrow $ & \text{"maki" G E \textbar\ "maki" P E \textbar\ "maki" E} \\
-        \text{Start} & $ \rightarrow $ & \text{"maki" P Z \textbar\ "maki" Z} \\
+        \text{Start} & $ \rightarrow $ & \text{"maki" G E \textbar\ "maki" P E \textbar\ "maki" P Z} \\
         \text{P} & $ \rightarrow $ & \text{" "} \\
         \text{G} & $ \rightarrow $ & \text{"-"} \\
         \text{W} & $ \rightarrow $ & \text{"message" \textbar\ "anime" \textbar\ "game"} \\
