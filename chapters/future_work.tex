@@ -104,14 +104,16 @@ Below is an example implementation of the Pandiwa-Nang-Pandiwa grammar rule in L
 
 % Maximum source code width                                             |
 \begin{lstlisting}[language=C, caption=Implementation of Pandiwa-Nang-Pandiwa Grammar Rule in Java]
+package Filipino_Language;
+
 import org.languagetool.AnalyzedSentence;
 import org.languagetool.AnalyzedTokenReadings;
 import org.languagetool.rules.Rule;
 import org.languagetool.rules.RuleMatch;
+import org.languagetool.Language;
 
 import java.io.IOException; 
 import java.util.ArrayList;
-import java.util.List;
 
 public class VerbNangVerbRule extends Rule {
 
@@ -122,7 +124,7 @@ public class VerbNangVerbRule extends Rule {
     };
 
     public VerbNangVerbRule(Language language) {
-        List<Pattern> patterns = new ArrayList<>();
+
     }
 
     @Override
@@ -132,49 +134,53 @@ public class VerbNangVerbRule extends Rule {
 
     @Override
     public String getDescription() {
-        return "A rule that detects errors in the phrase 
-        structure VERB-Nang-VERB.";
+        return "A rule that detects errors in the phrase structure 
+                VERB-Nang-VERB.";
     }
 
     @Override
     public RuleMatch[] match(AnalyzedSentence sentence) 
         throws IOException {
-        List<RuleMatch> ruleMatches = new ArrayList<>();
+        ArrayList<RuleMatch> ruleMatches = new ArrayList<>();
         AnalyzedTokenReadings[] tokens = 
             sentence.getTokensWithoutWhitespace();
 
-        for (int i = 1; i < words.length - 1; i++) {
-            String prevWord = words[i - 1];
-            String nextWord = words[i + 1];
+        for (int i = 1; i < tokens.length - 1; i++) {
+            AnalyzedTokenReadings prevWord = tokens[i - 1];
+            AnalyzedTokenReadings nextWord = tokens[i + 1];
 
-            if ("nang".equals(words[i])) {
-                // Check if the words surrounding "nang" 
+            if ("nang".equals(tokens[i])) {
+                // Check if the tokens surrounding "nang" 
                 // are in the verbs array and are the same
                 if (isVerb(prevWord) && 
                     isVerb(nextWord) && 
                     prevWord.equals(nextWord)) {
                     
-                    RuleMatch ruleMatch = 
-                        new RuleMatch(this, i, i + 2);
+                    RuleMatch ruleMatch = new RuleMatch(
+                        this, 
+                        tokens[i].getStartPos(), 
+                        tokens[i + 1].getEndPos(), 
+                        getMessage()
+                    );
                     
                     ruleMatches.add(ruleMatch);
 
-                    RuleMatch ruleMatch = new RuleMatch(
+                    RuleMatch newMatch = new RuleMatch(
                             this,
                             sentence,
                             i - 1,
                             i + 1,
-                            this.getMessage();
+                            this.getMessage()
                     );
-                    ruleMatches.add(ruleMatch);
+                    ruleMatches.add(newMatch);
                 }
             }
         }
 
-        return ruleMatches;
+        return ruleMatches.toArray(new RuleMatch[0]);
     }
 
-    private boolean isVerb(String word) {
+    private boolean isVerb(AnalyzedTokenReadings word) {
         for (String verb : VERBS) {
             if (verb.equals(word)) {
                 return true;
@@ -184,8 +190,8 @@ public class VerbNangVerbRule extends Rule {
     }
 
     private String getMessage(){
-        return "Pandiwa-Nang-Pandiwa misuse; the verbs 
-                surrounding 'nang' must be the same.";
+        return "Pandiwa-Nang-Pandiwa misuse; the verbs surrounding 
+        'nang' must be the same.";
     }
 }
 \end{lstlisting}
